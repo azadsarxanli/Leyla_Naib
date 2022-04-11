@@ -1,0 +1,17 @@
+@import './variables.scss';
+@import './inheritances.scss';
+@import './mixins.scss';
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    outline: none;
+}
+
+body {
+    max-width: 1920px;
+    margin: 0 auto;
+}
