@@ -1,4 +1,7 @@
 import AboutLeyla from './AboutLeyla';
+import Contact from './Contact';
+import ExclusiveDesigns from './ExclusiveDesigns';
+import ReadMore from './ReadMore';
 import ViewAll from './ViewAll';
 
 const Home = () => {
@@ -6,6 +9,9 @@ const Home = () => {
         <>
             <AboutLeyla />
             <ViewAll />
+            <ExclusiveDesigns />
+            <ReadMore />
+            <Contact />
         </>
     )
 }

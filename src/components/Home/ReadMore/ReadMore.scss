@@ -1,0 +1,64 @@
+@import '../../../styles/styles.scss';
+
+.read-more {
+    padding: 60px $mainPaddingRightAndLeft 80px $mainPaddingRightAndLeft;
+    background-color: $backColorPink;
+    height: 100vh;
+    &__container-one {
+        display: flex;
+        margin-bottom: 50px;
+        &__description {
+            margin-left: 40px;
+        }
+        &__image {
+            width: 27%;
+            img {
+                width: 100%;
+            }
+        }
+        .linne {
+            height: 2px;
+            width: 100px;
+            background-color: black;
+            transform: rotate(90deg);
+        }
+    }
+    &__container-two {
+        display: flex;
+        &__description {
+            margin-right: 40px;
+            margin-left: auto;
+        }
+        &__image {
+            width: 15%;
+            img {
+                width: 100%;
+            }
+        }
+    }
+    &__container-one__description, &__container-two__description {
+        width: 30%;
+        border-top: 1px solid white;
+        p {
+            @include fontStyles($interFont, $generalFontSizeTexts, 500, $lightGrayHeader);
+            line-height: 21px;
+            margin: 10px 0 5px 0;
+        }
+        span {
+            border-bottom: 2px solid $bottomLineColor;
+        }
+        .read-more-btn {
+            text-align: end;
+            button {
+                @include fontStyles($interFont, 18px, 600, white);
+                background: none;
+                border: none;
+            }
+        } 
+        h2 {
+            @include fontStyles($interFont, 18px, 600, white);
+            text-transform: uppercase;
+            margin-top: 30px;
+        }
+    }
+}

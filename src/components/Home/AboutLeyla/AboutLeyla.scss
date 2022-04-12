@@ -26,17 +26,15 @@
             width: 45%;
             border-top: 2px solid #7194EB;
             p {
-                color: $lightGrayText;
-                font-size: $generalFontSizeTexts;
+                @include fontStyles($interFont, $generalFontSizeTexts, 500, $lightGrayText);
                 line-height: 21px;
                 margin-left: 10px;
-                font-weight: 500;
             }
         }
         &__triangle {
             position: absolute;
             right: 0;
-            width: 67%;
+            width: 65%;
             &__image {
                 width: 100%;
                 position: absolute;
@@ -47,10 +45,7 @@
                 }
             }
             h1 {
-                color: white;
-                font-size: 65px;
-                font-family: $cormorantFont;
-                font-weight: 400;
+                @include fontStyles($cormorantFont, 65px, 400, white);
                 text-align: end;
                 padding-right: 12%;
                 padding-top: 30px;

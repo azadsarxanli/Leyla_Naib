@@ -1,0 +1,84 @@
+@import '../../../styles/styles.scss';
+
+.exclusive-design {
+    padding: 155px $mainPaddingRightAndLeft;
+    height: 100vh;
+    background-color: $backColorPurple;
+    &__container {
+        &__card-item {
+            position: relative;
+            width: 80%;
+            margin-left: auto;
+            margin-bottom: 30px;
+            border: 1px solid #FAFAFA;
+            height: 110px;
+            transition: all 0.2s linear;
+            &__title-and-desc {
+                display: flex;
+                height: 100%;
+                align-items: center;
+                h1 {
+                    @include fontStyles($cormorantFont, 36px, 500, $lightGrayHeader);
+                    margin-left: 5%;
+                    text-transform: uppercase;
+                    transition: all 0.2s linear;
+                    z-index: 99;
+                }
+                p {
+                    @include fontStyles($interFont, $generalFontSizeTexts, 500, $lightGrayHeader);
+                    margin-top: 20px;
+                    margin-left: auto;
+                    margin-right: 20%;
+                    line-height: 20px;
+                }
+            }
+            &__image {
+                opacity: 0;
+                position: absolute;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                transition: all 0.2s linear;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            &__view-all {
+                position: absolute;
+                top: 40%;
+                right: 20%;
+                display: flex;
+                align-items: center;
+                border: 2px solid white;
+                border-radius: 25px;
+                padding: 6px 20px 5px 20px;
+                opacity: 0;
+                z-index: 99;
+                transition: all 0.2s linear;
+                p {
+                    @include fontStyles($interFont, $generalFontSizeTexts, 500, white);
+                    margin-right: 15px
+                }
+                svg {
+                    width: 65px; 
+                    height: 15px;
+                    fill: white;
+                }
+            }
+        }
+        &__card-item:hover {
+            border: transparent;
+        }
+        &__card-item:hover &__card-item__image {
+            opacity: 1;
+        }
+        &__card-item:hover h1{
+            margin-left: -15%;
+        }
+        &__card-item:hover &__card-item__view-all {
+            opacity: 1;
+            right: 15%;
+        }
+    }
+}

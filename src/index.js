@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import { StrictMode } from 'react';
 import App from './App';
-import './styles/styles.scss';
 import './styles/Reset.scss';
 
 ReactDOM.createRoot (

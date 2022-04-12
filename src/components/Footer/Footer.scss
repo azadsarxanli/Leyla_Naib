@@ -1,0 +1,18 @@
+@import '../../styles/styles.scss';
+
+.footer {
+    padding: 0 $mainPaddingRightAndLeft 70px $mainPaddingRightAndLeft;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &__social-media, &__policy {
+        display: flex;
+        p {
+            @include fontStyles($interFont, $generalFontSizeTexts, 500, $blackColorContacts);
+            text-transform: uppercase;
+            &:first-child {
+                margin-right: 40px;
+            }
+        }
+    }
+}

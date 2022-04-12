@@ -1,0 +1,70 @@
+@import '../../../styles//styles.scss';
+
+.contact {
+    padding: 200px 16% 180px 16%;
+    height: 100vh;
+    &__work-together {
+        @include fontStyles($interFont, 18px, 600, $blackColorContacts);
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+    &__details {
+        border: 1px solid $blackColorContacts;
+        padding: 30px 70px;
+        h1 {
+            @include fontStyles($cormorantFont, $commonMiddleFontSize, 500, $blackColorContacts);
+            text-transform: uppercase;
+            text-align: center;
+        }
+        &__description {
+            @include fontStyles($cormorantFont, 20px, 600, $blackColorContacts);
+            width: 50%;
+            margin: 50px 0;
+            line-height: 25px;
+        }
+        &__messagge-send-part {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            &__contact-info {
+                p {
+                    @include fontStyles($interFont, $generalFontSizeTexts, 500, $blackColorContacts);
+                    &:first-child {
+                        margin-bottom: 15px;
+                    }
+                }
+            }
+            &__your-info {
+                text-align: end;
+                p {
+                    @include fontStyles($interFont, 14px, 400, $redColorError);
+                    margin-bottom: 5px;
+                }
+                &__enter-part {
+                    display: flex;
+                    flex-direction: column;
+                    input {
+                        @include fontStyles($interFont, $generalFontSizeTexts, 300, $blackColorContacts);
+                        margin-bottom: 20px;
+                        width: 300px;
+                        padding: 12px 10px;
+                        border: 1px solid black;
+                        &:focus::placeholder {
+                            color: transparent;
+                        }
+                        &:focus {
+                            outline: none;
+                        }
+                    }                    
+                }
+                button {
+                    @include fontStyles($interFont, 18px, 600, $blackColorContacts);
+                    margin-bottom: 5px;
+                    border: none;
+                    background: none;
+                }
+            }
+        }
+    }
+}
