@@ -1,8 +1,12 @@
-import './Home.scss';
+import AboutLeyla from './AboutLeyla';
+import ViewAll from './ViewAll';
 
 const Home = () => {
     return (
-        <p className="hello">Hello</p>
+        <>
+            <AboutLeyla />
+            <ViewAll />
+        </>
     )
 }
 
