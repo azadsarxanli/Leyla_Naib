@@ -30,8 +30,10 @@
             cursor: pointer;
           }
           &.language {
-            li {
-              margin-left: 9px;
+            ul {
+              li {
+                margin-left: 9px;
+              }
             }
           }
         }

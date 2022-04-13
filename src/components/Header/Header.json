@@ -1,0 +1,16 @@
+{
+  "items": [
+    { "id": 1, "text": "About" },
+    { "id": 2, "text": "blabla" },
+    { "id": 3, "text": "blog" },
+    { "id": 4, "text": "contact" },
+    {
+      "id": 5,
+      "languages": [
+        { "id": 6, "lang": "en" },
+        { "id": 7, "lang": "ru" },
+        { "id": 8, "lang": "az" }
+      ]
+    }
+  ]
+}
