@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import "./CustomCursor.scss";
 
-const CustomCursor = () => {
+const CustomCursor = ({ cursor }) => {
   const appCursor = useRef(null);
 
   useEffect(() => {
@@ -17,7 +17,7 @@ const CustomCursor = () => {
     return () => {};
   }, [appCursor]);
 
-  return <div className="app-cursor " ref={appCursor}></div>;
+  return <div className="app-cursor  " ref={appCursor}></div>;
 };
 
 export default CustomCursor;
