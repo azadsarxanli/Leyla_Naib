@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import './ReadMore.scss';
 import readMoreData from './ReadMore.json';
+import sit from '../../../assets/images/sit-on-chair.png';
+import sitt from '../../../assets/images/read-more.png';
 
 const ReadMore = () => {
     const [moreData, setMoreData] = useState(readMoreData);
