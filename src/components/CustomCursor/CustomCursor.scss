@@ -1,12 +1,20 @@
 .app-cursor {
-    z-index: 1000;
-    border-radius: 50%;
-    width: 25px;
-    height: 25px;
-    background-color: #F0E983;
-    // border: 2px solid black;
-    pointer-events: none;
-    overflow: hidden;
-    transform: translate3d(0, 0, 0);
-    position: fixed;
+  z-index: 1000;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  background-color: #f0e983;
+  transform: translate(-50%, -50%);
+  transform-origin: 100% 100%;
+  // border: 2px solid black;
+  cursor: none;
+  overflow: hidden;
+  // transform: translate3d(0, 0, 0);
+  position: fixed;
+  //   transition: all 300ms ease;
+  pointer-events: none;
+  transition-property: width;
+  &:hover {
+    cursor: none;
+  }
 }
