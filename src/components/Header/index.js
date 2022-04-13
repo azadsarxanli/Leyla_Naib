@@ -3,7 +3,7 @@ import Logo from "../../assets/images/logo.svg";
 
 import "./Header.scss";
 import HeaderJSON from "./Header.json";
-import { useState, useId } from "react";
+import { useState } from "react";
 const Header = () => {
   const [header] = useState(HeaderJSON.items);
   return (
