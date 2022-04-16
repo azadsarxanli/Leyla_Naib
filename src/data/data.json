@@ -1,0 +1,14 @@
+{
+  "images": [
+    {
+      "id": 1,
+      "url": "http://localhost:3000/static/media/img-five.ec8b71740c794810f0b2.png",
+      "description": "Croissant"
+    },
+    {
+      "id": 2,
+      "url": "http://localhost:3000/static/media/img-five.ec8b71740c794810f0b2.png",
+      "description": "Croissant 3570"
+    }
+  ]
+}

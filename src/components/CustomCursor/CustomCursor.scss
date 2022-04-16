@@ -6,15 +6,15 @@
   background-color: #f0e983;
   transform: translate(-50%, -50%);
   transform-origin: 100% 100%;
-  // border: 2px solid black;
   cursor: none;
   overflow: hidden;
-  // transform: translate3d(0, 0, 0);
   position: fixed;
-  //   transition: all 300ms ease;
   pointer-events: none;
-  transition-property: width;
+  transition-property: width, visibility;
   &:hover {
     cursor: none;
+  }
+  &.pointer {
+    visibility: hidden;
   }
 }

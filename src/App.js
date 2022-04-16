@@ -8,15 +8,15 @@ import "./styles/styles.scss";
 
 const App = () => {
   const [cursor, setCursor] = useState(false);
-  const onMouseOverHandler = () => {
+  const onMouseEnter = () => {
     setCursor(true);
   };
-  const onMouseOutHandler = () => {
+  const onMouseLeave = () => {
     setCursor(false);
   };
   return (
     <>
-      <Header cursor={cursor} />
+      <Header onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} />
       <CustomCursor cursor={cursor} />
       <Home />
       <Footer />
