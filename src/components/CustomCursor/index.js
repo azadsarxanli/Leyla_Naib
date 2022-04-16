@@ -17,7 +17,12 @@ const CustomCursor = ({ cursor }) => {
     return () => {};
   }, [appCursor]);
 
-  return <div className="app-cursor  " ref={appCursor}></div>;
+  return (
+    <div
+      className={cursor ? "app-cursor pointer" : "app-cursor"}
+      ref={appCursor}
+    ></div>
+  );
 };
 
 export default CustomCursor;
