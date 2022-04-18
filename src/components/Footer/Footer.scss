@@ -8,10 +8,32 @@
     &__social-media, &__policy {
         display: flex;
         p {
-            @include fontStyles($interFont, $generalFontSizeTexts, 500, $blackColorContacts);
+            @include fontStyles($interFont, $fontSizeTexts-1920px, 500, $blackColorContacts);
             text-transform: uppercase;
             &:first-child {
                 margin-right: 40px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1600px) {
+    .footer {
+        margin-top: 70px;
+        &__social-media, &__policy {
+            p {
+                font-size: $fontSizeTexts-1600px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1450px) {
+    .footer {
+        margin-top: 130px;
+        &__social-media, &__policy {
+            p {
+                font-size: $fontSizeTexts-1450px;
             }
         }
     }

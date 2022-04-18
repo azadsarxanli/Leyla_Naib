@@ -29,7 +29,7 @@
       p {
         @include fontStyles(
           $interFont,
-          $generalFontSizeTexts,
+          $fontSizeTexts-1920px,
           500,
           $lightGrayText
         );
@@ -40,7 +40,7 @@
     &__triangle {
       position: absolute;
       right: 0;
-      width: 63%;
+      width: 61%;
       &__image {
         width: 100%;
         position: absolute;
@@ -51,7 +51,7 @@
         }
       }
       h1 {
-        @include fontStyles($cormorantFont, 65px, 400, white);
+        @include fontStyles($cormorantFont, $commonMiddleFontSize-1920px, 400, white);
         text-align: end;
         padding-right: 12%;
         padding-top: 30px;
@@ -63,10 +63,15 @@
 @media only screen and (max-width: 1600px) {
   .about-leila {
     &__description {
+      &__texts {
+        p {
+          font-size: $fontSizeTexts-1600px;
+        }
+      }
       &__triangle {
         width: 58%;
         h1 {
-          font-size: 50px;
+          font-size: $commonMiddleFontSize-1600px;
         }
       }
     }
@@ -79,6 +84,24 @@
       img {
         max-height: 600px;
       }
+    }
+  }
+}
+
+@media only screen and (max-width: 1450px) {
+  .about-leila {
+    &__description {
+        &__texts {
+          p {
+            font-size: $fontSizeTexts-1450px;
+          }
+        }
+        &__triangle {
+          width: 58%;
+          h1 {
+            font-size: $commonMiddleFontSize-1450px;
+          }
+        }
     }
   }
 }

@@ -4,7 +4,7 @@
   padding: 200px 16% 180px 16%;
   height: 100vh;
   &__work-together {
-    @include fontStyles($interFont, 18px, 600, $blackColorContacts);
+    @include fontStyles($interFont, 22px, 600, $blackColorContacts);
     text-transform: uppercase;
     margin-bottom: 10px;
     text-align: center;
@@ -15,7 +15,7 @@
     h1 {
       @include fontStyles(
         $cormorantFont,
-        $commonMiddleFontSize,
+        $commonMiddleFontSize-1920px,
         500,
         $blackColorContacts
       );
@@ -23,7 +23,7 @@
       text-align: center;
     }
     &__description {
-      @include fontStyles($cormorantFont, 20px, 600, $blackColorContacts);
+      @include fontStyles($cormorantFont, 1.5rem, 600, $blackColorContacts);
       width: 50%;
       margin: 50px 0;
       line-height: 25px;
@@ -36,7 +36,7 @@
         p {
           @include fontStyles(
             $interFont,
-            $generalFontSizeTexts,
+            $fontSizeTexts-1920px,
             500,
             $blackColorContacts
           );
@@ -48,7 +48,7 @@
       &__your-info {
         text-align: end;
         p {
-          @include fontStyles($interFont, 14px, 400, $redColorError);
+          @include fontStyles($interFont, $fontSizeTexts-1600px, 400, $redColorError);
           margin-bottom: 5px;
         }
         &__enter-part {
@@ -57,12 +57,12 @@
           input {
             @include fontStyles(
               $interFont,
-              $generalFontSizeTexts,
+              $fontSizeTexts-1920px,
               300,
               $blackColorContacts
             );
             margin-bottom: 20px;
-            width: 300px;
+            width: 400px;
             padding: 12px 10px;
             border: 1px solid black;
             &:focus::placeholder {
@@ -77,10 +77,84 @@
           }
         }
         button {
-          @include fontStyles($interFont, 18px, 600, $blackColorContacts);
+          @include fontStyles($interFont, 1.4rem, 600, $blackColorContacts);
           margin-bottom: 5px;
           border: none;
           background: none;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1600px) {
+  .contact {
+    &__work-together {
+      font-size: $fontSizeTexts-1920px;
+    }
+    &__details {
+      h1 {
+        font-size: $commonMiddleFontSize-1600px;
+      }
+      &__description {
+        font-size: 1.4rem;
+      }
+      &__messagge-send-part {
+        &__contact-info {
+          p {
+            font-size: $fontSizeTexts-1600px;
+          }
+        }
+        &__your-info {
+          p {
+            font-size: $fontSizeTexts-1450px;
+          }
+          &__enter-part {
+            input {
+              font-size: $fontSizeTexts-1600px;
+              width: 370px;
+            }
+          }
+          button {
+            font-size: $fontSizeTexts-1920px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1450px) {
+  .contact {
+    &__work-together {
+      font-size: $fontSizeTexts-1600px;
+    }
+    &__details {
+      h1 {
+        font-size: $commonMiddleFontSize-1450px;
+      }
+      &__description {
+        font-size: $fontSizeTexts-1920px;
+      }
+      &__messagge-send-part {
+        &__contact-info {
+          p {
+            font-size: $fontSizeTexts-1450px;
+          }
+        }
+        &__your-info {
+          p {
+            font-size: 14px;
+          }
+          &__enter-part {
+            input {
+              font-size: $fontSizeTexts-1450px;
+              width: 350px;
+            }
+          }
+          button {
+            font-size: $fontSizeTexts-1600px;
+          }
         }
       }
     }
