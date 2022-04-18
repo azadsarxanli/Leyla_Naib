@@ -10,7 +10,7 @@
         justify-content: center;
         margin-bottom: 40px;
         p {
-            @include fontStyles($cormorantFont, 65px, 400, $blackColorContents);
+            @include fontStyles($cormorantFont, $commonMiddleFontSize-1920px, 400, $blackColorContents);
             margin-right: 30px;
         }
         div {
@@ -62,7 +62,7 @@
                     opacity: 0;
                     transition: all 0.2s linear;
                     p {
-                        @include fontStyles($interFont, $generalFontSizeTexts, 500, $blackColorContents);
+                        @include fontStyles($interFont, $fontSizeTexts-1920px, 500, $blackColorContents);
                         margin-right: 15px
                     }
                     svg {
@@ -137,6 +137,40 @@
             }
             input:active::-webkit-slider-thumb  {
                 background-color: black;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1600px) {
+    .view-all {
+        &__title {
+            p {
+                font-size: $commonMiddleFontSize-1600px;
+            }
+        }
+        &__images-section {
+            &__cards__card-item__view-work {
+                p {
+                    font-size: $fontSizeTexts-1600px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1450px) {
+    .view-all {
+        &__title {
+            p {
+                font-size: $commonMiddleFontSize-1450px;
+            }
+        }
+        &__images-section {
+            &__cards__card-item__view-work {
+                p {
+                    font-size: $fontSizeTexts-1450px;
+                }
             }
         }
     }

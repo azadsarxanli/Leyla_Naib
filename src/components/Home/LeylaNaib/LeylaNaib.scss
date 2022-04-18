@@ -10,11 +10,39 @@
         align-items: flex-end;
         margin-bottom: 100px;
         h1 {
-            @include fontStyles($cormorantFont, 100px, 400, $blackColorContacts);
+            @include fontStyles($cormorantFont, 130px, 400, $blackColorContacts);
         }
         p {
-            @include fontStyles($interFont, 20px, 400, $blackColorContacts);
-            margin-bottom: 15px;
+            @include fontStyles($interFont, $fontSizeTexts-1920px, 400, $blackColorContacts);
+            margin-bottom: 20px;
+        }
+    }
+}
+
+@media only screen and (max-width: 1600px) {
+    .leyla-naib {
+        &__name {
+            h1 {
+                font-size: 110px;
+            }
+            p {
+                font-size: $fontSizeTexts-1600px;
+                margin-bottom: 16px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1450px) {
+    .leyla-naib {
+        &__name {
+            h1 {
+                font-size: 100px;
+            }
+            p {
+                font-size: $fontSizeTexts-1450px;
+                margin-bottom: 15px;
+            }
         }
     }
 }

@@ -19,6 +19,7 @@
       &.navigation {
         li {
           margin-left: 38px;
+          @include fontStyles($interFont, $fontSizeTexts-1920px, 500, $blackColorContacts);
           &:first-child {
             margin-left: 0;
           }
@@ -31,6 +32,34 @@
                 margin-left: 9px;
               }
             }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1600px) {
+  .header {
+    nav {
+      ul {
+        &.navigation {
+          li {
+            font-size: $fontSizeTexts-1600px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1450px) {
+  .header {
+    nav {
+      ul {
+        &.navigation {
+          li {
+            font-size: $fontSizeTexts-1450px;
           }
         }
       }

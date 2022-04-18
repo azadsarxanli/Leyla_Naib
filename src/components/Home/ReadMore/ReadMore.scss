@@ -36,7 +36,7 @@
             width: 30%;
             border-top: 1px solid white;
             p {
-                @include fontStyles($interFont, $generalFontSizeTexts, 500, $lightGrayHeader);
+                @include fontStyles($interFont, $fontSizeTexts-1920px, 500, $lightGrayHeader);
                 line-height: 21px;
                 margin: 10px 0 5px 0;
             }
@@ -46,15 +46,35 @@
             .read-more-btn {
                 text-align: end;
                 button {
-                    @include fontStyles($interFont, 18px, 600, white);
+                    @include fontStyles($interFont, 22px, 600, white);
                     background: none;
                     border: none;
                 }
             } 
             h2 {
-                @include fontStyles($interFont, 18px, 600, white);
+                @include fontStyles($interFont, 22px, 600, white);
                 text-transform: uppercase;
                 margin-top: 30px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1600px) {
+    .read-more {
+        &__container {
+            &__description {
+                p {
+                    font-size: $fontSizeTexts-1600px;
+                }
+                .read-more-btn {
+                    button {
+                        font-size: $fontSizeTexts-1920px;
+                    }
+                }
+                h2 {
+                    font-size: $fontSizeTexts-1920px;
+                }
             }
         }
     }
@@ -65,6 +85,26 @@
         &__container {
             &__description {
                 width: 40%;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1450px) {
+    .read-more {
+        &__container {
+            &__description {
+                p {
+                    font-size: $fontSizeTexts-1450px;
+                }
+                .read-more-btn {
+                    button {
+                        font-size: $fontSizeTexts-1600px;
+                    }
+                }
+                h2 {
+                    font-size: $fontSizeTexts-1600px;
+                }
             }
         }
     }
