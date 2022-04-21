@@ -29,7 +29,12 @@
             margin-left: 20px;
             padding: 5px 15px;
             border-radius: 15px;
-            @include fontStyles($interFont, $fontSizeTexts-1920px, 500, $blackColorContacts);
+            @include fontStyles(
+              $interFont,
+              $fontSizeTexts-1920px,
+              500,
+              $blackColorContacts
+            );
             transition: all 0.1s linear;
             &:hover {
               cursor: pointer;
@@ -43,6 +48,9 @@
             border: 2px solid $blackColorContacts;
           }
           &.language {
+            > a {
+              display: none;
+            }
             &:hover {
               border: none;
             }
