@@ -10,7 +10,9 @@
   overflow: hidden;
   position: fixed;
   pointer-events: none;
+  // mix-blend-mode: difference;
   transition-property: width, visibility;
+  z-index: 10000;
   &:hover {
     cursor: none;
   }

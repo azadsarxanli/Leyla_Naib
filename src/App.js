@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import { useState } from "react";
 import CustomCursor from "./components/CustomCursor";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
@@ -17,17 +16,26 @@ const App = () => {
   const onMouseLeave = () => {
     setCursor(false);
   };
+
+  const [windowScrollY, setWindowScrollY] = useState('');
+  window.onscroll = () => {
+    setWindowScrollY(window.scrollY);
+  }
+
   return (
     <>
-      <Header onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} />
+      <Header 
+        onMouseEnter={onMouseEnter} 
+        onMouseLeave={onMouseLeave} 
+        windowScrollY={windowScrollY}
+      />
       <CustomCursor cursor={cursor} />
       <Routes>
         {/* // Use it in this way, and it should work: */}
         <Route path="*" element={<NotFound />} />
-        <Route path="/" element={<Home />}></Route>
+        <Route path="/" element={<Home windowScrollY={windowScrollY} />}></Route>
         <Route path="about" element={<About />}></Route>
       </Routes>
-
       <Footer />
     </>
   );
