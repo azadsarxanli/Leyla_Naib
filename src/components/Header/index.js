@@ -19,30 +19,36 @@ const Header = ({ onMouseEnter, onMouseLeave, windowScrollY }) => {
     if (windowScrollY < windowHeightHalf) {
       headerContainer.current.style.backgroundColor = "white";
       // navLinks.current.style.color = "#101010"
-    } else if (
+    }
+    if (
       windowScrollY > windowHeightHalf &&
       windowScrollY < windowHeightHalf + windowHeight
     ) {
+      console.log("second");
       headerContainer.current.style.backgroundColor = "#3e71f1";
       // navLinks.current.style.color = "#F2F2F2"
-    } else if (
+    }
+    if (
       windowScrollY > windowHeightHalf + windowHeight &&
       windowScrollY < windowHeightHalf + 2 * windowHeight
     ) {
       headerContainer.current.style.backgroundColor = "#99d4c2";
       // navLinks.current.style.color = "#383838"
-    } else if (
+    }
+    if (
       windowScrollY > windowHeightHalf + 2 * windowHeight &&
       windowScrollY < windowHeightHalf + 3 * windowHeight
     ) {
       headerContainer.current.style.backgroundColor = "#bc85d4";
       // navLinks.current.style.color = "#F2F2F2"
-    } else if (
+    }
+    if (
       windowScrollY > windowHeightHalf + 3 * windowHeight &&
       windowScrollY < windowHeightHalf + 4 * windowHeight
     ) {
-      // headerContainer.current.style.backgroundColor = "#d66ca3"
-    } else if (
+      headerContainer.current.style.backgroundColor = "#d66ca3";
+    }
+    if (
       windowScrollY > windowHeightHalf + 4 * windowHeight &&
       windowScrollY < windowHeightHalf + 5 * windowHeight
     ) {

@@ -19,8 +19,6 @@ const Contact = () => {
     message: false,
   });
   const onSubmitForm = () => {
-    console.log("first");
-
     if (inputs.email.length === 0) {
       setType((param) => ({
         ...param,
@@ -32,14 +30,12 @@ const Contact = () => {
         ...param,
         message: true,
       }));
-      console.log(type.email, "email");
     }
     if (inputs.phone.length === 0) {
       setType((param) => ({
         ...param,
         phone: true,
       }));
-      console.log(type.phone, "phone");
     }
     if (inputs.email.length !== 0) {
       setType((param) => ({
@@ -73,10 +69,6 @@ const Contact = () => {
       )
       .join("");
   }
-
-  let number1 = document.querySelector("#num1");
-  console.log(number1);
-  // console.log(number);
 
   return (
     <section className="contact">
