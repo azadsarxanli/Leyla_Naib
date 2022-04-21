@@ -7,7 +7,6 @@ import imageFour from "../../../assets/images/img-four.png";
 import imageFive from "../../../assets/images/img-five.png";
 import imageSixth from "../../../assets/images/img-sixth.png";
 import dataApi from "./data.json";
-import { setRef } from "@mui/material";
 
 const ViewAll = () => {
   // let [currentScrollValue, setCurrentScrollValue] = useState(0);

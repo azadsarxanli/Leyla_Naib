@@ -8,16 +8,15 @@
   top: 0;
   left: 0;
   z-index: 1000;
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
-  box-shadow: 0px 3px 9px rgba(51, 51, 51, 0.295);
   justify-content: space-between;
-  background-color: transparent;
+  background-color: white;
   align-items: center;
-  padding: 20px $mainPaddingRightAndLeft;
+  padding: 20px $mainPaddingRightAndLeft 0 $mainPaddingRightAndLeft;
   font-family: "Inter";
   font-weight: 500;
   text-transform: uppercase;
+  position: fixed;
+  z-index: 9999;
   nav {
     ul {
       display: flex;
@@ -25,29 +24,31 @@
       justify-content: space-between;
       &.navigation {
         li {
-          margin-left: 38px;
+          // margin-left: 38px;
           a {
-            @include fontStyles(
-              $interFont,
-              $fontSizeTexts-1920px,
-              500,
-              $blackColorContacts
-            );
+            margin-left: 20px;
+            padding: 5px 15px;
+            border-radius: 15px;
+            @include fontStyles($interFont, $fontSizeTexts-1920px, 500, $blackColorContacts);
+            transition: all 0.1s linear;
             &:hover {
               cursor: pointer;
             }
           }
-
           &:first-child {
             margin-left: 0;
           }
           &:hover {
             cursor: pointer;
+            border: 2px solid $blackColorContacts;
           }
           &.language {
+            &:hover {
+              border: none;
+            }
             ul {
               li {
-                margin-left: 9px;
+                margin-left: 0px;
               }
             }
           }
@@ -77,6 +78,8 @@
       ul {
         &.navigation {
           li {
+            margin-left: 10px;
+            padding: 5px 10px;
             font-size: $fontSizeTexts-1450px;
           }
         }
