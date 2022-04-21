@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import Logo from "../../assets/images/logo.svg";
 
 import "./Header.scss";
@@ -12,29 +12,44 @@ const Header = ({ onMouseEnter, onMouseLeave, windowScrollY }) => {
   const windowHeight = window.innerHeight;
   const windowHeightHalf = window.innerHeight / 2;
   // const navLinks = document.getElementsByTagName('li');
-  
+
   // console.log(navLinks)
 
   useEffect(() => {
     if (windowScrollY < windowHeightHalf) {
-      headerContainer.current.style.backgroundColor = "white"
+      headerContainer.current.style.backgroundColor = "white";
       // navLinks.current.style.color = "#101010"
-    } else if (windowScrollY > windowHeightHalf && windowScrollY < (windowHeightHalf + windowHeight)) {
-      headerContainer.current.style.backgroundColor = "#3e71f1"
+    } else if (
+      windowScrollY > windowHeightHalf &&
+      windowScrollY < windowHeightHalf + windowHeight
+    ) {
+      headerContainer.current.style.backgroundColor = "#3e71f1";
       // navLinks.current.style.color = "#F2F2F2"
-    } else if (windowScrollY > (windowHeightHalf + windowHeight) && windowScrollY < (windowHeightHalf + (2 * windowHeight))) {
-      headerContainer.current.style.backgroundColor = "#99d4c2"
+    } else if (
+      windowScrollY > windowHeightHalf + windowHeight &&
+      windowScrollY < windowHeightHalf + 2 * windowHeight
+    ) {
+      headerContainer.current.style.backgroundColor = "#99d4c2";
       // navLinks.current.style.color = "#383838"
-    } else if (windowScrollY > (windowHeightHalf + (2 * windowHeight)) && windowScrollY < (windowHeightHalf + (3 * windowHeight))) {
-      headerContainer.current.style.backgroundColor = "#bc85d4"
+    } else if (
+      windowScrollY > windowHeightHalf + 2 * windowHeight &&
+      windowScrollY < windowHeightHalf + 3 * windowHeight
+    ) {
+      headerContainer.current.style.backgroundColor = "#bc85d4";
       // navLinks.current.style.color = "#F2F2F2"
-    } else if (windowScrollY > (windowHeightHalf + (3 * windowHeight)) && windowScrollY < (windowHeightHalf + (4 * windowHeight))) {
+    } else if (
+      windowScrollY > windowHeightHalf + 3 * windowHeight &&
+      windowScrollY < windowHeightHalf + 4 * windowHeight
+    ) {
       // headerContainer.current.style.backgroundColor = "#d66ca3"
-    } else if (windowScrollY > (windowHeightHalf + (4 * windowHeight)) && windowScrollY < (windowHeightHalf + (5 * windowHeight))) {
-      headerContainer.current.style.backgroundColor = "white"
+    } else if (
+      windowScrollY > windowHeightHalf + 4 * windowHeight &&
+      windowScrollY < windowHeightHalf + 5 * windowHeight
+    ) {
+      headerContainer.current.style.backgroundColor = "white";
       // navLinks.current.style.color = "#101010"
     }
-  }, [windowScrollY])
+  }, [windowScrollY]);
 
   return (
     <header className="header" ref={headerContainer}>
