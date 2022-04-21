@@ -27,7 +27,6 @@ const App = () => {
         <Route path="/" element={<Home />}></Route>
         <Route path="about" element={<About />}></Route>
       </Routes>
-
       <Footer />
     </>
   );
