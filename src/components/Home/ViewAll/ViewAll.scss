@@ -90,7 +90,6 @@
                 appearance: none;
                 outline: none;
                 transform: rotate(90deg);
-                // border: 1px solid $blackColorContents;
                 width: 600px;
                 margin: 299px -300px 0 -300px;
                 transition: all 0.3s;
@@ -103,8 +102,8 @@
                 cursor: pointer;
                 border-radius: 50%;
                 pointer-events: auto;
-                // border: 2px solid $blackColorContents;
-                background-color: black;
+                border: 1px solid $blackColorContents;
+                background-color: $backColorLightGreen;
             }
             input::-moz-range-thumb {
                 -webkit-appearance: none;
@@ -136,7 +135,7 @@
                 -webkit-appearance: none;
             }
             input:active::-webkit-slider-thumb  {
-                background-color: black;
+                background-color: $backColorLightGreen;
             }
         }
     }

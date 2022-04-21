@@ -60,41 +60,23 @@ const Contact = () => {
       }));
     }
   };
-  //   const onSubmitForm = () => {
-  //     if (
-  //       inputs.email.length <= 0 ||
-  //       inputs.phone.length <= 0 ||
-  //       inputs.message.length <= 0
-  //     ) {
-  //       if (inputs.email.length <= 0) {
-  //         setType((param) => ({
-  //           ...param,
-  //           email: true,
-  //         }));
-  //         console.log(type.email, "email");
-  //       }
-  //       if (inputs.message.length <= 0) {
-  //         setType((param) => ({
-  //           ...param,
-  //           message: true,
-  //         }));
-  //         console.log(type.message, "message");
-  //       }
-  //       if (inputs.phone.length <= 0) {
-  //         setType((param) => ({
-  //           ...param,
-  //           phone: true,
-  //         }));
-  //         console.log(type.phone, "phone");
-  //       }
-  //     } else {
-  //       setType({
-  //         phone: inputs.phone.length <= 0,
-  //         email: inputs.email.length <= 0,
-  //         message: inputs.message.length <= 0,
-  //       });
-  //     }
-  //   };
+  function addDashesToNumber(number) {
+    const numWithoutDashes = number.replace(/[^0-9]/g, "");
+    if (numWithoutDashes.length > 10) return number.slice(0, -1);
+    const dashPlaces = [3, 6];
+    return numWithoutDashes
+      .split("")
+      .reduce(
+        (acc, curr, i) =>
+          dashPlaces.includes(i) ? [...acc, "-", curr] : [...acc, curr],
+        []
+      )
+      .join("");
+  }
+
+  let number1 = document.querySelector("#num1");
+  console.log(number1);
+  // console.log(number);
 
   return (
     <section className="contact">
@@ -115,28 +97,37 @@ const Contact = () => {
             {type.email || type.message || type.phone ? <p>*Error</p> : <></>}
             <div className="contact__details__messagge-send-part__your-info__enter-part">
               <input
-                type="text"
+                type="number"
+                inputMode="numeric"
+                autoComplete="tel"
                 value={inputs.phone}
                 name="phone"
                 className={type.phone ? "error" : null}
                 placeholder="Phone"
                 onChange={onInputsChangeHandler}
+                enterKeyHint="next"
               />
               <input
-                type="text"
+                type="email"
+                autoComplete="email"
+                inputMode="email"
                 value={inputs.email}
                 className={type.email ? "error" : null}
                 name="email"
                 placeholder="Email"
                 onChange={onInputsChangeHandler}
+                enterKeyHint="next"
               />
               <input
                 type="text"
+                inputMode="text"
+                autoComplete="text"
                 value={inputs.message}
                 name="message"
                 placeholder="Message"
                 className={type.message ? "error" : null}
                 onChange={onInputsChangeHandler}
+                enterKeyHint="done"
               />
             </div>
             <button onClick={onSubmitForm}>Send</button>

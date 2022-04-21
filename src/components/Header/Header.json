@@ -1,15 +1,17 @@
 {
   "items": [
-    { "id": 1, "text": "About" },
-    { "id": 2, "text": "blabla" },
-    { "id": 3, "text": "blog" },
-    { "id": 4, "text": "contact" },
+    { "id": 1, "text": "About", "link": "about" },
+    { "id": 2, "text": "Service", "link": "service" },
+    { "id": 3, "text": "Work", "link": "work" },
+    { "id": 4, "text": "Blog", "link": "blog" },
+    { "id": 5, "text": "Contact", "link": "contact" },
     {
-      "id": 5,
+      "link": "asdf",
+      "id": 6,
       "languages": [
-        { "id": 6, "lang": "en" },
-        { "id": 7, "lang": "ru" },
-        { "id": 8, "lang": "az" }
+        { "id": 7, "lang": "en", "link": "en" },
+        { "id": 8, "lang": "ru", "link": "ru" },
+        { "id": 9, "lang": "az", "link": "az" }
       ]
     }
   ]

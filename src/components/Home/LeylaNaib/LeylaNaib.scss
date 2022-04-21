@@ -1,14 +1,13 @@
 @import '../../../styles/styles.scss';
 
 .leyla-naib {
-    height: 85vh;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     &__name {
         display: flex;
         align-items: flex-end;
-        margin-bottom: 100px;
         h1 {
             @include fontStyles($cormorantFont, 130px, 400, $blackColorContacts);
         }

@@ -1,5 +1,5 @@
-
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import './Home.scss';
 import AboutLeyla from './AboutLeyla';
 import Contact from './Contact';
 import ExclusiveDesigns from './ExclusiveDesigns';
@@ -7,25 +7,51 @@ import LeylaNaib from './LeylaNaib';
 import ReadMore from './ReadMore';
 import ViewAll from './ViewAll';
 
-const Home = () => {
-    window.onscroll = () => {
-        const windowHeight = window.innerHeight;
-        const windowHeightHalf = window.innerHeight / 2;
-        if (window.scrollY < windowHeightHalf) {
-            document.body.style.backgroundColor = "white";
-        } else if (window.scrollY > windowHeightHalf && window.scrollY < (windowHeightHalf + windowHeight)) {
-            document.body.style.backgroundColor = "#3E71F1";
-        } else if (window.scrollY > (windowHeightHalf + windowHeight) && window.scrollY < (windowHeightHalf + (2 * windowHeight))) {
-            document.body.style.backgroundColor = "#99D4C2";
-        } else if (window.scrollY > (windowHeightHalf + (2 * windowHeight)) && window.scrollY < (windowHeightHalf + (3 * windowHeight))) {
-            document.body.style.backgroundColor = "#BC85D4";
-        } else if (window.scrollY > (windowHeightHalf + (3 * windowHeight)) && window.scrollY < (windowHeightHalf + (4 * windowHeight))) {
-            document.body.style.backgroundColor = "#D66CA3";
-        } else if (window.scrollY > (windowHeightHalf + (4 * windowHeight)) && window.scrollY < (windowHeightHalf + (5 * windowHeight))) {
-            document.body.style.backgroundColor = "white";
-        }
-    }
+const Home = ({ windowScrollY }) => {
+    const body = document.body;
+    body.classList.add("background-color-white");
+    const windowHeight = window.innerHeight;
+    const windowHeightHalf = window.innerHeight / 2;
 
+    useEffect(() => {
+        if (windowScrollY < windowHeightHalf) {
+            body.classList.add("background-color-white");
+            body.classList.remove("background-color-blue");
+            body.classList.remove("background-color-lightgreen");
+            body.classList.remove("background-color-purple");
+            body.classList.remove("background-color-pink");
+        } else if (windowScrollY > windowHeightHalf && windowScrollY < (windowHeightHalf + windowHeight)) {
+            body.classList.add("background-color-blue");
+            body.classList.remove("background-color-white");
+            body.classList.remove("background-color-lightgreen");
+            body.classList.remove("background-color-purple");
+            body.classList.remove("background-color-pink");
+        } else if (windowScrollY > (windowHeightHalf + windowHeight) && windowScrollY < (windowHeightHalf + (2 * windowHeight))) {
+            body.classList.add("background-color-lightgreen");
+            body.classList.remove("background-color-blue");
+            body.classList.remove("background-color-white");
+            body.classList.remove("background-color-purple");
+            body.classList.remove("background-color-pink");
+        } else if (windowScrollY > (windowHeightHalf + (2 * windowHeight)) && windowScrollY < (windowHeightHalf + (3 * windowHeight))) {
+            body.classList.add("background-color-purple");
+            body.classList.remove("background-color-blue");
+            body.classList.remove("background-color-white");
+            body.classList.remove("background-color-lightgreen");
+            body.classList.remove("background-color-pink");
+        } else if (windowScrollY > (windowHeightHalf + (3 * windowHeight)) && windowScrollY < (windowHeightHalf + (4 * windowHeight))) {
+            body.classList.add("background-color-pink");
+            body.classList.remove("background-color-blue");
+            body.classList.remove("background-color-white");
+            body.classList.remove("background-color-lightgreen");
+            body.classList.remove("background-color-purple");
+        } else if (windowScrollY > (windowHeightHalf + (4 * windowHeight)) && windowScrollY < (windowHeightHalf + (5 * windowHeight))) {
+            body.classList.remove("background-color-blue");
+            body.classList.remove("background-color-lightgreen");
+            body.classList.remove("background-color-purple");
+            body.classList.remove("background-color-pink");
+            body.classList.add("background-color-white");
+        }
+    }, [windowScrollY])
 
     return (
         <>

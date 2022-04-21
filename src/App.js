@@ -1,10 +1,12 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
+import { Routes, Route } from "react-router-dom";
 import CustomCursor from "./components/CustomCursor";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import Home from "./components/Home/Home";
+import Home from "./components/Home/";
 import "./styles/styles.scss";
+import About from "./components/About/About";
+import NotFound from "./components/NotFound";
 
 const App = () => {
   const [cursor, setCursor] = useState(false);
@@ -14,11 +16,26 @@ const App = () => {
   const onMouseLeave = () => {
     setCursor(false);
   };
+
+  const [windowScrollY, setWindowScrollY] = useState('');
+  window.onscroll = () => {
+    setWindowScrollY(window.scrollY);
+  }
+
   return (
     <>
-      <Header onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} />
+      <Header 
+        onMouseEnter={onMouseEnter} 
+        onMouseLeave={onMouseLeave} 
+        windowScrollY={windowScrollY}
+      />
       <CustomCursor cursor={cursor} />
-      <Home />
+      <Routes>
+        {/* // Use it in this way, and it should work: */}
+        <Route path="*" element={<NotFound />} />
+        <Route path="/" element={<Home windowScrollY={windowScrollY} />}></Route>
+        <Route path="about" element={<About />}></Route>
+      </Routes>
       <Footer />
     </>
   );
