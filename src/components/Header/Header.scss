@@ -24,7 +24,6 @@
       justify-content: space-between;
       &.navigation {
         li {
-          // margin-left: 38px;
           a {
             margin-left: 20px;
             padding: 5px 15px;
@@ -34,15 +33,18 @@
             &:hover {
               cursor: pointer;
             }
-          }
-          &:first-child {
-            margin-left: 0;
-          }
-          &:hover {
-            cursor: pointer;
-            border: 2px solid $blackColorContacts;
+            &:first-child {
+              margin-left: 0;
+            }
+            &:hover {
+              cursor: pointer;
+              border: 2px solid $blackColorContacts;
+            }
           }
           &.language {
+            > a {
+              display: none;
+            }
             &:hover {
               border: none;
             }
@@ -64,7 +66,9 @@
       ul {
         &.navigation {
           li {
-            font-size: $fontSizeTexts-1600px;
+            a {
+              font-size: $fontSizeTexts-1600px;
+            }
           }
         }
       }
@@ -78,9 +82,11 @@
       ul {
         &.navigation {
           li {
-            margin-left: 10px;
-            padding: 5px 10px;
-            font-size: $fontSizeTexts-1450px;
+            a {
+              margin-left: 10px;
+              padding: 5px 10px;
+              font-size: $fontSizeTexts-1450px;
+            }
           }
         }
       }
