@@ -1,0 +1,47 @@
+@import '../../../styles/styles.scss';
+
+.work-cards {
+    padding: 0 16% 100px $mainPaddingRightAndLeft;
+    // background-color: $backColorLightGreen;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    &__card-item {
+        width: 45%;
+        margin-bottom: 100px;
+        &__image-link {
+            width: 100%;
+            height: 130px;
+            position: relative;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+            &__view-work-button {
+                position: absolute;
+                top: 45%;
+                right: 40px;
+                display: flex;
+                align-items: center;
+                border: 2px solid $blackColorContents;
+                border-radius: 25px;
+                padding: 6px 20px 5px 20px;
+                opacity: 0;
+                transition: all 0.2s linear;
+                p {
+                    @include fontStyles($interFont, $fontSizeTexts-1920px, 500, $blackColorContents);
+                    margin-right: 15px
+                }
+                svg {
+                    width: 65px; 
+                    height: 15px;
+                    fill: $blackColorContents;
+                }
+            }
+        }
+        &__title {
+            @include fontStyles($interFont, 1.5rem, 600, $blackColorContents);
+            margin-top: 15px;
+        }
+    }
+}

@@ -7,6 +7,8 @@ import Home from "./components/Home/";
 import "./styles/styles.scss";
 import About from "./components/About/About";
 import NotFound from "./components/NotFound";
+import Work from "./components/Work/Work";
+import WorkInterior from "./components/WorkInterior/WorkInterior";
 
 const App = () => {
   const [cursor, setCursor] = useState(false);
@@ -38,7 +40,9 @@ const App = () => {
           path="/"
           element={<Home windowScrollY={windowScrollY} />}
         ></Route>
-        <Route path="about" element={<About />}></Route>
+        <Route path="/about" element={<About />}></Route>
+        <Route path="/work" element={<Work />}></Route>
+        <Route path="/work-interior" element={<WorkInterior />}></Route>
       </Routes>
       <Footer />
     </>

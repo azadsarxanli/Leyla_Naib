@@ -1,0 +1,17 @@
+@import '../../../styles/styles.scss';
+
+.main-img-container {
+    position: relative;
+    padding: 40px 0 70px 0;
+    img {
+        width: 100%;
+        object-fit: cover;
+    }
+    p {
+        position: absolute;
+        top: 80px;
+        left: $mainPaddingRightAndLeft;
+        text-transform: uppercase;
+        @include fontStyles($interFont, 1.4rem, 400, $blackColorContents);
+    }
+}
