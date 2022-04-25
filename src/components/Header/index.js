@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import Logo from "../../assets/images/logo.svg";
-import LogoWhite from '../../assets/images/logo-signature-white.svg';
+import LogoWhite from "../../assets/images/logo-signature-white.svg";
 
 import "./Header.scss";
 import HeaderJSON from "./Header.json";
@@ -72,13 +72,13 @@ const Header = ({ onMouseEnter, onMouseLeave, windowScrollY }) => {
       }
       headerContainer.current.style.backgroundColor = "#3e71f1";
     } else if (
-        window.location.href === "http://localhost:3000/work" 
-        || window.location.href === "http://localhost:3000/work-interior"
-      ) {
-        if (headerContainer.current.className) {
-          headerContainer.current.classList.remove("header-white");
-        }
-        headerContainer.current.style.backgroundColor = "#99d4c2";
+      window.location.href === "http://localhost:3000/work" ||
+      window.location.href === "http://localhost:3000/work-interior"
+    ) {
+      if (headerContainer.current.className) {
+        headerContainer.current.classList.remove("header-white");
+      }
+      headerContainer.current.style.backgroundColor = "#99d4c2";
     }
   }, [windowScrollY]);
   const onClickHandler = (event) => {
@@ -123,7 +123,9 @@ const Header = ({ onMouseEnter, onMouseLeave, windowScrollY }) => {
                 <ul>
                   {item.languages.map((lang) => (
                     <li key={lang.id}>
-                      <NavLink to={lang.link} onClick={refreshPage}>{lang.lang}</NavLink>
+                      <NavLink to={lang.link} onClick={refreshPage}>
+                        {lang.lang}
+                      </NavLink>
                     </li>
                   ))}
                 </ul>
