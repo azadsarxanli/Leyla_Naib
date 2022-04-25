@@ -13,10 +13,10 @@ const Header = ({ onMouseEnter, onMouseLeave, windowScrollY }) => {
   const windowHeight = window.innerHeight;
   const windowHeightHalf = window.innerHeight / 2;
 
+  // bosss
   useEffect(() => {
     if (window.location.href === "http://localhost:3000/") {
       if (windowScrollY < windowHeightHalf) {
-        
         if (headerContainer.current.className) {
           headerContainer.current.classList.remove("header-white");
         }
