@@ -6,6 +6,11 @@ import BlogFilter from "./BlogFilter";
 import BlogNews from "./BlogNews";
 
 const Blog = () => {
+  const body = document.body;
+  if (!body.className) {
+    body.classList.add("background-color-pink");
+  }
+
   return (
     <>
       <BreadCrumb />
