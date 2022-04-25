@@ -1,0 +1,18 @@
+@import '../../../styles/styles.scss';
+
+.interior-designs {
+    padding: 100px $mainPaddingRightAndLeft 70px $mainPaddingRightAndLeft;
+    display: flex;
+    justify-content: space-between;
+    &__container {
+        width: 31%;
+        img {
+            width: 100%;
+        }
+        p {
+            line-height: 25px;
+            margin-top: 80px;
+            @include fontStyles($interFont, $fontSizeTexts-1920px, 500, $blackColorHeaders);
+        }
+    }
+}

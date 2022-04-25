@@ -1,0 +1,13 @@
+@import '../../../styles/styles.scss';
+
+.interior-content {
+    padding-left: $mainPaddingRightAndLeft;
+    display: flex;
+    align-items: center;
+    p {
+        width: 35%;
+        margin-right: 50px;
+        line-height: 25px;
+        @include fontStyles($interFont, $fontSizeTexts-1920px, 500, $blackColorHeaders);
+    }
+}
