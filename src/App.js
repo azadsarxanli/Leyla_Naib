@@ -5,7 +5,9 @@ import CustomCursor from "./components/CustomCursor";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Home from "./components/Home/Home";
-import About from "./components/About/About";
+
+import "./styles/styles.scss";
+import About from "./components/About";
 import NotFound from "./components/NotFound";
 import Work from "./components/Work/Work";
 import WorkInterior from "./components/WorkInterior/WorkInterior";
@@ -45,8 +47,6 @@ const App = () => {
       <CustomCursor cursor={cursor} />
       <ViewButton hover={hover} />
       <Routes>
-        {/* // Use it in this way, and it should work: */}
-        <Route path="*" element={<NotFound />} />
         <Route
           path="/"
           element={<Home onMouseMove={onMouseMove} onMouseOut={onMouseOut} windowScrollY={windowScrollY} />}
@@ -57,6 +57,9 @@ const App = () => {
           element={<Work onMouseMove={onMouseMove} onMouseOut={onMouseOut} />}
         ></Route>
         <Route path="/work-interior" element={<WorkInterior />}></Route>
+        <Route path="about" element={<About />}></Route>
+        {/* // for not found page*/}
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </>
