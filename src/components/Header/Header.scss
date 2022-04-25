@@ -18,7 +18,7 @@
 
   transition: all 0.3s;
 
-  position: fixed;
+  // position: fixed;
   z-index: 9999;
   nav {
     ul {
@@ -27,8 +27,13 @@
       justify-content: space-between;
       &.navigation {
         li {
+          display: flex;
+          align-items: baseline;
           a {
             margin-left: 20px;
+            display: flex;
+            align-items: center;
+            display: flex;
             padding: 5px 15px;
             border-radius: 15px;
             @include fontStyles(
@@ -37,6 +42,15 @@
               500,
               $blackColorContacts
             );
+            .dot {
+              display: none;
+            }
+            &.active {
+              .dot {
+                display: inline-block;
+                font-size: 30px;
+              }
+            }
             transition: all 0.1s linear;
             &:hover {
               cursor: pointer;
@@ -49,6 +63,7 @@
               border: 2px solid $blackColorContacts;
             }
           }
+
           &.language {
             > a {
               display: none;
