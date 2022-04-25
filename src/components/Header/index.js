@@ -65,6 +65,12 @@ const Header = ({ onMouseEnter, onMouseLeave, windowScrollY }) => {
       }
     }
   }, [windowScrollY]);
+  const onClickHandler = (event) => {
+    // if (document.body.className) {
+    //   document.body.className = "";
+    //   console.log(event.target.textContent);
+    // }
+  };
 
   return (
     <header className="header" ref={headerContainer}>
@@ -80,6 +86,7 @@ const Header = ({ onMouseEnter, onMouseLeave, windowScrollY }) => {
             <li
               onMouseLeave={onMouseLeave}
               onMouseEnter={onMouseEnter}
+              onClick={onClickHandler}
               key={item.id}
               className={index === 5 ? "language" : null}
             >
