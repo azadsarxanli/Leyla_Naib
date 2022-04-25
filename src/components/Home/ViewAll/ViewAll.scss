@@ -36,7 +36,6 @@
                 display: none;
             }
             &__card-item {
-                position: relative;
                 width: 100%;
                 &:not(:last-child) {
                     margin-bottom: 10px;
@@ -50,33 +49,9 @@
                         width: 100%;
                     }
                 }
-                &__view-work {
-                    position: absolute;
-                    top: 45%;
-                    right: 40px;
-                    display: flex;
-                    align-items: center;
-                    border: 2px solid $blackColorContents;
-                    border-radius: 25px;
-                    padding: 6px 20px 5px 20px;
-                    opacity: 0;
-                    transition: all 0.2s linear;
-                    p {
-                        @include fontStyles($interFont, $fontSizeTexts-1920px, 500, $blackColorContents);
-                        margin-right: 15px
-                    }
-                    svg {
-                        width: 65px; 
-                        height: 15px;
-                        fill: $blackColorContents;
-                    }
-                }
             }
             &__card-item:hover &__card-item__image {
                 height: 350px;
-            }
-            &__card-item:hover &__card-item__view-work {
-                opacity: 1;
             }
         }
         &__scroll-card-line {
@@ -148,13 +123,6 @@
                 font-size: $commonMiddleFontSize-1600px;
             }
         }
-        &__images-section {
-            &__cards__card-item__view-work {
-                p {
-                    font-size: $fontSizeTexts-1600px;
-                }
-            }
-        }
     }
 }
 
@@ -163,13 +131,6 @@
         &__title {
             p {
                 font-size: $commonMiddleFontSize-1450px;
-            }
-        }
-        &__images-section {
-            &__cards__card-item__view-work {
-                p {
-                    font-size: $fontSizeTexts-1450px;
-                }
             }
         }
     }

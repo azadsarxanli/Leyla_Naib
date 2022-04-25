@@ -7,11 +7,12 @@ import LeylaNaib from "./LeylaNaib";
 import ReadMore from "./ReadMore";
 import ViewAll from "./ViewAll";
 
-const Home = ({ windowScrollY }) => {
-  const body = document.body;
-  body.classList.add("background-color-white");
-  const windowHeight = window.innerHeight;
-  const windowHeightHalf = window.innerHeight / 2;
+const Home = ({ onMouseMove, onMouseOut, windowScrollY }) => {
+    const body = document.body;
+    body.classList.add("background-color-white");
+    const windowHeight = window.innerHeight;
+    const windowHeightHalf = window.innerHeight / 2;
+
 
   useEffect(() => {
     if (window.location.href === "http://localhost:3000/") {
@@ -70,16 +71,17 @@ const Home = ({ windowScrollY }) => {
     }
   }, [windowScrollY]);
 
-  return (
-    <>
-      <LeylaNaib />
-      <AboutLeyla />
-      <ViewAll />
-      <ExclusiveDesigns />
-      <ReadMore />
-      <Contact />
-    </>
-  );
-};
+    return (
+        <>
+            <LeylaNaib />
+            <AboutLeyla />
+            <ViewAll onMouseMove={onMouseMove} onMouseOut={onMouseOut} />
+            <ExclusiveDesigns />
+            <ReadMore onMouseMove={onMouseMove} onMouseOut={onMouseOut} />
+            <Contact />
+        </>
+    )
+}
+
 
 export default Home;

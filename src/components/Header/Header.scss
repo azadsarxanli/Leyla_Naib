@@ -7,7 +7,6 @@
   position: sticky;
   top: 0;
   left: 0;
-  z-index: 1000;
   justify-content: space-between;
   background-color: white;
   align-items: center;
@@ -17,8 +16,6 @@
   text-transform: uppercase;
 
   transition: all 0.3s;
-
-  // position: fixed;
   z-index: 9999;
   nav {
     ul {
