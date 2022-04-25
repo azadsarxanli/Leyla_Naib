@@ -9,64 +9,58 @@ import ViewAll from "./ViewAll";
 
 const Home = ({ onMouseMove, onMouseOut, windowScrollY }) => {
     const body = document.body;
-    body.classList.add("background-color-white");
     const windowHeight = window.innerHeight;
     const windowHeightHalf = window.innerHeight / 2;
 
 
   useEffect(() => {
     if (window.location.href === "http://localhost:3000/") {
+      body.classList.add("background-color-white");
       if (windowScrollY < windowHeightHalf) {
-        body.classList.add("background-color-white");
-        body.classList.remove("background-color-blue");
-        body.classList.remove("background-color-lightgreen");
-        body.classList.remove("background-color-purple");
-        body.classList.remove("background-color-pink");
+        if (body.className) {
+          body.className = "";
+          body.classList.add("background-color-white");
+        }
       } else if (
         windowScrollY > windowHeightHalf &&
         windowScrollY < windowHeightHalf + windowHeight
       ) {
-        body.classList.add("background-color-blue");
-        body.classList.remove("background-color-white");
-        body.classList.remove("background-color-lightgreen");
-        body.classList.remove("background-color-purple");
-        body.classList.remove("background-color-pink");
+        if (body.className) {
+          body.className = "";
+          body.classList.add("background-color-blue");
+        }
       } else if (
         windowScrollY > windowHeightHalf + windowHeight &&
         windowScrollY < windowHeightHalf + 2 * windowHeight
       ) {
-        body.classList.add("background-color-lightgreen");
-        body.classList.remove("background-color-blue");
-        body.classList.remove("background-color-white");
-        body.classList.remove("background-color-purple");
-        body.classList.remove("background-color-pink");
+        if (body.className) {
+          body.className = "";
+          body.classList.add("background-color-lightgreen");
+        }
       } else if (
         windowScrollY > windowHeightHalf + 2 * windowHeight &&
         windowScrollY < windowHeightHalf + 3 * windowHeight
       ) {
-        body.classList.add("background-color-purple");
-        body.classList.remove("background-color-blue");
-        body.classList.remove("background-color-white");
-        body.classList.remove("background-color-lightgreen");
-        body.classList.remove("background-color-pink");
+        if (body.className) {
+          body.className = "";
+          body.classList.add("background-color-purple");
+        }
       } else if (
         windowScrollY > windowHeightHalf + 3 * windowHeight &&
         windowScrollY < windowHeightHalf + 4 * windowHeight
       ) {
-        body.classList.add("background-color-pink");
-        body.classList.remove("background-color-blue");
-        body.classList.remove("background-color-white");
-        body.classList.remove("background-color-lightgreen");
-        body.classList.remove("background-color-purple");
+        if (body.className) {
+          body.className = "";
+          body.classList.add("background-color-pink");
+        }
       } else if (
         windowScrollY > windowHeightHalf + 4 * windowHeight &&
         windowScrollY < windowHeightHalf + 5 * windowHeight
       ) {
-        body.classList.remove("background-color-blue");
-        body.classList.remove("background-color-lightgreen");
-        body.classList.remove("background-color-purple");
-        body.classList.remove("background-color-pink");
-        body.classList.add("background-color-white");
+        if (body.className) {
+          body.className = "";
+          body.classList.add("background-color-white");
+        }
       }
     }
   }, [windowScrollY]);

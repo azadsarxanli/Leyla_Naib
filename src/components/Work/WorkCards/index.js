@@ -7,13 +7,15 @@ const WorkCards = ({ onMouseMove, onMouseOut }) => {
     const [cardData, setCardData] = useState(workCardData);
     const imageCard = useRef(null);
 
-    
+    function refreshPage() {
+        document.reload(true);
+    }
 
     return (
         <section className="work-cards">
             {cardData.map((cardItem, index) => (
                 <div className="work-cards__card-item" key={index}>
-                    <Link to="/work-interior">
+                    <Link to="/work-interior" onClick={refreshPage}>
                         <div 
                             className="work-cards__card-item__image-link" 
                             onMouseMove={onMouseMove} 
