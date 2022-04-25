@@ -7,7 +7,7 @@ import LeylaNaib from './LeylaNaib';
 import ReadMore from './ReadMore';
 import ViewAll from './ViewAll';
 
-const Home = ({ windowScrollY }) => {
+const Home = ({ onMouseMove, onMouseOut, windowScrollY }) => {
     const body = document.body;
     body.classList.add("background-color-white");
     const windowHeight = window.innerHeight;
@@ -57,9 +57,9 @@ const Home = ({ windowScrollY }) => {
         <>
             <LeylaNaib />
             <AboutLeyla />
-            <ViewAll />
+            <ViewAll onMouseMove={onMouseMove} onMouseOut={onMouseOut} />
             <ExclusiveDesigns />
-            <ReadMore />
+            <ReadMore onMouseMove={onMouseMove} onMouseOut={onMouseOut} />
             <Contact />
         </>
     )
