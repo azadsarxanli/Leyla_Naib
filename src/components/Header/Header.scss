@@ -17,6 +17,12 @@
 
   transition: all 0.3s;
   z-index: 9999;
+
+  .logo {
+    .logo-white {
+      display: none;
+    }
+  }
   nav {
     ul {
       display: flex;
@@ -78,7 +84,29 @@
       }
     }
   }
+  &.header-white {
+    .logo {
+      .logo-black {
+        display: none;
+      }
+      .logo-white {
+        display: block;
+      }
+    }
+    nav {
+      ul {
+        &.navigation {
+          li {
+            a {
+              color: white;
+            }
+          }
+        }
+      }
+    }
+  }
 }
+
 
 @media only screen and (max-width: 1600px) {
   .header {

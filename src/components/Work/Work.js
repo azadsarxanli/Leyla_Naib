@@ -4,10 +4,12 @@ import WorkFilter from "./WorkFilter";
 import "./Work.scss";
 
 const Work = ({ onMouseMove, onMouseOut }) => {
-  if (document.body.className) {
-    document.body.className = "";
-    document.body.classList.add("background-color-lightgreen");
-  }
+
+    const body = document.body;
+    if (!body.className) {
+        body.classList.add("background-color-lightgreen");
+    }
+
 
   return (
     <>
