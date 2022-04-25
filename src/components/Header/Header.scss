@@ -26,16 +26,16 @@
   nav {
     ul {
       display: flex;
-      align-items: baseline;
+      align-items: center;
       justify-content: space-between;
       &.navigation {
         li {
           display: flex;
-          align-items: baseline;
+          align-items: center;
           a {
             margin-left: 20px;
             display: flex;
-            align-items: baseline;
+            align-items: center;
             display: flex;
             padding: 5px 15px;
             border-radius: 15px;
@@ -47,11 +47,17 @@
             );
             .dot {
               display: none;
+              width: 5px;
+              height: 5px;
+              background: $blackColorContacts;
+              border-radius: 50%;
+              align-self: flex-end;
+              margin-bottom: 2px;
+              margin-left: 3px;
             }
             &.active {
               .dot {
-                display: inline-block;
-                font-size: 30px;
+                display: block;
               }
             }
             transition: all 0.1s linear;
@@ -102,6 +108,9 @@
               &:hover {
                 cursor: pointer;
                 border: 2px solid $lightGrayHeader;
+              }
+              .dot {
+                background: $lightGrayHeader;
               }
             }
           }

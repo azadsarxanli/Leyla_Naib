@@ -8,10 +8,9 @@ import ReadMore from "./ReadMore";
 import ViewAll from "./ViewAll";
 
 const Home = ({ onMouseMove, onMouseOut, windowScrollY }) => {
-    const body = document.body;
-    const windowHeight = window.innerHeight;
-    const windowHeightHalf = window.innerHeight / 2;
-
+  const body = document.body;
+  const windowHeight = window.innerHeight;
+  const windowHeightHalf = window.innerHeight / 2;
 
   useEffect(() => {
     if (window.location.href === "http://localhost:3000/") {
@@ -76,6 +75,5 @@ const Home = ({ onMouseMove, onMouseOut, windowScrollY }) => {
         </>
     )
 }
-
 
 export default Home;

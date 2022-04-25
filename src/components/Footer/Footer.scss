@@ -15,6 +15,13 @@
             }
         }
     }
+    &.footer-white {
+        .footer__social-media, .footer__policy {
+            p {
+                color: white;
+            }
+        }
+    }
 }
 
 @media only screen and (max-width: 1600px) {

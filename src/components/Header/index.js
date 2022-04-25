@@ -79,14 +79,21 @@ const Header = ({ onMouseEnter, onMouseLeave, windowScrollY }) => {
         headerContainer.current.classList.remove("header-white");
       }
       headerContainer.current.style.backgroundColor = "#99d4c2";
+    } else if (
+      window.location.href === "http://localhost:3000/blog" ||
+      window.location.href === "http://localhost:3000/blog-interior"
+    ) {
+      if (headerContainer.current.className) {
+        headerContainer.current.classList.add("header-white");
+      }
+      headerContainer.current.style.backgroundColor = "#d66ca3";
+    } else if (window.location.href === "http://localhost:3000/service") {
+      if (headerContainer.current.className) {
+        headerContainer.current.classList.add("header-white");
+      }
+      headerContainer.current.style.backgroundColor = "#bc85d4";
     }
   }, [windowScrollY]);
-  const onClickHandler = (event) => {
-    // if (document.body.className) {
-    //   document.body.className = "";
-    //   console.log(event.target.textContent);
-    // }
-  };
 
   function refreshPage() {
     document.reload(true);
@@ -107,7 +114,6 @@ const Header = ({ onMouseEnter, onMouseLeave, windowScrollY }) => {
             <li
               onMouseLeave={onMouseLeave}
               onMouseEnter={onMouseEnter}
-              onClick={onClickHandler}
               key={item.id}
               className={index === 5 ? "language" : null}
             >
@@ -117,7 +123,7 @@ const Header = ({ onMouseEnter, onMouseLeave, windowScrollY }) => {
                 onClick={refreshPage}
               >
                 {item.text}
-                <span className="dot">.</span>
+                <span className="dot"></span>
               </NavLink>
               {index === 5 ? (
                 <ul>
