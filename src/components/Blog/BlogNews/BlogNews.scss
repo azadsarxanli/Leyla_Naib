@@ -1,0 +1,60 @@
+@import "../../../styles/styles.scss";
+
+.blog-news {
+  padding: 50px 9.4%;
+  .card {
+    margin: 50px 0 120px;
+    &:nth-child(even) {
+      flex-direction: row;
+    }
+    &:nth-last-child(odd) {
+      flex-direction: row-reverse;
+    }
+    display: flex;
+    // justify-content: space-between;
+    // align-items: center;
+    gap: 0 30px;
+    .card__image {
+      img {
+        width: 100%;
+        max-width: 480px;
+        min-width: 160px;
+        object-fit: contain;
+        height: auto;
+      }
+    }
+    .card__detail {
+      border-top: 1px solid white;
+      padding-top: 9px;
+      max-width: 480px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      .card_description {
+        @include fontStyles($interFont, 16px, 500, $lightGrayText);
+        line-height: 22px;
+      }
+      .read-more-link {
+        font-family: "Inter";
+        margin-top: 2px;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 22px;
+        color: #f1f1f1;
+        text-align: right;
+        display: flex;
+        justify-content: flex-end;
+      }
+      .card-title {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        text-transform: uppercase;
+        margin-top: 30px;
+        color: #ffffff;
+      }
+    }
+  }
+}

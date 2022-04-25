@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import Logo from "../../assets/images/logo.svg";
-import LogoWhite from '../../assets/images/logo-signature-white.svg';
+import LogoWhite from "../../assets/images/logo-signature-white.svg";
 
 import "./Header.scss";
 import HeaderJSON from "./Header.json";
@@ -13,7 +13,6 @@ const Header = ({ onMouseEnter, onMouseLeave, windowScrollY }) => {
   const windowHeight = window.innerHeight;
   const windowHeightHalf = window.innerHeight / 2;
 
-  // bosss
   useEffect(() => {
     if (window.location.href === "http://localhost:3000/") {
       if (windowScrollY < windowHeightHalf) {
@@ -73,13 +72,26 @@ const Header = ({ onMouseEnter, onMouseLeave, windowScrollY }) => {
       }
       headerContainer.current.style.backgroundColor = "#3e71f1";
     } else if (
-        window.location.href === "http://localhost:3000/work" 
-        || window.location.href === "http://localhost:3000/work-interior"
-      ) {
-        if (headerContainer.current.className) {
-          headerContainer.current.classList.remove("header-white");
-        }
-        headerContainer.current.style.backgroundColor = "#99d4c2";
+      window.location.href === "http://localhost:3000/work" ||
+      window.location.href === "http://localhost:3000/work-interior"
+    ) {
+      if (headerContainer.current.className) {
+        headerContainer.current.classList.remove("header-white");
+      }
+      headerContainer.current.style.backgroundColor = "#99d4c2";
+    } else if (
+      window.location.href === "http://localhost:3000/blog" ||
+      window.location.href === "http://localhost:3000/blog-interior"
+    ) {
+      if (headerContainer.current.className) {
+        headerContainer.current.classList.add("header-white");
+      }
+      headerContainer.current.style.backgroundColor = "#d66ca3";
+    } else if (window.location.href === "http://localhost:3000/service") {
+      if (headerContainer.current.className) {
+        headerContainer.current.classList.add("header-white");
+      }
+      headerContainer.current.style.backgroundColor = "#bc85d4";
     }
   }, [windowScrollY]);
 
@@ -111,13 +123,15 @@ const Header = ({ onMouseEnter, onMouseLeave, windowScrollY }) => {
                 onClick={refreshPage}
               >
                 {item.text}
-                <span className="dot">.</span>
+                <span className="dot"></span>
               </NavLink>
               {index === 5 ? (
                 <ul>
                   {item.languages.map((lang) => (
                     <li key={lang.id}>
-                      <NavLink to={lang.link} onClick={refreshPage}>{lang.lang}</NavLink>
+                      <NavLink to={lang.link} onClick={refreshPage}>
+                        {lang.lang}
+                      </NavLink>
                     </li>
                   ))}
                 </ul>
