@@ -101,7 +101,8 @@ const ViewAll = ({ onMouseMove, onMouseOut }) => {
             <div
               key={item.id * index}
               className="view-all__images-section__cards__card-item"
-              onMouseMove={onMouseMove} onMouseOut={onMouseOut}
+              onMouseEnter={onMouseMove}
+              onMouseOut={onMouseOut}
             >
               <div className="view-all__images-section__cards__card-item__image">
                 <img src={item.src} alt="background images" />

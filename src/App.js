@@ -12,9 +12,11 @@ import NotFound from "./components/NotFound";
 import Work from "./components/Work/Work";
 import WorkInterior from "./components/WorkInterior/WorkInterior";
 import ViewButton from "./components/ViewButton";
+import Blog from "./components/Blog";
 
 const App = () => {
   const [cursor, setCursor] = useState(false);
+  //Tehran
   const [hover, setHover] = useState(false);
 
   const onMouseEnter = () => {
@@ -24,13 +26,14 @@ const App = () => {
     setCursor(false);
   };
 
+  //Tehran
+
   const onMouseMove = () => {
     setHover(true);
-  }
+  };
   const onMouseOut = () => {
     setHover(false);
-  }
-
+  };
 
   const [windowScrollY, setWindowScrollY] = useState(0);
   document.onscroll = () => {
@@ -49,15 +52,21 @@ const App = () => {
       <Routes>
         <Route
           path="/"
-          element={<Home onMouseMove={onMouseMove} onMouseOut={onMouseOut} windowScrollY={windowScrollY} />}
+          element={
+            <Home
+              onMouseMove={onMouseMove}
+              onMouseOut={onMouseOut}
+              windowScrollY={windowScrollY}
+            />
+          }
         ></Route>
         <Route path="/about" element={<About />}></Route>
-        <Route 
-          path="/work" 
+        <Route
+          path="/work"
           element={<Work onMouseMove={onMouseMove} onMouseOut={onMouseOut} />}
         ></Route>
         <Route path="/work-interior" element={<WorkInterior />}></Route>
-        <Route path="about" element={<About />}></Route>
+        <Route path="blog" element={<Blog />}></Route>
         {/* // for not found page*/}
         <Route path="*" element={<NotFound />} />
       </Routes>
