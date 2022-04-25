@@ -16,6 +16,7 @@ const Header = ({ onMouseEnter, onMouseLeave, windowScrollY }) => {
   useEffect(() => {
     if (window.location.href === "http://localhost:3000/") {
       if (windowScrollY < windowHeightHalf) {
+        
         if (headerContainer.current.className) {
           headerContainer.current.classList.remove("header-white");
         }
