@@ -153,3 +153,78 @@
     }
   }
 }
+
+// @include fontStyles(
+//   $interFont,
+//   $fontSizeTexts-1920px,
+//   500,
+//   $blackColorContacts
+// );
+
+@media only screen and (max-width: 991px) {
+  #root {
+    overflow-x: hidden;
+    height: 100vh;
+  }
+  .header {
+    padding: 4px 20px;
+    .logo-mobile {
+      width: 50px;
+    }
+    &__nav__mobile {
+      .btn {
+        border: none;
+        outline: none;
+        background-color: transparent;
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        text-transform: uppercase;
+        color: #101010;
+      }
+    }
+    &__panel {
+      background-color: #101010;
+      position: absolute;
+      width: 100%;
+      padding-top: 20px;
+      height: 100vh;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      transform: translateX(100%);
+      transition: all 400ms ease;
+      &.active {
+        transform: translateX(0);
+        overflow-y: hidden;
+        -ms-overflow-style: hidden;
+      }
+      .close-btn {
+        margin: 0 20px;
+        background-color: transparent;
+        color: white;
+        font-size: 24px;
+        border: none;
+        outline: none;
+        margin-bottom: 10px;
+      }
+      .navigation {
+        width: 100%;
+        li {
+          padding: 20px 0;
+          border-bottom: 1px solid #eee;
+          font-size: 20px;
+          text-align: center;
+          &:first-child {
+            border-top: 1px solid #eee;
+          }
+          a {
+            padding: 10px 20px;
+            color: #f1f1f1;
+          }
+        }
+      }
+    }
+  }
+}

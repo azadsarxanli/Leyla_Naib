@@ -1,47 +1,84 @@
-@import '../../../styles/styles.scss';
+@import "../../../styles/styles.scss";
 
 .leyla-naib {
-    height: 80vh;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &__name {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    &__name {
-        display: flex;
-        align-items: flex-end;
-        h1 {
-            @include fontStyles($cormorantFont, 130px, 400, $blackColorContacts);
-        }
-        p {
-            @include fontStyles($interFont, $fontSizeTexts-1920px, 400, $blackColorContacts);
-            margin-bottom: 20px;
-        }
+    align-items: flex-end;
+    h1 {
+      @include fontStyles($cormorantFont, 130px, 400, $blackColorContacts);
     }
+    p {
+      @include fontStyles(
+        $interFont,
+        $fontSizeTexts-1920px,
+        400,
+        $blackColorContacts
+      );
+      margin-bottom: 20px;
+    }
+  }
 }
 
 @media only screen and (max-width: 1600px) {
-    .leyla-naib {
-        &__name {
-            h1 {
-                font-size: 110px;
-            }
-            p {
-                font-size: $fontSizeTexts-1600px;
-                margin-bottom: 16px;
-            }
-        }
+  .leyla-naib {
+    &__name {
+      h1 {
+        font-size: 110px;
+      }
+      p {
+        font-size: $fontSizeTexts-1600px;
+        margin-bottom: 16px;
+      }
     }
+  }
 }
 
 @media only screen and (max-width: 1450px) {
-    .leyla-naib {
-        &__name {
-            h1 {
-                font-size: 100px;
-            }
-            p {
-                font-size: $fontSizeTexts-1450px;
-                margin-bottom: 15px;
-            }
-        }
+  .leyla-naib {
+    &__name {
+      h1 {
+        font-size: 100px;
+      }
+      p {
+        font-size: $fontSizeTexts-1450px;
+        margin-bottom: 15px;
+      }
     }
+  }
+}
+@media only screen and (max-width: 991px) {
+  .leyla-naib {
+    padding: 0 20px;
+    &__mobile {
+      width: 230px;
+      display: flex;
+      flex-direction: column;
+      span {
+        &:first-child {
+          text-align: left;
+        }
+        &:last-child {
+          text-align: right;
+        }
+        font-family: "Cormorant";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 70px;
+        line-height: 69px;
+
+        color: #101010;
+      }
+    }
+    &__surname {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 24px;
+    }
+  }
 }

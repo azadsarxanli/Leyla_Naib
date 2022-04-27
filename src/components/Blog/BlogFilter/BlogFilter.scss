@@ -39,13 +39,16 @@
       border-radius: 50%;
       pointer-events: auto;
       border: 1px solid white;
+
       background-color: transparent;
     }
     input::-moz-range-thumb {
       -webkit-appearance: none;
+
       height: 21px;
       width: 21px;
       background-color: transparent;
+
       cursor: pointer;
       border-radius: 50%;
       pointer-events: auto;
