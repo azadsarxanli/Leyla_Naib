@@ -68,10 +68,10 @@ const Home = ({ onMouseMove, onMouseOut, windowScrollY }) => {
   return (
     <>
       <LeylaNaib />
-      <AboutLeyla />
+      {/* <AboutLeyla /> */}
       <ViewAll onMouseMove={onMouseMove} onMouseOut={onMouseOut} />
       <ExclusiveDesigns />
-      <ReadMore onMouseMove={onMouseMove} onMouseOut={onMouseOut} />
+      {/*<ReadMore onMouseMove={onMouseMove} onMouseOut={onMouseOut} /> */}
       <Contact />
     </>
   );

@@ -10,6 +10,20 @@ import { useState } from "react";
 import { configure } from "@testing-library/react";
 
 const Header = ({ onMouseEnter, onMouseLeave, windowScrollY }) => {
+  // let = window.matchMedia("(max-width: 991px)").matches;
+  // const [windowScrollY, setWindowScrollY] = useState(0);
+  // // console.log(windowScrollY);
+
+  // window.addEventListener(
+  //   "scroll",
+  //   function () {
+  //     setWindowScrollY(window.scrollY);
+  //   },
+  //   true
+  // );
+  window.addEventListener("scroll", () => {
+    console.log("hello");
+  });
   const [header] = useState(HeaderJSON.items);
   const headerContainer = useRef(null);
   const windowHeight = window.innerHeight;

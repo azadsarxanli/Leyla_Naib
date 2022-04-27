@@ -7,7 +7,6 @@ const Service = () => {
     const header = body.querySelector("header");
     if (!body.className) {
       header.className = "header";
-
       body.classList.add("background-color-purple");
       header.classList.add("background-color-purple");
       header.classList.add("header-white");
