@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import "./Home.scss";
 import AboutLeyla from "./AboutLeyla";
-import Contact from "./Contact";
+import Contact from "../Contact";
 import ExclusiveDesigns from "./ExclusiveDesigns";
 import LeylaNaib from "./LeylaNaib";
 import ReadMore from "./ReadMore";

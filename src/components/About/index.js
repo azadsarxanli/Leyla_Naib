@@ -1,6 +1,8 @@
 import React from "react";
 import { useEffect } from "react";
+import AboutLeyla from "../Home/AboutLeyla";
 import "./About.scss";
+import AboutImages from "./AboutImages";
 
 const About = () => {
   useEffect(() => {
@@ -19,7 +21,12 @@ const About = () => {
     };
   });
 
-  return <section>hay guys</section>;
+  return (
+    <>
+      <AboutLeyla />
+      <AboutImages />
+    </>
+  )
 };
 
 export default About;
