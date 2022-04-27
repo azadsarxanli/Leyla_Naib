@@ -15,6 +15,7 @@ import ViewButton from "./components/ViewButton";
 import Blog from "./components/Blog";
 import Service from "./components/Service";
 import BlogInterior from "./components/BlogInterior";
+import Contact from "./components/Contact";
 
 const App = () => {
   const [cursor, setCursor] = useState(false);
@@ -71,6 +72,7 @@ const App = () => {
         <Route path="blog" element={<Blog />}></Route>
         <Route path="blog-interior" element={<BlogInterior />}></Route>
         <Route path="service" element={<Service />}></Route>
+        <Route path="contact" element={<Contact />}></Route>
         {/* // for not found page*/}
         <Route path="*" element={<NotFound />} />
       </Routes>
