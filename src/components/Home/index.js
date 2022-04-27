@@ -64,9 +64,6 @@ const Home = ({ onMouseMove, onMouseOut, windowScrollY }) => {
       }
     }
   }, [windowScrollY]);
-  // const onScrollHandler = () => {
-  //   console.log("eli");
-  // };
 
   return (
     <>
