@@ -37,11 +37,17 @@ const App = () => {
   const onMouseOut = () => {
     setHover(false);
   };
-
   const [windowScrollY, setWindowScrollY] = useState(0);
-  document.onscroll = () => {
-    setWindowScrollY(window.scrollY);
-  };
+  // console.log(windowScrollY);
+
+  window.addEventListener(
+    "scroll",
+    function () {
+      setWindowScrollY(window.scrollY);
+    },
+    true
+  );
+  let matchMedia = window.matchMedia("(max-width: 991px)").matches;
 
   return (
     <>
@@ -50,7 +56,8 @@ const App = () => {
         onMouseLeave={onMouseLeave}
         windowScrollY={windowScrollY}
       />
-      <CustomCursor cursor={cursor} />
+      {!matchMedia ? <CustomCursor cursor={cursor} /> : <></>}
+
       <ViewButton hover={hover} />
       <Routes>
         <Route
@@ -76,7 +83,7 @@ const App = () => {
         {/* // for not found page*/}
         <Route path="*" element={<NotFound />} />
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };
