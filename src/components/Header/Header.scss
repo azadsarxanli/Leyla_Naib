@@ -17,6 +17,12 @@
 
   transition: all 0.3s;
   z-index: 9999;
+
+  .logo {
+    .logo-white {
+      display: none;
+    }
+  }
   nav {
     ul {
       display: flex;
@@ -25,7 +31,7 @@
       &.navigation {
         li {
           display: flex;
-          align-items: baseline;
+          align-items: center;
           a {
             margin-left: 20px;
             display: flex;
@@ -41,11 +47,17 @@
             );
             .dot {
               display: none;
+              width: 5px;
+              height: 5px;
+              background: $blackColorContacts;
+              border-radius: 50%;
+              align-self: flex-end;
+              margin-bottom: 2px;
+              margin-left: 3px;
             }
             &.active {
               .dot {
-                display: inline-block;
-                font-size: 30px;
+                display: block;
               }
             }
             transition: all 0.1s linear;
@@ -71,6 +83,34 @@
             ul {
               li {
                 margin-left: 0px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &.header-white {
+    .logo {
+      .logo-black {
+        display: none;
+      }
+      .logo-white {
+        display: block;
+      }
+    }
+    nav {
+      ul {
+        &.navigation {
+          li {
+            a {
+              color: $lightGrayHeader;
+              &:hover {
+                cursor: pointer;
+                border: 2px solid $lightGrayHeader;
+              }
+              .dot {
+                background: $lightGrayHeader;
               }
             }
           }
@@ -107,6 +147,81 @@
               padding: 5px 10px;
               font-size: $fontSizeTexts-1450px;
             }
+          }
+        }
+      }
+    }
+  }
+}
+
+// @include fontStyles(
+//   $interFont,
+//   $fontSizeTexts-1920px,
+//   500,
+//   $blackColorContacts
+// );
+
+@media only screen and (max-width: 991px) {
+  #root {
+    overflow-x: hidden;
+    height: 100vh;
+  }
+  .header {
+    padding: 4px 20px;
+    .logo-mobile {
+      width: 50px;
+    }
+    &__nav__mobile {
+      .btn {
+        border: none;
+        outline: none;
+        background-color: transparent;
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        text-transform: uppercase;
+        color: #101010;
+      }
+    }
+    &__panel {
+      background-color: #101010;
+      position: absolute;
+      width: 100%;
+      padding-top: 20px;
+      height: 100vh;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      transform: translateX(100%);
+      transition: all 400ms ease;
+      &.active {
+        transform: translateX(0);
+        overflow-y: hidden;
+        -ms-overflow-style: hidden;
+      }
+      .close-btn {
+        margin: 0 20px;
+        background-color: transparent;
+        color: white;
+        font-size: 24px;
+        border: none;
+        outline: none;
+        margin-bottom: 10px;
+      }
+      .navigation {
+        width: 100%;
+        li {
+          padding: 20px 0;
+          border-bottom: 1px solid #eee;
+          font-size: 20px;
+          text-align: center;
+          &:first-child {
+            border-top: 1px solid #eee;
+          }
+          a {
+            padding: 10px 20px;
+            color: #f1f1f1;
           }
         }
       }

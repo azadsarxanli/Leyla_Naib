@@ -1,6 +1,7 @@
-@import '../../styles/styles.scss';
+@import "../../styles/styles.scss";
 
 .view-button {
+
     position: fixed;
     top: 0;
     left: 0;
@@ -9,8 +10,6 @@
     border: 2px solid $blackColorContents;
     border-radius: 25px;
     padding: 6px 20px 5px 20px;
-    // opacity: 1;
-    transition: all 0.1s linear;
     z-index: 100000;
     visibility: hidden;
     p {
@@ -28,17 +27,17 @@
 }
 
 @media only screen and (max-width: 1600px) {
-    .view-button {
-        p {
-            font-size: $fontSizeTexts-1600px;
-        }
+  .view-button {
+    p {
+      font-size: $fontSizeTexts-1600px;
     }
+  }
 }
 
 @media only screen and (max-width: 1450px) {
-    .view-button {
-        p {
-            font-size: $fontSizeTexts-1450px;
-        }
+  .view-button {
+    p {
+      font-size: $fontSizeTexts-1450px;
     }
+  }
 }
