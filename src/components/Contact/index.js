@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "./Contact.scss";
 
 const Contact = () => {
@@ -69,6 +70,7 @@ const Contact = () => {
       )
       .join("");
   }
+  let matchMedia = window.matchMedia("(max-width: 991px)").matches;
 
   return (
     <section className="contact">
@@ -125,6 +127,14 @@ const Contact = () => {
             <button onClick={onSubmitForm}>Send</button>
           </div>
         </div>
+        {matchMedia ? (
+          <div className="contact__details__social">
+            <Link to="instagram">INSTAGRAM</Link>
+            <Link to="instagram">FACEBOOK</Link>
+          </div>
+        ) : (
+          <></>
+        )}
       </div>
     </section>
   );

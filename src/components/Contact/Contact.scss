@@ -48,7 +48,12 @@
       &__your-info {
         text-align: end;
         p {
-          @include fontStyles($interFont, $fontSizeTexts-1600px, 400, $redColorError);
+          @include fontStyles(
+            $interFont,
+            $fontSizeTexts-1600px,
+            400,
+            $redColorError
+          );
           margin-bottom: 5px;
         }
         &__enter-part {
@@ -155,6 +160,72 @@
           button {
             font-size: $fontSizeTexts-1600px;
           }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 991px) {
+  .contact {
+    width: 100%;
+    padding: 0 20px;
+    &__work-together {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 17px;
+      text-align: center;
+      text-transform: uppercase;
+    }
+    &__details {
+      padding: 10px;
+      h1 {
+        font-family: "Cormorant";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 35px;
+        line-height: 42px;
+        text-align: center;
+        text-transform: uppercase;
+      }
+      &__description {
+        width: 100%;
+        margin: 30px 0;
+      }
+      &__messagge-send-part {
+        // background-color: red;
+        margin-top: 60px;
+        width: 100%;
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        &__your-info {
+          width: 100%;
+          &__enter-part {
+            // width: 100%;
+            input {
+              width: 100%;
+            }
+          }
+        }
+        &__contact-info {
+          margin-top: 80px;
+        }
+      }
+      &__social {
+        display: flex;
+        margin-top: 100px;
+        margin-bottom: 7px;
+        gap: 0 40px;
+        a {
+          font-family: "Inter";
+          font-style: normal;
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 19px;
+          text-transform: uppercase;
+
+          color: #101010;
         }
       }
     }

@@ -8,10 +8,10 @@ import ReadMore from "./ReadMore";
 import ViewAll from "./ViewAll";
 
 const Home = ({ onMouseMove, onMouseOut, windowScrollY }) => {
+  const body = document.body;
+  const windowHeight = window.innerHeight;
+  const windowHeightHalf = window.innerHeight / 2;
   useEffect(() => {
-    const body = document.body;
-    const windowHeight = window.innerHeight;
-    const windowHeightHalf = window.innerHeight / 2;
     if (window.location.href.includes("")) {
       body.classList.add("background-color-white");
       console.log(windowScrollY > windowHeightHalf);
@@ -64,17 +64,14 @@ const Home = ({ onMouseMove, onMouseOut, windowScrollY }) => {
       }
     }
   }, [windowScrollY]);
-  // const onScrollHandler = () => {
-  //   console.log("eli");
-  // };
 
   return (
     <>
       <LeylaNaib />
-      <AboutLeyla />
+      {/* <AboutLeyla /> */}
       <ViewAll onMouseMove={onMouseMove} onMouseOut={onMouseOut} />
       <ExclusiveDesigns />
-      <ReadMore onMouseMove={onMouseMove} onMouseOut={onMouseOut} />
+      {/*<ReadMore onMouseMove={onMouseMove} onMouseOut={onMouseOut} /> */}
       <Contact />
     </>
   );
