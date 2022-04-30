@@ -1,12 +1,9 @@
 .about-triangles {
-    // height: 200vh;
-    // border: 1px solid red;
     margin-top: 40%;
     &__contaier {
         position: relative;
         &__first-triangle {
             position: absolute;
-            // bottom: 0;
             right: 0;
             top: -65%;
             width: 70%;
@@ -15,14 +12,19 @@
             }
         }
         &__last-triangle {
-            // position: absolute;
+            position: relative;
             left: 0;
             width: 80%;
-            // bottom: -100px;
-            top: 50%;
+            top: 200px;
             img {
                 width: 100%;
             }
         }
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .about-triangles{
+        display: none;
     }
 }

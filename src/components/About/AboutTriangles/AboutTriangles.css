@@ -1,0 +1,30 @@
+.about-triangles {
+  margin-top: 40%;
+}
+
+.about-triangles__contaier {
+  position: relative;
+}
+
+.about-triangles__contaier__first-triangle {
+  position: absolute;
+  right: 0;
+  top: -65%;
+  width: 70%;
+}
+
+.about-triangles__contaier__first-triangle img {
+  width: 100%;
+}
+
+.about-triangles__contaier__last-triangle {
+  position: relative;
+  left: 0;
+  width: 80%;
+  top: 200px;
+}
+
+.about-triangles__contaier__last-triangle img {
+  width: 100%;
+}
+/*# sourceMappingURL=AboutTriangles.css.map */

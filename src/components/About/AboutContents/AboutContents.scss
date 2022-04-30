@@ -18,3 +18,29 @@
         }
     }
 }
+
+@media screen and (max-width: 991px) {
+    .about-contents{
+        padding: 0 20px;
+        flex-direction: column;
+    }
+
+    .about-contents__item-container{
+        width: 100%;
+    }
+
+    .about-contents__item-container h1{
+        font-size: 35px;
+    }
+
+    .about-contents__item-container p {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 21px;
+        margin-top: 20px;
+    }
+
+    .about-contents__item-container{
+        margin-top: 60px;
+    }
+}

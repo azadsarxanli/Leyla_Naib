@@ -1,0 +1,12 @@
+{
+    "version": 3,
+    "mappings": "ACCA,OAAO,CAAC,+FAAI;AACZ,OAAO,CAAC,2FAAI;ADEZ,AAAA,CAAC,CAAC;EACA,UAAU,EAAE,UAAU;EACtB,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC;EACV,eAAe,EAAE,IAAI;EACrB,MAAM,EAAE,IAAI;EACZ,UAAU,EAAE,IAAI;EAChB,OAAO,EAAE,IAAI;EACb,qBAAqB,EAAE,IAAI;EAC3B,mBAAmB,EAAE,IAAI;EACzB,kBAAkB,EAAE,IAAI;EACxB,gBAAgB,EAAE,IAAI;EACtB,eAAe,EAAE,IAAI;EACrB,WAAW,EAAE,IAAI;EACjB,eAAe,EAAE,IAAI;CACtB",
+    "sources": [
+        "styles.scss",
+        "variables.scss",
+        "inheritances.scss",
+        "mixins.scss"
+    ],
+    "names": [],
+    "file": "styles.css"
+}

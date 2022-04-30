@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  cursor: none;
+  list-style: none;
+  outline: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  text-decoration: none;
+}
+
+.about-images {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 430px 9.4% 350px 9.4%;
+}
+
+.about-images__triangle {
+  width: 80%;
+  position: absolute;
+  z-index: 1000;
+  left: 0;
+  top: -20%;
+}
+
+.about-images__triangle img {
+  width: 100%;
+}
+
+.about-images__main-img {
+  width: 37%;
+}
+
+.about-images__main-img img {
+  width: 100%;
+}
+
+.about-images__small-img {
+  width: 30%;
+  margin-top: 30px;
+}
+
+.about-images__small-img__rotate {
+  width: 80%;
+  -webkit-transform: rotate(-14deg);
+          transform: rotate(-14deg);
+}
+
+.about-images__small-img__rotate img {
+  width: 100%;
+}
+
+.about-images__small-img p {
+  font-family: "Inter";
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #f1f1f1;
+  line-height: 25px;
+  margin-top: 50px;
+}
+
+.about-images__medium-img {
+  width: 23%;
+}
+
+.about-images__medium-img img {
+  width: 100%;
+}
+
+.about-images__medium-img p {
+  font-family: "Inter";
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #f1f1f1;
+  line-height: 25px;
+  margin-top: 70px;
+}
+/*# sourceMappingURL=AboutImages.css.map */
