@@ -38,6 +38,7 @@ const Home = ({ onMouseMove, onMouseOut, windowScrollY }) => {
       ) {
         if (body.className) {
           body.className = "";
+          // background mobile ucun background if serti daxil edilmelidir
           body.classList.add("background-color-lightgreen");
           const section = document.querySelector(".view-all");
 
