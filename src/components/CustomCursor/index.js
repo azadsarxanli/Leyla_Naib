@@ -10,8 +10,10 @@ const CustomCursor = ({ cursor }) => {
       //   const mouseX = clientX - appCursor.current.clientWidth / 2;
       //   const mouseY = clientY - appCursor.current.clientHeight / 2;
       //   appCursor.current.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
-      appCursor.current.style.top = event.clientY + "px";
-      appCursor.current.style.left = event.clientX + "px";
+      if (appCursor) {
+        appCursor.current.style.top = event.clientY + "px";
+        appCursor.current.style.left = event.clientX + "px";
+      }
     });
 
     return () => {};
