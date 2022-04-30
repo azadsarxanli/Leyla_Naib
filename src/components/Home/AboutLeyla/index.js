@@ -25,7 +25,7 @@ const AboutLeyla = () => {
           <div className="about-leila__description__triangle__image">
             <img src={triangle} alt="" />
           </div>
-          <h1>Leyla Naib</h1>
+          <h1 className="about-leila__h1">Leyla Naib</h1>
         </div>
       </div>
     </section>
