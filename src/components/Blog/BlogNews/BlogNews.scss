@@ -5,10 +5,10 @@
   .card {
     margin: 50px 0 120px;
     &:nth-child(even) {
-      flex-direction: row;
-    }
-    &:nth-last-child(odd) {
       flex-direction: row-reverse;
+    }
+    &:nth-child(odd) {
+      flex-direction: row;
     }
     display: flex;
     // justify-content: space-between;
@@ -54,6 +54,79 @@
         text-transform: uppercase;
         margin-top: 30px;
         color: #ffffff;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .blog-news {
+    padding: 0px 20px 90px;
+    .card {
+      margin: 0;
+      &:nth-child(even) {
+        flex-direction: column;
+        align-items: flex-end;
+        .card__image {
+          max-width: calc((100% + 286px) / 4);
+          margin-bottom: 8px;
+        }
+      }
+      &:nth-child(odd) {
+        flex-direction: column;
+        align-items: flex-start;
+
+        .card__image {
+          max-width: calc((100% + 286px) / 3);
+          margin-bottom: 8px;
+        }
+      }
+      .card__image {
+        img {
+          min-width: auto;
+          max-width: auto;
+        }
+      }
+      .card__detail {
+        max-width: 100%;
+        .card_description {
+          font-family: "Inter";
+          font-style: normal;
+          font-weight: 500;
+          font-size: 18px;
+          line-height: 23px;
+          /* or 128% */
+
+          color: #f1f1f1;
+        }
+        .card-title {
+          font-family: "Inter";
+          font-style: normal;
+          font-weight: 600;
+          font-size: 18px;
+          line-height: 22px;
+          text-transform: uppercase;
+
+          color: #ffffff;
+          margin: 20px 0;
+        }
+        .read-more-link {
+          margin-bottom: 75px;
+          font-family: "Inter";
+          font-style: normal;
+          font-weight: 600;
+          font-size: 18px;
+          line-height: 22px;
+          /* identical to box height */
+
+          text-align: right;
+
+          color: #ffffff;
+        }
+        .read-more-and-title {
+          display: flex;
+          flex-direction: column-reverse;
+        }
       }
     }
   }

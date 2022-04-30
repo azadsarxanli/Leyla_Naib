@@ -1,8 +1,8 @@
 @import "../../styles/styles.scss";
 
 .contact {
-  padding: 200px 16% 180px 16%;
-  height: 100vh;
+  padding: 100px 16% 0 16%;
+  height: 90vh;
   &__work-together {
     @include fontStyles($interFont, 22px, 600, $blackColorContacts);
     text-transform: uppercase;
@@ -167,10 +167,41 @@
     }
   }
 }
+
+@media only screen and (max-width: 1160px) {
+  .contact {
+    padding-top: 50px;
+    &__details {
+      &__description {
+        width: 80%;
+      }
+      &__messagge-send-part {
+        flex-direction: column-reverse;
+        &__contact-info {
+          align-self: flex-start;
+        }
+      }
+    }
+  }
+}
+
 @media only screen and (max-width: 991px) {
   .contact {
-    width: 100%;
-    padding: 0 20px;
+    padding: 50px 20px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .contact {
+    &__details {
+      padding: 30px;
+    }
+  }
+}
+
+@media only screen and (max-width: 486px) {
+  .contact {
+    height: 100vh;
     &__work-together {
       font-family: "Inter";
       font-style: normal;
@@ -209,6 +240,9 @@
               width: 100%;
             }
           }
+          button {
+            margin-right: 15px;
+          }
         }
         &__contact-info {
           margin-top: 80px;
@@ -231,5 +265,11 @@
         }
       }
     }
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .contact {
+    height: 105vh;
   }
 }

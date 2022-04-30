@@ -1,7 +1,7 @@
 @import '../../styles/styles.scss';
 
 .footer {
-    padding: 0 $mainPaddingRightAndLeft 70px $mainPaddingRightAndLeft;
+    padding: 70px $mainPaddingRightAndLeft;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -26,7 +26,6 @@
 
 @media only screen and (max-width: 1600px) {
     .footer {
-        margin-top: 70px;
         &__social-media, &__policy {
             p {
                 font-size: $fontSizeTexts-1600px;
@@ -37,10 +36,43 @@
 
 @media only screen and (max-width: 1450px) {
     .footer {
-        margin-top: 130px;
         &__social-media, &__policy {
             p {
                 font-size: $fontSizeTexts-1450px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .footer {
+        padding: 50px 20px;
+        &__social-media, &__policy {
+            p {
+                font-size: 14px;
+                &:first-child {
+                    margin-right: 20px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 486px) {
+    .footer {
+        padding: 50px 20px 20px 20px;
+        &__social-media {
+            display: none;
+        }
+        &__policy {
+            position: relative;
+            width: 100%;
+            p {
+                position: absolute;
+                &:first-child {
+                    right: 0;
+                    margin-right: 0;
+                }
             }
         }
     }

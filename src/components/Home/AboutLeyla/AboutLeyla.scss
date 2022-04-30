@@ -138,8 +138,15 @@
     flex-direction: column;
     &__image {
       position: static;
+      overflow: hidden;
       width: 70%;
       margin-bottom: 13px;
+      img {
+        transform-origin: 100% 100%;
+        aspect-ratio: 4/4;
+        // object-fit: cover;
+        object-position: 100%;
+      }
     }
     &__description {
       &__texts {

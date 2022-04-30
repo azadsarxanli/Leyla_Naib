@@ -17,10 +17,12 @@ const BlogNews = () => {
             odio eget morbi at nulla nisi. Mauris, ipsum convallis diam gravida
             tristique...
           </p>
-          <Link to="blog" className="read-more-link">
-            Read more
-          </Link>
-          <p className="card-title">Sed cras ut vulputate a risus</p>
+          <div className="read-more-and-title">
+            <Link to="blog" className="read-more-link">
+              Read more
+            </Link>
+            <p className="card-title">Sed cras ut vulputate a risus</p>
+          </div>
         </div>
       </div>
       <div className="card">
@@ -34,10 +36,12 @@ const BlogNews = () => {
             odio eget morbi at nulla nisi. Mauris, ipsum convallis diam gravida
             tristique...
           </p>
-          <Link to="blog" className="read-more-link">
-            Read more
-          </Link>
-          <p className="card-title">Sed cras ut vulputate a risus</p>
+          <div className="read-more-and-title">
+            <Link to="blog" className="read-more-link">
+              Read more
+            </Link>
+            <p className="card-title">Sed cras ut vulputate a risus</p>
+          </div>
         </div>
       </div>
       <div className="card">
@@ -51,10 +55,12 @@ const BlogNews = () => {
             odio eget morbi at nulla nisi. Mauris, ipsum convallis diam gravida
             tristique...
           </p>
-          <Link to="blog" className="read-more-link">
-            Read more
-          </Link>
-          <p className="card-title">Sed cras ut vulputate a risus</p>
+          <div className="read-more-and-title">
+            <Link to="blog" className="read-more-link">
+              Read more
+            </Link>
+            <p className="card-title">Sed cras ut vulputate a risus</p>
+          </div>
         </div>
       </div>
       <div className="card">
@@ -68,10 +74,12 @@ const BlogNews = () => {
             odio eget morbi at nulla nisi. Mauris, ipsum convallis diam gravida
             tristique...
           </p>
-          <Link to="blog" className="read-more-link">
-            Read more
-          </Link>
-          <p className="card-title">Sed cras ut vulputate a risus</p>
+          <div className="read-more-and-title">
+            <Link to="blog" className="read-more-link">
+              Read more
+            </Link>
+            <p className="card-title">Sed cras ut vulputate a risus</p>
+          </div>
         </div>
       </div>
     </section>
