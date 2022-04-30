@@ -51,7 +51,12 @@
         }
       }
       h1 {
-        @include fontStyles($cormorantFont, $commonMiddleFontSize-1920px, 400, white);
+        @include fontStyles(
+          $cormorantFont,
+          $commonMiddleFontSize-1920px,
+          400,
+          white
+        );
         text-align: end;
         padding-right: 12%;
         padding-top: 30px;
@@ -91,17 +96,17 @@
 @media only screen and (max-width: 1450px) {
   .about-leila {
     &__description {
-        &__texts {
-          p {
-            font-size: $fontSizeTexts-1450px;
-          }
+      &__texts {
+        p {
+          font-size: $fontSizeTexts-1450px;
         }
-        &__triangle {
-          width: 58%;
-          h1 {
-            font-size: $commonMiddleFontSize-1450px;
-          }
+      }
+      &__triangle {
+        width: 58%;
+        h1 {
+          font-size: $commonMiddleFontSize-1450px;
         }
+      }
     }
   }
 }
@@ -121,6 +126,51 @@
     &__description {
       &__triangle {
         width: 52%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1600px) {
+  .about-leila {
+    padding: 150px 20px;
+    height: auto;
+    flex-direction: column;
+    &__image {
+      position: static;
+      width: 70%;
+      margin-bottom: 13px;
+    }
+    &__description {
+      &__texts {
+        margin: 20px 0;
+        flex-direction: row;
+        padding: 0;
+        width: 100%;
+        p {
+          width: 100%;
+        }
+      }
+      &__triangle {
+        width: 100%;
+        &__image {
+          width: 125%;
+          right: 0;
+          position: absolute;
+          z-index: -1;
+          left: calc(-80px);
+          top: 3px;
+        }
+        h1 {
+          padding: 0;
+          margin: 0;
+          text-align: left;
+          padding-left: 45px;
+          font-size: 40px;
+          line-height: 48px;
+          // top: ;
+          padding-top: 5px;
+        }
       }
     }
   }
