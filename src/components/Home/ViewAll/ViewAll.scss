@@ -171,6 +171,7 @@
         width: 100%;
         margin-right: 0;
         &__card-item {
+          overflow: hidden;
           &__product-name {
             display: none;
 
