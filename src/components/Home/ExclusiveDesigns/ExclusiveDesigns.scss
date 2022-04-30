@@ -131,6 +131,7 @@
         margin: 20px 0;
         &__title-and-desc {
           padding: 0 10px;
+          justify-content: space-between;
           h1 {
             font-weight: 500;
             font-size: 25px;
@@ -144,7 +145,7 @@
             }
             font-size: 12px;
             line-height: 15px;
-            width: 100%;
+            width: fit-content;
             margin: 0;
           }
         }

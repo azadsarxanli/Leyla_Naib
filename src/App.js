@@ -83,7 +83,7 @@ const App = () => {
         {/* // for not found page*/}
         <Route path="*" element={<NotFound />} />
       </Routes>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 };

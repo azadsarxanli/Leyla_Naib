@@ -1,0 +1,30 @@
+.about-triangles {
+    margin-top: 40%;
+    &__contaier {
+        position: relative;
+        &__first-triangle {
+            position: absolute;
+            right: 0;
+            top: -65%;
+            width: 70%;
+            img {
+                width: 100%;
+            }
+        }
+        &__last-triangle {
+            position: relative;
+            left: 0;
+            width: 80%;
+            top: 200px;
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .about-triangles{
+        display: none;
+    }
+}

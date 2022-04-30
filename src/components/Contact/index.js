@@ -57,6 +57,24 @@ const Contact = () => {
       }));
     }
   };
+  useEffect(() => {
+    if (window.location.href.includes("contact")) {
+      const body = document.body;
+      const header = body.querySelector("header");
+      if (!body.className) {
+        header.className = "header";
+        body.classList.add("background-color-white");
+        header.classList.add("background-color-white");
+        // header.classList.add("header-white");
+      }
+      return () => {
+        body.className = "";
+        header.classList.remove("background-color-white");
+        // header.classList.remove("header-white");
+      };
+    }
+    console.log("hello my name is");
+  });
   function addDashesToNumber(number) {
     const numWithoutDashes = number.replace(/[^0-9]/g, "");
     if (numWithoutDashes.length > 10) return number.slice(0, -1);

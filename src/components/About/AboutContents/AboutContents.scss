@@ -1,0 +1,46 @@
+@import '../../../styles/styles.scss';
+
+.about-contents {
+    padding: 0 $mainPaddingRightAndLeft;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    &__item-container {
+        width: 30%;
+        margin-top: 100px;
+        h1 {
+            @include fontStyles($cormorantFont, $commonMiddleFontSize-1450px, 500, white);
+        }
+        p {
+            @include fontStyles($interFont, $fontSizeTexts-1920px, 500, $lightGrayText);
+            line-height: 25px;
+            margin-top: 30px;
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .about-contents{
+        padding: 0 20px;
+        flex-direction: column;
+    }
+
+    .about-contents__item-container{
+        width: 100%;
+    }
+
+    .about-contents__item-container h1{
+        font-size: 35px;
+    }
+
+    .about-contents__item-container p {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 21px;
+        margin-top: 20px;
+    }
+
+    .about-contents__item-container{
+        margin-top: 60px;
+    }
+}

@@ -125,3 +125,42 @@
     }
   }
 }
+
+
+@media only screen and (max-width: 991px){
+  .about-leila {
+    padding: 60px 0 0 20px;
+  }
+
+  .about-leila__description__texts{
+    margin-top: 90% !important;
+    width: 100%;
+    margin: 0;
+    padding: 0 20px 0 0;
+  }
+
+  .about-leila__image{
+    width: 240px;
+    height: 286px;
+  }
+
+  .about-leila__description__triangle{
+    width: 100%;
+    position: absolute;
+    top: 18%;
+    left: 40%;
+  }
+
+  .about-leila__h1{
+    position: absolute !important;
+    top: 500px !important;
+    left: -28% !important;
+    font-family: 'Cormorant';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 48px;
+    color: #FFFFFF;
+  }
+  
+}
