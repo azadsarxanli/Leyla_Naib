@@ -1,118 +1,155 @@
-@import '../../../styles/styles.scss';
+@import "../../../styles/styles.scss";
 
 .exclusive-design {
-    padding: 155px $mainPaddingRightAndLeft;
-    height: 100vh;
-    // background-color: $backColorPurple;
-    &__container {
-        &__card-item {
-            position: relative;
-            width: 80%;
-            margin-left: auto;
-            margin-bottom: 30px;
-            border: 1px solid #FAFAFA;
-            height: 110px;
-            transition: all 0.2s linear;
-            &__title-and-desc {
-                display: flex;
-                height: 100%;
-                align-items: center;
-                h1 {
-                    @include fontStyles($cormorantFont, 40px, 500, $lightGrayHeader);
-                    margin-left: 5%;
-                    text-transform: uppercase;
-                    transition: all 0.2s linear;
-                    z-index: 99;
-                }
-                p {
-                    @include fontStyles($interFont, $fontSizeTexts-1920px, 500, $lightGrayHeader);
-                    margin-top: 20px;
-                    margin-left: auto;
-                    margin-right: 20%;
-                    line-height: 20px;
-                }
-            }
-            &__image {
-                opacity: 0;
-                position: absolute;
-                top: 0;
-                width: 100%;
-                height: 100%;
-                transition: all 0.2s linear;
-                img {
-                    width: 100%;
-                    height: 100%;
-                }
-            }
-            &__view-all {
-                position: absolute;
-                top: 40%;
-                right: 20%;
-                display: flex;
-                align-items: center;
-                border: 2px solid white;
-                border-radius: 25px;
-                padding: 6px 20px 5px 20px;
-                opacity: 0;
-                z-index: 99;
-                transition: all 0.2s linear;
-                p {
-                    @include fontStyles($interFont, $fontSizeTexts-1450px, 500, white);
-                    margin-right: 15px
-                }
-                svg {
-                    width: 65px; 
-                    height: 15px;
-                    fill: white;
-                }
-            }
+  padding: 155px $mainPaddingRightAndLeft;
+  height: 100vh;
+  // background-color: $backColorPurple;
+  &__container {
+    &__card-item {
+      position: relative;
+      width: 80%;
+      margin-left: auto;
+      margin-bottom: 30px;
+      border: 1px solid #fafafa;
+      height: 110px;
+      transition: all 0.2s linear;
+      &__title-and-desc {
+        display: flex;
+        height: 100%;
+        align-items: center;
+        h1 {
+          @include fontStyles($cormorantFont, 40px, 500, $lightGrayHeader);
+          margin-left: 5%;
+          text-transform: uppercase;
+          transition: all 0.2s linear;
+          z-index: 99;
         }
-        &__card-item:hover {
-            border: transparent;
+        p {
+          @include fontStyles(
+            $interFont,
+            $fontSizeTexts-1920px,
+            500,
+            $lightGrayHeader
+          );
+          margin-top: 20px;
+          margin-left: auto;
+          margin-right: 20%;
+          line-height: 20px;
         }
-        &__card-item:hover &__card-item__image {
-            opacity: 1;
+      }
+      &__image {
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        transition: all 0.2s linear;
+        img {
+          width: 100%;
+          height: 100%;
         }
-        &__card-item:hover h1{
-            margin-left: -15%;
+      }
+      &__view-all {
+        position: absolute;
+        top: 40%;
+        right: 20%;
+        display: flex;
+        align-items: center;
+        border: 2px solid white;
+        border-radius: 25px;
+        padding: 6px 20px 5px 20px;
+        opacity: 0;
+        z-index: 99;
+        transition: all 0.2s linear;
+        p {
+          @include fontStyles($interFont, $fontSizeTexts-1450px, 500, white);
+          margin-right: 15px;
         }
-        &__card-item:hover &__card-item__view-all {
-            opacity: 1;
-            right: 15%;
+        svg {
+          width: 65px;
+          height: 15px;
+          fill: white;
         }
+      }
     }
+    &__card-item:hover {
+      border: transparent;
+    }
+    &__card-item:hover &__card-item__image {
+      opacity: 1;
+    }
+    &__card-item:hover h1 {
+      margin-left: -15%;
+    }
+    &__card-item:hover &__card-item__view-all {
+      opacity: 1;
+      right: 15%;
+    }
+  }
 }
 
 @media only screen and (max-width: 1600px) {
-    .exclusive-design {
-        &__container {
-            &__card-item {
-                &__title-and-desc {
-                    h1 {
-                        font-size: 38px;
-                    }
-                    p {
-                        font-size: $fontSizeTexts-1600px;
-                    }
-                }
-            }
+  .exclusive-design {
+    &__container {
+      &__card-item {
+        &__title-and-desc {
+          h1 {
+            font-size: 38px;
+          }
+          p {
+            font-size: $fontSizeTexts-1600px;
+          }
         }
+      }
     }
+  }
 }
 
 @media only screen and (max-width: 1450px) {
-    .exclusive-design {
-        &__container {
-            &__card-item {
-                &__title-and-desc {
-                    h1 {
-                        font-size: 36px;
-                    }
-                    p {
-                        font-size: $fontSizeTexts-1450px;
-                    }
-                }
-            }
+  .exclusive-design {
+    &__container {
+      &__card-item {
+        &__title-and-desc {
+          h1 {
+            font-size: 36px;
+          }
+          p {
+            font-size: $fontSizeTexts-1450px;
+          }
         }
+      }
     }
+  }
+}
+@media only screen and (max-width: 991px) {
+  .exclusive-design {
+    padding: 155px 10px 155px 20px;
+    &__container {
+      width: 100%;
+      &__card-item {
+        width: 100%;
+        margin: 20px 0;
+        &__title-and-desc {
+          padding: 0 10px;
+          justify-content: space-between;
+          h1 {
+            font-weight: 500;
+            font-size: 25px;
+            margin: 0;
+            margin-right: 20px;
+          }
+          p {
+            font-weight: 500;
+            br {
+              display: none;
+            }
+            font-size: 12px;
+            line-height: 15px;
+            width: fit-content;
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
 }

@@ -8,10 +8,11 @@ import ReadMore from "./ReadMore";
 import ViewAll from "./ViewAll";
 
 const Home = ({ onMouseMove, onMouseOut, windowScrollY }) => {
+  const body = document.body;
+  const windowHeight = window.innerHeight;
+  const windowHeightHalf = window.innerHeight / 2;
   useEffect(() => {
-    const body = document.body;
-    const windowHeight = window.innerHeight;
-    const windowHeightHalf = window.innerHeight / 2;
+    const header = document.querySelector("header");
     if (window.location.href.includes("")) {
       body.classList.add("background-color-white");
       console.log(windowScrollY > windowHeightHalf);
@@ -28,6 +29,8 @@ const Home = ({ onMouseMove, onMouseOut, windowScrollY }) => {
         if (body.className) {
           body.className = "";
           body.classList.add("background-color-blue");
+          const section = document.querySelector(".view-all");
+          section.style.backgroundColor = "#3e71f1";
         }
       } else if (
         windowScrollY > windowHeightHalf + windowHeight &&
@@ -35,7 +38,11 @@ const Home = ({ onMouseMove, onMouseOut, windowScrollY }) => {
       ) {
         if (body.className) {
           body.className = "";
+          // background mobile ucun background if serti daxil edilmelidir
           body.classList.add("background-color-lightgreen");
+          const section = document.querySelector(".view-all");
+
+          section.style.backgroundColor = "#99d4c2";
         }
       } else if (
         windowScrollY > windowHeightHalf + 2 * windowHeight &&
@@ -44,6 +51,8 @@ const Home = ({ onMouseMove, onMouseOut, windowScrollY }) => {
         if (body.className) {
           body.className = "";
           body.classList.add("background-color-purple");
+          const section = document.querySelector(".view-all");
+          section.style.backgroundColor = "transparent";
         }
       } else if (
         windowScrollY > windowHeightHalf + 3 * windowHeight &&
@@ -62,6 +71,10 @@ const Home = ({ onMouseMove, onMouseOut, windowScrollY }) => {
           body.classList.add("background-color-white");
         }
       }
+      return () => {
+        body.className = "";
+        header.className = "header";
+      };
     }
   }, [windowScrollY]);
 

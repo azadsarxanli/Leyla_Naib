@@ -2,7 +2,9 @@ import React from "react";
 import { useEffect } from "react";
 import AboutLeyla from "../Home/AboutLeyla";
 import "./About.scss";
+import AboutContents from "./AboutContents";
 import AboutImages from "./AboutImages";
+import AboutTriangles from "./AboutTriangles";
 
 const About = () => {
   useEffect(() => {
@@ -25,6 +27,8 @@ const About = () => {
     <>
       <AboutLeyla />
       <AboutImages />
+      <AboutContents />
+      <AboutTriangles />
     </>
   )
 };

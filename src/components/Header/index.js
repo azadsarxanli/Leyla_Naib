@@ -10,6 +10,18 @@ import { useState } from "react";
 import { configure } from "@testing-library/react";
 
 const Header = ({ onMouseEnter, onMouseLeave, windowScrollY }) => {
+  // let = window.matchMedia("(max-width: 991px)").matches;
+  // const [windowScrollY, setWindowScrollY] = useState(0);
+  // // console.log(windowScrollY);
+
+  // window.addEventListener(
+  //   "scroll",
+  //   function () {
+  //     setWindowScrollY(window.scrollY);
+  //   },
+  //   true
+  // );
+
   const [header] = useState(HeaderJSON.items);
   const headerContainer = useRef(null);
   const windowHeight = window.innerHeight;
@@ -142,7 +154,7 @@ const Header = ({ onMouseEnter, onMouseLeave, windowScrollY }) => {
       ) : (
         <>
           <div className="logo">
-            <NavLink to="/" onClick={refreshPage}>
+            <NavLink to="/">
               <img className="logo-black" src={Logo} alt="logo" />
               <img className="logo-white" src={LogoWhite} alt="logo" />
             </NavLink>
