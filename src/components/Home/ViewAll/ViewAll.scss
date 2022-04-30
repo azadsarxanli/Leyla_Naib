@@ -141,7 +141,8 @@
 }
 @media only screen and (max-width: 991px) {
   .view-all {
-    padding: 0px 20px;
+    padding: 70px 20px;
+    transition: all 300ms ease;
     padding-right: 40px;
     &__title {
       display: flex;
