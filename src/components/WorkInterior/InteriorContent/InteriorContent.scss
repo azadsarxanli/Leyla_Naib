@@ -12,6 +12,24 @@
     }
 }
 
+@media only screen and (max-width: 1600px) {
+    .interior-content {
+        p {
+            font-size: $fontSizeTexts-1600px;
+            line-height: 23px;
+        }
+    }
+}
+
+@media only screen and (max-width: 1450px) {
+    .interior-content {
+        p {
+            font-size: $fontSizeTexts-1450px;
+            line-height: 21px;
+        }
+    }
+}
+
 @media only screen and (max-width: 1280px) {
     .interior-content {
         p {
@@ -40,12 +58,14 @@
 
 @media only screen and (max-width: 768px) {
     .interior-content {
-        padding-left: 20px;
-        // border: 1px solid red;
         flex-direction: column;
         p {
             width: 100%;
-            border: 1px solid red;
+            margin-right: 0;
+            &:not(:first-child) {
+                margin-top: 70px;
+            }
+            line-height: 23px;
         }
     }
 }

@@ -7,11 +7,49 @@
         width: 100%;
         object-fit: cover;
     }
+    &__for-mobile {
+        display: none;
+    }
     p {
         position: absolute;
         top: 80px;
         left: $mainPaddingRightAndLeft;
         text-transform: uppercase;
         @include fontStyles($interFont, 1.4rem, 400, $blackColorContents);
+    }
+}
+
+@media only screen and (max-width: 1600px) {
+    .main-img-container {
+        p {
+            font-size: $fontSizeTexts-1920px;
+        }
+    }
+}
+
+@media only screen and (max-width: 1450px) {
+    .main-img-container {
+        p {
+            font-size: $fontSizeTexts-1600px;
+        }
+    }
+}
+
+@media only screen and (max-width: 486px) {
+    .main-img-container {
+        &__for-desktop {
+            display: none;
+        }
+        &__for-mobile {
+            display: block;
+        }
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .main-img-container {
+        p {
+            font-size: $fontSizeTexts-1450px;
+        }
     }
 }

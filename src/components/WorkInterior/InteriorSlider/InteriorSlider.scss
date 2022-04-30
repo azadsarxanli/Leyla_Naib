@@ -3,23 +3,29 @@
 .interior-slider {
     padding: 0 0 50px $mainPaddingRightAndLeft;
     &__image-container {
-        width: 100%;
-        overflow: hidden;
         display: flex;
         align-items: center;
-        white-space: nowrap;
-        overflow: scroll;
         scroll-behavior: smooth;
+        width: 100%;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        white-space: nowrap;
         &::-webkit-scrollbar {
             display: none;
         }
         &__inner-container {
             width: 75%;
             img {
-                &:not(:last-child) {
-                    margin-right: 50px;
-                }
                 width: 100%;
+                margin-right: 50px;
+                &:nth-child(5),
+                &:nth-child(10) {
+                    margin-right: 0;
+                }
+            }
+            .slider-img-mob {
+                display: none;
+                // aspect-ratio: 1/1;
             }
         }
     }
@@ -77,6 +83,42 @@
         }
         input:active::-webkit-slider-thumb  {
             background-color: $backColorLightGreen;
+        }
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .interior-slider {
+        padding-left: 20px
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .interior-slider {
+        &__image-container {
+            &__inner-container {
+                width: 85%;
+            }
+        }
+        &__control-range {
+            padding-right: 0;
+        }
+    }
+}
+
+@media only screen and (max-width: 486px) {
+    .interior-slider {
+        padding-left: 0;
+        &__image-container {
+            &__inner-container {
+                width: 100%;
+                .slider-img-desk {
+                    display: none;
+                }
+                .slider-img-mob {
+                    display: inline;
+                }
+            }
         }
     }
 }

@@ -88,7 +88,7 @@ const Contact = () => {
       )
       .join("");
   }
-  let matchMedia = window.matchMedia("(max-width: 991px)").matches;
+  let matchMedia = window.matchMedia("(max-width: 486px)").matches;
 
   return (
     <section className="contact">

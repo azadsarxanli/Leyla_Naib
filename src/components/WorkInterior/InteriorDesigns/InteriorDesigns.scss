@@ -2,17 +2,90 @@
 
 .interior-designs {
     padding: 100px $mainPaddingRightAndLeft 70px $mainPaddingRightAndLeft;
-    display: flex;
-    justify-content: space-between;
-    &__container {
-        width: 31%;
-        img {
+    &__img-container {
+        width: 100%;
+        &__image {
+            display: flex;
+            justify-content: space-between;
             width: 100%;
+            img {
+                width: 31%;
+            }
         }
+    }
+    &__text-container { 
+        display: flex;
+        justify-content: space-between;
+        margin-top: 80px;
         p {
+            width: 31%;
             line-height: 25px;
-            margin-top: 80px;
             @include fontStyles($interFont, $fontSizeTexts-1920px, 500, $blackColorHeaders);
+        }
+    }
+}
+
+@media only screen and (max-width: 1600px) {
+    .interior-designs {
+        &__text-container {
+            p {
+                line-height: 23px;
+                font-size: $fontSizeTexts-1600px
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1450px) {
+    .interior-designs {
+        &__text-container {
+            p {
+                line-height: 21px;
+                font-size: $fontSizeTexts-1450px
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .interior-designs {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@media only screen and (max-width: 486px) {
+    .interior-designs {
+        padding-right: 0;
+        &__img-container {
+            overflow-x: scroll;
+            overflow-y: hidden;
+            white-space: nowrap;
+            scroll-behavior: smooth;
+            &::-webkit-scrollbar {
+                display: none;
+            }
+            &__image {
+                img {
+                    width: 85%;
+                    &:not(:last-child) {
+                        margin-right: 30px;
+                    }
+                }
+            }
+        }
+        &__text-container {
+            flex-direction: column;
+            margin-right: 20px;
+            position: relative;
+            height: 100px;
+            p {
+                position: absolute;
+                width: 100%;
+                &:not(:first-child) {
+                    opacity: 0;
+                }
+            }
         }
     }
 }

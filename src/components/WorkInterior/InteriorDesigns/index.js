@@ -10,12 +10,18 @@ const InteriorDesigns = () => {
 
     return (
         <section className="interior-designs">
-            {designsImgData.map((designsData, index) => (
-                <div className="interior-designs__container" key={index}>
-                    <img src={designsData.src} alt="" />
-                    <p>{designsData.desc}</p>
+            <div className="interior-designs__img-container" >
+                <div className="interior-designs__img-container__image">
+                    {designsImgData.map((designsData, index) => (
+                        <img key={index} src={designsData.src} alt="" />
+                    ))}
                 </div>
-            ))}
+            </div>
+            <div className="interior-designs__text-container">
+                {designsImgData.map((designsData, index) => (
+                    <p key={index}>{designsData.desc}</p>
+                ))}
+            </div>
         </section>
     )
 }
