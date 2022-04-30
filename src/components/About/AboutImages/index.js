@@ -2,7 +2,7 @@ import './AboutImages.scss';
 import aboutImg1 from '../../../assets/images/about-img1.png';
 import aboutImg2 from '../../../assets/images/about-img2.png';
 import rotateImg from '../../../assets/images/rotate-img.png';
-import triangleImg from '../../../assets/images/triangle-home.png';
+import triangleImg from '../../../assets/images/big-triangle.png';
 
 const AboutImages = () => {
     return (

@@ -11,3 +11,41 @@
         @include fontStyles($interFont, $fontSizeTexts-1920px, 500, $blackColorHeaders);
     }
 }
+
+@media only screen and (max-width: 1280px) {
+    .interior-content {
+        p {
+            width: 40%;
+        }
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .interior-content {
+        padding-right: $mainPaddingRightAndLeft;
+        p {
+            width: 45%;
+        }
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .interior-content {
+        padding: 0 20px;
+        p {
+            width: 45%;
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .interior-content {
+        padding-left: 20px;
+        // border: 1px solid red;
+        flex-direction: column;
+        p {
+            width: 100%;
+            border: 1px solid red;
+        }
+    }
+}
