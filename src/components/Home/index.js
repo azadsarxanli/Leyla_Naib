@@ -29,6 +29,8 @@ const Home = ({ onMouseMove, onMouseOut, windowScrollY }) => {
         if (body.className) {
           body.className = "";
           body.classList.add("background-color-blue");
+          const section = document.querySelector(".view-all");
+          section.style.backgroundColor = "#3e71f1";
         }
       } else if (
         windowScrollY > windowHeightHalf + windowHeight &&
@@ -37,6 +39,9 @@ const Home = ({ onMouseMove, onMouseOut, windowScrollY }) => {
         if (body.className) {
           body.className = "";
           body.classList.add("background-color-lightgreen");
+          const section = document.querySelector(".view-all");
+
+          section.style.backgroundColor = "#99d4c2";
         }
       } else if (
         windowScrollY > windowHeightHalf + 2 * windowHeight &&
@@ -45,6 +50,8 @@ const Home = ({ onMouseMove, onMouseOut, windowScrollY }) => {
         if (body.className) {
           body.className = "";
           body.classList.add("background-color-purple");
+          const section = document.querySelector(".view-all");
+          section.style.backgroundColor = "transparent";
         }
       } else if (
         windowScrollY > windowHeightHalf + 3 * windowHeight &&
