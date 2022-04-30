@@ -17,7 +17,7 @@
   text-decoration: none;
 }
 
-.about-leila {
+.leila-about {
   padding: 60px 0 0 9.4%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -27,20 +27,20 @@
   position: relative;
 }
 
-.about-leila__image {
+.leila-about__image {
   position: absolute;
   width: 38%;
   z-index: 999;
   max-height: 320px;
 }
 
-.about-leila__image img {
+.leila-about__image img {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
-.about-leila__description__texts {
+.leila-about__description__texts {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -53,7 +53,7 @@
   border-top: 2px solid #7194eb;
 }
 
-.about-leila__description__texts p {
+.leila-about__description__texts p {
   font-family: "Inter";
   font-size: 1.25rem;
   font-weight: 500;
@@ -62,24 +62,24 @@
   margin-left: 10px;
 }
 
-.about-leila__description__triangle {
+.leila-about__description__triangle {
   position: absolute;
   right: 0;
   width: 61%;
 }
 
-.about-leila__description__triangle__image {
+.leila-about__description__triangle__image {
   width: 100%;
   position: absolute;
   right: 0;
   z-index: 500;
 }
 
-.about-leila__description__triangle__image img {
+.leila-about__description__triangle__image img {
   width: 100%;
 }
 
-.about-leila__description__triangle h1 {
+.leila-about__description__triangle h1 {
   font-family: "Cormorant";
   font-size: 4rem;
   font-weight: 400;
@@ -90,43 +90,43 @@
 }
 
 @media only screen and (max-width: 1600px) {
-  .about-leila__description__texts p {
+  .leila-about__description__texts p {
     font-size: 1.125rem;
   }
-  .about-leila__description__triangle {
+  .leila-about__description__triangle {
     width: 58%;
   }
-  .about-leila__description__triangle h1 {
+  .leila-about__description__triangle h1 {
     font-size: 3.5rem;
   }
 }
 
 @media only screen and (max-width: 1500px) {
-  .about-leila__image img {
+  .leila-about__image img {
     max-height: 600px;
   }
 }
 
 @media only screen and (max-width: 1450px) {
-  .about-leila__description__texts p {
+  .leila-about__description__texts p {
     font-size: 1rem;
   }
-  .about-leila__description__triangle {
+  .leila-about__description__triangle {
     width: 58%;
   }
-  .about-leila__description__triangle h1 {
+  .leila-about__description__triangle h1 {
     font-size: 3.1rem;
   }
 }
 
 @media only screen and (max-width: 1400px) {
-  .about-leila__image img {
+  .leila-about__image img {
     max-height: 500px;
   }
 }
 
 @media only screen and (max-width: 1160px) {
-  .about-leila__description__triangle {
+  .leila-about__description__triangle {
     width: 52%;
   }
 }
