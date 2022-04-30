@@ -21,9 +21,7 @@ const Header = ({ onMouseEnter, onMouseLeave, windowScrollY }) => {
   //   },
   //   true
   // );
-  window.addEventListener("scroll", () => {
-    console.log("hello");
-  });
+
   const [header] = useState(HeaderJSON.items);
   const headerContainer = useRef(null);
   const windowHeight = window.innerHeight;
@@ -156,7 +154,7 @@ const Header = ({ onMouseEnter, onMouseLeave, windowScrollY }) => {
       ) : (
         <>
           <div className="logo">
-            <NavLink to="/" onClick={refreshPage}>
+            <NavLink to="/">
               <img className="logo-black" src={Logo} alt="logo" />
               <img className="logo-white" src={LogoWhite} alt="logo" />
             </NavLink>

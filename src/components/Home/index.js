@@ -12,6 +12,7 @@ const Home = ({ onMouseMove, onMouseOut, windowScrollY }) => {
   const windowHeight = window.innerHeight;
   const windowHeightHalf = window.innerHeight / 2;
   useEffect(() => {
+    const header = document.querySelector("header");
     if (window.location.href.includes("")) {
       body.classList.add("background-color-white");
       console.log(windowScrollY > windowHeightHalf);
@@ -62,16 +63,20 @@ const Home = ({ onMouseMove, onMouseOut, windowScrollY }) => {
           body.classList.add("background-color-white");
         }
       }
+      return () => {
+        body.className = "";
+        header.className = "header";
+      };
     }
   }, [windowScrollY]);
 
   return (
     <>
       <LeylaNaib />
-      {/* <AboutLeyla /> */}
+      <AboutLeyla />
       <ViewAll onMouseMove={onMouseMove} onMouseOut={onMouseOut} />
       <ExclusiveDesigns />
-      {/*<ReadMore onMouseMove={onMouseMove} onMouseOut={onMouseOut} /> */}
+      <ReadMore onMouseMove={onMouseMove} onMouseOut={onMouseOut} />
       <Contact />
     </>
   );
