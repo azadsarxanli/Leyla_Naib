@@ -20,12 +20,13 @@ const LeylaAbout = () => {
             Facilisis odio eget morbi at nulla nisi. Mauris, ipsum convallis
             diam gravida tristique. Luctus aliquam in a tristique.
           </p>
+          <h1>Leyla Naib</h1>
         </div>
         <div className="leila-about__description__triangle">
           <div className="leila-about__description__triangle__image">
             <img src={triangle} alt="" />
           </div>
-          <h1 className="leila-about__h1">Leyla Naib</h1>
+          <h1>Leyla Naib</h1>
         </div>
       </div>
     </section>

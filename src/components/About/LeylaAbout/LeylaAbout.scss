@@ -2,7 +2,6 @@
 
 .leila-about {
   padding: 60px 0 0 $mainPaddingRightAndLeft;
-  //   background-color: $backColorBlue;
   display: flex;
   height: 100vh;
   opacity: 1;
@@ -35,6 +34,9 @@
         );
         line-height: 25px;
         margin-left: 10px;
+      }
+      h1 {
+          display: none;
       }
     }
     &__triangle {
@@ -78,16 +80,6 @@
   }
 }
 
-@media only screen and (max-width: 1500px) {
-  .leila-about {
-    &__image {
-      img {
-        max-height: 600px;
-      }
-    }
-  }
-}
-
 @media only screen and (max-width: 1450px) {
   .leila-about {
     &__description {
@@ -106,61 +98,77 @@
   }
 }
 
-@media only screen and (max-width: 1400px) {
-  .leila-about {
-    &__image {
-      img {
-        max-height: 500px;
-      }
-    }
-  }
-}
-
 @media only screen and (max-width: 1160px) {
   .leila-about {
     &__description {
-      &__triangle {
-        width: 52%;
+      &__texts {
+        padding-left: 40px;
       }
     }
   }
 }
 
+@media only screen and (max-width: 991px) {
+    .leila-about {
+        padding-left: 20px;
+        padding-right: 20px;
+        height: 70vh;
+        &__description {
+            display: flex;
+            flex-direction: column;
+            &__texts {
+                margin-top: 53%;
+                padding-left: 0;
+                width: 65%;
+            }
+            &__triangle {
+                top: 20%;
+                width: 70%;
+            }
+        }
+    }
+}
 
-@media only screen and (max-width: 991px){
-  .leila-about {
-    padding: 60px 0 0 20px;
-  }
+@media only screen and (max-width: 768px) {
+    .leila-about {
+        height: 60vh;
+        &__description {
+            &__texts {
+                width: 70%;
+            }
+        }
+    }
+}
 
-  .leila-about__description__texts{
-    margin-top: 90% !important;
-    width: 100%;
-    margin: 0;
-    padding: 0 20px 0 0;
-  }
-
-  .leila-about__image{
-    width: 240px;
-    height: 286px;
-  }
-
-  .leila-about__description__triangle{
-    width: 100%;
-    position: absolute;
-    top: 18%;
-    left: 40%;
-  }
-
-  .leila-about__h1{
-    position: absolute !important;
-    top: 500px !important;
-    left: -28% !important;
-    font-family: 'Cormorant';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 40px;
-    line-height: 48px;
-    color: #FFFFFF;
-  }
-  
+@media only screen and (max-width: 486px) {
+    .leila-about {
+        height: 70vh;
+        &__image {
+            width: 60%;
+        }
+        &__description {
+            &__texts {
+                display: flex;
+                flex-direction: column;
+                margin-top: 85%;
+                width: 100%;
+                p {
+                    padding-left: 10px;
+                }
+                h1 {
+                    display: block;
+                    @include fontStyles($cormorantFont, 40px, 400, white);
+                    padding-left: 20px;
+                    padding-top: 20px;
+                }
+            }
+            &__triangle {
+                width: 100%;
+                left: 30%;
+                h1 {
+                    display: none;
+                }
+            }
+        }
+    }
 }
