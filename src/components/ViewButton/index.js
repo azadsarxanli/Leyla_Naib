@@ -8,8 +8,10 @@ const ViewButton = ({ hover }) => {
   useEffect(() => {
     if (!matchMedia) {
       document.addEventListener("mousemove", (event) => {
-        viewBtn.current.style.top = event.clientY + 15 + "px";
-        viewBtn.current.style.left = event.clientX - 90 + "px";
+        if (viewBtn.current) {
+          viewBtn.current.style.top = event.clientY + 15 + "px";
+          viewBtn.current.style.left = event.clientX - 90 + "px";
+        }
       });
 
       // return () => {};
