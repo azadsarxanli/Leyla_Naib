@@ -6,7 +6,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     &__item-container {
-        width: 30%;
+        width: 31%;
         margin-top: 100px;
         h1 {
             @include fontStyles($cormorantFont, $commonMiddleFontSize-1450px, 500, white);
@@ -19,28 +19,52 @@
     }
 }
 
+@media screen and (max-width: 1600px) {
+    .about-contents {
+        &__item-container {
+            h1 {
+                font-size: 44px;
+            }
+            p {
+                font-size: $fontSizeTexts-1600px;
+                line-height: 23px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1450px) {
+    .about-contents {
+        &__item-container {
+            h1 {
+                font-size: 40px;
+            }
+            p {
+                font-size: $fontSizeTexts-1450px;
+                line-height: 21px;
+            }
+        }
+    }
+}
+
 @media screen and (max-width: 991px) {
-    .about-contents{
+    .about-contents {
+        padding: 0 20px 50px 20px;
+        &__item-container {
+            width: 48%;
+            margin-top: 60px;
+            h1 {
+                font-size: 35px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 486px) {
+    .about-contents {
         padding: 0 20px;
-        flex-direction: column;
-    }
-
-    .about-contents__item-container{
-        width: 100%;
-    }
-
-    .about-contents__item-container h1{
-        font-size: 35px;
-    }
-
-    .about-contents__item-container p {
-        font-weight: 500;
-        font-size: 16px;
-        line-height: 21px;
-        margin-top: 20px;
-    }
-
-    .about-contents__item-container{
-        margin-top: 60px;
+        &__item-container {
+            width: 100%;
+        }
     }
 }
