@@ -167,11 +167,15 @@
     // height: 100vh;
   }
   .header {
-    padding: 4px 20px;
+    padding: 20px 20px;
     .logo-mobile {
       width: 50px;
     }
-    &__nav__mobile {
+    .logo-white-mobile {
+      display: none;
+    }
+
+    .header__nav__mobile {
       .btn {
         border: none;
         outline: none;
@@ -182,6 +186,19 @@
         font-size: 16px;
         text-transform: uppercase;
         color: #101010;
+      }
+    }
+    &.header-white {
+      .header__nav__mobile {
+        .btn {
+          color: white;
+        }
+      }
+      .logo-white-mobile {
+        display: inline-block;
+      }
+      .logo-dark-mobile {
+        display: none;
       }
     }
     &__panel {

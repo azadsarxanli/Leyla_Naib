@@ -2,10 +2,11 @@ import React, { useEffect, useRef } from "react";
 import { Link, NavLink } from "react-router-dom";
 import Logo from "../../assets/images/logo.svg";
 import LogoWhite from "../../assets/images/logo-signature-white.svg";
+import mobileLogoDark from "../../assets/images/logo-mobile.png";
+import mobileLogoWhite from "../../assets/images/logo-white-mobile.png";
 
 import "./Header.scss";
 import HeaderJSON from "./Header.json";
-import mobileLogo from "../../assets/images/logo-mobile.png";
 import { useState } from "react";
 import { configure } from "@testing-library/react";
 
@@ -98,6 +99,7 @@ const Header = ({ onMouseEnter, onMouseLeave, windowScrollY }) => {
       }
     }
   }, [windowScrollY]);
+  let matchMedia = window.matchMedia("(max-width: 991px)").matches;
 
   function refreshPage() {
     document.reload(true);
@@ -105,9 +107,13 @@ const Header = ({ onMouseEnter, onMouseLeave, windowScrollY }) => {
   const [panel, setPanel] = useState(false);
   const headerPanelHandler = () => {
     setPanel(true);
+    document.body.style.overflowY = "hidden";
+  };
+  const headerPanelRemoveHandler = () => {
+    setPanel(false);
+    document.body.style.overflowY = null;
   };
   //responsive render
-  let matchMedia = window.matchMedia("(max-width: 991px)").matches;
 
   return (
     <header className="header" ref={headerContainer}>
@@ -115,7 +121,16 @@ const Header = ({ onMouseEnter, onMouseLeave, windowScrollY }) => {
         <>
           <div className="logo-mobile">
             <Link exact="true" to="/">
-              <img src={mobileLogo} alt="mobile_logo" />
+              <img
+                src={mobileLogoDark}
+                className="logo-dark-mobile"
+                alt="mobile_logo"
+              />
+              <img
+                src={mobileLogoWhite}
+                className="logo-white-mobile"
+                alt="mobile_logo"
+              />
             </Link>
           </div>
           <div className="header__nav__mobile">
@@ -124,27 +139,27 @@ const Header = ({ onMouseEnter, onMouseLeave, windowScrollY }) => {
             </button>
           </div>
           <div className={panel ? "header__panel active" : "header__panel"}>
-            <button className="close-btn " onClick={() => setPanel(false)}>
+            <button className="close-btn " onClick={headerPanelRemoveHandler}>
               X
             </button>
             <ul className="navigation">
               <li>
-                <Link onClick={() => setPanel(false)} to="about">
+                <Link onClick={headerPanelRemoveHandler} to="about">
                   about
                 </Link>
               </li>
               <li>
-                <Link onClick={() => setPanel(false)} to="work">
+                <Link onClick={headerPanelRemoveHandler} to="work">
                   work
                 </Link>
               </li>
               <li>
-                <Link onClick={() => setPanel(false)} to="blog">
+                <Link onClick={headerPanelRemoveHandler} to="blog">
                   blog
                 </Link>
               </li>
               <li>
-                <Link onClick={() => setPanel(false)} to="contact">
+                <Link onClick={headerPanelRemoveHandler} to="contact">
                   contact
                 </Link>
               </li>
