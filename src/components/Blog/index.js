@@ -3,7 +3,7 @@ import BreadCrumb from "./BreadCrumb";
 import "./Blog.scss";
 // import Filter from "../Work/WorkFilter";
 import BlogFilter from "./BlogFilter";
-import BlogNews from "./BlogNews";
+import BlogItems from "./BlogItems";
 
 const Blog = () => {
   useEffect(() => {
@@ -26,7 +26,7 @@ const Blog = () => {
     <>
       <BreadCrumb />
       <BlogFilter />
-      <BlogNews />
+      <BlogItems />
     </>
   );
 };

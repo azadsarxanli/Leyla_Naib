@@ -80,74 +80,74 @@
 
 @media only screen and (max-width: 1550px) {
   .blog-filter {
-      &__subheader {
-          p {
-              font-size: 44px;
-          }
+    &__subheader {
+      p {
+        font-size: 44px;
       }
+    }
   }
 }
 
 @media only screen and (max-width: 1450px) {
   .work-filter {
-      &__subheader {
-          p {
-              font-size: 40px;
-          }
+    &__subheader {
+      p {
+        font-size: 40px;
       }
+    }
   }
 }
 
 @media only screen and (max-width: 1280px) {
   .blog-filter {
-      &__subheader {
-          width: 70%;
-          p {
-              font-size: 40px;
-          }
+    &__subheader {
+      width: 70%;
+      p {
+        font-size: 40px;
       }
-      &__range {
-          width: 70%;
-      }
+    }
+    &__range {
+      width: 70%;
+    }
   }
 }
 
 @media only screen and (max-width: 991px) {
   .blog-filter {
-      padding-left: 20px ;
-      &__subheader {
-          p {
-              font-size: 35px;
-          }
+    padding-left: 20px;
+    &__subheader {
+      p {
+        font-size: 35px;
       }
+    }
   }
 }
 
 @media only screen and (max-width: 768px) {
   .blog-filter {
-      &__subheader {
-          width: 100%;
-          overflow-x: scroll;
-          overflow-y: hidden;
-          white-space: nowrap;
-          &::-webkit-scrollbar {
-              display: none;
-          }
+    &__subheader {
+      width: 100%;
+      overflow-x: scroll;
+      overflow-y: hidden;
+      white-space: nowrap;
+      &::-webkit-scrollbar {
+        display: none;
       }
-      &__range {
-          width: 100%;
-      }
+    }
+    &__range {
+      width: 100%;
+    }
   }
 }
 
 @media only screen and (max-width: 600px) {
   .blog-filter {
-      &__subheader {
-          p {
-              &:not(:last-child) {
-                  margin-right: 30px;
-              }
-          }
+    &__subheader {
+      p {
+        &:not(:last-child) {
+          margin-right: 30px;
+        }
       }
+    }
   }
 }

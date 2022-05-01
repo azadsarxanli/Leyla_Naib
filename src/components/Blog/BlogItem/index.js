@@ -1,11 +1,10 @@
 import React from "react";
 import blogImg from "../../../assets/images/blog-img.png";
 import { Link } from "react-router-dom";
-import "./BlogNews.scss";
 
-const BlogNews = () => {
+const BlogItem = () => {
   return (
-    <section className="blog-news">
+    <>
       <div className="card">
         <div className="card__image">
           <img src={blogImg} alt="blogimage" />
@@ -18,7 +17,7 @@ const BlogNews = () => {
             tristique...
           </p>
           <div className="read-more-and-title">
-            <Link to="blog" className="read-more-link">
+            <Link to="/blog-interior" className="read-more-link">
               Read more
             </Link>
             <p className="card-title">Sed cras ut vulputate a risus</p>
@@ -37,7 +36,7 @@ const BlogNews = () => {
             tristique...
           </p>
           <div className="read-more-and-title">
-            <Link to="blog" className="read-more-link">
+            <Link to="/blog-interior" className="read-more-link">
               Read more
             </Link>
             <p className="card-title">Sed cras ut vulputate a risus</p>
@@ -56,7 +55,7 @@ const BlogNews = () => {
             tristique...
           </p>
           <div className="read-more-and-title">
-            <Link to="blog" className="read-more-link">
+            <Link to="/blog-interior" className="read-more-link">
               Read more
             </Link>
             <p className="card-title">Sed cras ut vulputate a risus</p>
@@ -75,15 +74,15 @@ const BlogNews = () => {
             tristique...
           </p>
           <div className="read-more-and-title">
-            <Link to="blog" className="read-more-link">
+            <Link to="/blog-interior" className="read-more-link">
               Read more
             </Link>
             <p className="card-title">Sed cras ut vulputate a risus</p>
           </div>
         </div>
       </div>
-    </section>
+    </>
   );
 };
 
-export default BlogNews;
+export default BlogItem;
