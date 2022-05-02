@@ -52,17 +52,17 @@ const ViewAll = ({ onMouseMove, onMouseOut }) => {
 
   //   rangeRef.current.value = imageContainer.current.scrollTop;
   // });
-  const onScrollContainer = () => {
-    const textOffSetHeight =
-      imageContainer.current.clientHeight + imageContainer.current.scrollHeight;
-    const scrollHeight =
-      textOffSetHeight - imageContainer.current.clientHeight * 2;
-    // const clientHeight = imageContainer.current.clientHeight;
-    // const offSet = imageContainer.current.offsetHeight;
-    rangeRef.current.setAttribute("max", scrollHeight);
+  // const onScrollContainer = () => {
+  //   const textOffSetHeight =
+  //     imageContainer.current.clientHeight + imageContainer.current.scrollHeight;
+  //   const scrollHeight =
+  //     textOffSetHeight - imageContainer.current.clientHeight * 2;
+  //   // const clientHeight = imageContainer.current.clientHeight;
+  //   // const offSet = imageContainer.current.offsetHeight;
+  //   rangeRef.current.setAttribute("max", scrollHeight);
 
-    rangeRef.current.value = imageContainer.current.scrollTop;
-  };
+  //   rangeRef.current.value = imageContainer.current.scrollTop;
+  // };
   // input.addEventListener("input", (event) => {
   //   setTimeout(() => {
   //     text.scrollTo({
@@ -71,13 +71,24 @@ const ViewAll = ({ onMouseMove, onMouseOut }) => {
   //     });
   //   }, 100);
   // });
+  const [valueData, setValueData] = useState(0);
+  const innerContainer = useRef();
+  const inputRangeRef = useRef();
+  useEffect(() => {
+    const container = imageContainer.current;
+    const input = inputRangeRef.current;
+    console.log(container.scrollHeight);
+    var b = container.scrollHeight - container.clientHeight;
+    input.setAttribute("max", b);
+    container.addEventListener("scroll", () => {
+      console.log("rasim balayev");
+      var a = container.scrollTop;
+      setValueData(a);
+    });
+  }, [valueData]);
   const onChangeInput = (event) => {
-    setTimeout(() => {
-      imageContainer.current.scrollTo({
-        behavior: "smooth",
-        top: event.target.value,
-      });
-    }, 100);
+    const container = imageContainer.current;
+    container.scrollTop = Number(event.target.value);
   };
   const [data] = useState(dataApi.items);
   // const myRefs = useRef([]);
@@ -94,11 +105,7 @@ const ViewAll = ({ onMouseMove, onMouseOut }) => {
         </div>
       </div>
       <div className="view-all__images-section">
-        <div
-          className="view-all__images-section__cards"
-          onScroll={onScrollContainer}
-          ref={imageContainer}
-        >
+        <div className="view-all__images-section__cards" ref={imageContainer}>
           {data.map((item, index) => (
             <div
               key={item.id * index}
@@ -136,10 +143,11 @@ const ViewAll = ({ onMouseMove, onMouseOut }) => {
         <div className="view-all__images-section__scroll-card-line">
           <input
             type="range"
-            ref={rangeRef}
+            ref={inputRangeRef}
             onChange={onChangeInput}
             min="0"
-            // max={imageContainerScrollHeight - imageContainerHeight}
+            max={100}
+            value={valueData}
           />
         </div>
       </div>

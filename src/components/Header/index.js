@@ -101,9 +101,6 @@ const Header = ({ onMouseEnter, onMouseLeave, windowScrollY }) => {
   }, [windowScrollY]);
   let matchMedia = window.matchMedia("(max-width: 991px)").matches;
 
-  function refreshPage() {
-    document.reload(true);
-  }
   const [panel, setPanel] = useState(false);
   const headerPanelHandler = () => {
     setPanel(true);
