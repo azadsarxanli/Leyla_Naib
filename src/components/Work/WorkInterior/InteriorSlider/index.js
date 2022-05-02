@@ -1,8 +1,9 @@
 import "./InteriorSlider.scss";
 import sliderImagesData from "./slider-images.json";
-import sliderImage from "../../../assets/images/slider-img-1.png";
-import sliderImageMobile from "../../../assets/images/slider-img-mobile.png";
+import sliderImage from "../../../../assets/images/slider-img-1.png";
+import sliderImageMobile from "../../../../assets/images/slider-img-mobile.png";
 import { useRef, useState, useEffect } from "react";
+
 
 const InteriorSlider = () => {
   const [valueData, setValueData] = useState(0);

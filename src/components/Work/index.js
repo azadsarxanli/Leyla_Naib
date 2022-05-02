@@ -1,13 +1,14 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import WorkCards from "./WorkCards";
 import WorkFilter from "./WorkFilter";
 import "./Work.scss";
+import BreadCrumb from "../BreadCrumb";
 
 const Work = ({ onMouseMove, onMouseOut }) => {
+
   useEffect(() => {
     const body = document.body;
     const header = body.querySelector("header");
-    console.log("salam");
     if (!body.className) {
       header.className = "header";
 
@@ -22,6 +23,7 @@ const Work = ({ onMouseMove, onMouseOut }) => {
 
   return (
     <>
+      <BreadCrumb />
       <WorkFilter />
       <WorkCards onMouseMove={onMouseMove} onMouseOut={onMouseOut} />
     </>

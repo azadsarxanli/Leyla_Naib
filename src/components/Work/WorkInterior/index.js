@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import BreadCrumb from "../../BreadCrumb";
 import InteriorContent from "./InteriorContent";
 import InteriorDesigns from "./InteriorDesigns";
 import InteriorMainImage from "./InteriorMainImage";
@@ -6,6 +7,7 @@ import InteriorSlider from "./InteriorSlider";
 import "./WorkInterior.scss";
 
 const WorkInterior = () => {
+
   useEffect(() => {
     const body = document.body;
 
@@ -24,6 +26,7 @@ const WorkInterior = () => {
 
   return (
     <>
+      <BreadCrumb />
       <InteriorMainImage />
       <InteriorContent />
       <InteriorDesigns />

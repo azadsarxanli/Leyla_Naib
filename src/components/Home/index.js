@@ -15,7 +15,6 @@ const Home = ({ onMouseMove, onMouseOut, windowScrollY }) => {
     const header = document.querySelector("header");
     if (window.location.href.includes("")) {
       body.classList.add("background-color-white");
-      console.log(windowScrollY > windowHeightHalf);
       if (windowScrollY < windowHeightHalf) {
         if (body.className) {
           body.className = "";
@@ -25,7 +24,6 @@ const Home = ({ onMouseMove, onMouseOut, windowScrollY }) => {
         windowScrollY > windowHeightHalf &&
         windowScrollY < windowHeightHalf + windowHeight
       ) {
-        console.log("else if serti");
         if (body.className) {
           body.className = "";
           body.classList.add("background-color-blue");
@@ -83,7 +81,7 @@ const Home = ({ onMouseMove, onMouseOut, windowScrollY }) => {
       <LeylaNaib />
       <AboutLeyla />
       <ViewAll onMouseMove={onMouseMove} onMouseOut={onMouseOut} />
-      <ExclusiveDesigns />
+      <ExclusiveDesigns onMouseMove={onMouseMove} onMouseOut={onMouseOut} />
       <ReadMore onMouseMove={onMouseMove} onMouseOut={onMouseOut} />
       <Contact />
     </>
