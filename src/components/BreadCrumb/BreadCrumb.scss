@@ -16,6 +16,14 @@
           font-weight: 600;
       }
     }
+    &.bread-crumb-black {
+        a {
+            color: $blackColorHeaders;
+            &:last-child {
+                color: $blackColorContents;
+            }
+        }
+    }
 }
 
 @media only screen and (max-width: 1600px) {

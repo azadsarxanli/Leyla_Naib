@@ -82,7 +82,7 @@
         border-radius: 50%;
         pointer-events: auto;
         border: 1px solid $blackColorContents;
-        background-color: transparent;
+        background-color: $backColorLightGreen;
       }
       input::-moz-range-thumb {
         -webkit-appearance: none;

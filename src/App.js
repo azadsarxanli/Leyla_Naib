@@ -38,7 +38,6 @@ const App = () => {
     setHover(false);
   };
   const [windowScrollY, setWindowScrollY] = useState(0);
-  // console.log(windowScrollY);
 
   window.addEventListener(
     "scroll",

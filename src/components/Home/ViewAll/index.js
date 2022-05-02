@@ -10,88 +10,27 @@ import mobileDetailRectangle from "../../../assets/images/rectangle.svg";
 import dataApi from "./data.json";
 
 const ViewAll = ({ onMouseMove, onMouseOut }) => {
-  // let [currentScrollValue, setCurrentScrollValue] = useState(0);
-  // let [eventValue, setEventValue] = useState(0);
-  // const [imageContainerHeight, setImageContainerHeight] = useState(0);
-  // const [imageContainerScrollHeight, setImageContainerScrollHeight] =
-  //   useState(0);
-  // const [inputOnChangeValue, setInputOnChangeValue] = useState(0);
-
-  // const onClickInput = (e) => {
-  //   onScrollContainer(e);
-  //   currentScrollValue = null;
-  //   setEventValue(inputOnChangeValue);
-  //   imageContainer.current.scrollTo({
-  //     top: inputOnChangeValue,
-  //     behavior: "smooth",
-  //   });
-  // };
-
-  // const onScrollContainer = (e) => {
-  //   setCurrentScrollValue(e.target.scrollTop);
-  //   setImageContainerHeight(e.target.offsetHeight);
-  //   setImageContainerScrollHeight(e.target.scrollHeight);
-  // };
-
-  // const onChangeInput = (e) => {
-  //   setInputOnChangeValue(e.target.value);
-  // };
-  const imageContainer = useRef();
-  const rangeRef = useRef();
-
-  // imageContainer.current.addEventListener("scroll", () => {
-  //   const textOffSetHeight =
-  //     imageContainer.current.clientHeight + imageContainer.current.scrollHeight;
-  //   const scrollHeight =
-  //     textOffSetHeight - imageContainer.current.clientHeight * 2;
-  //   // const clientHeight = imageContainer.current.clientHeight;
-  //   // const offSet = imageContainer.current.offsetHeight;
-  //   rangeRef.current.setAttribute("max", scrollHeight);
-
-  //   console.log(rangeRef.current);
-
-  //   rangeRef.current.value = imageContainer.current.scrollTop;
-  // });
-  // const onScrollContainer = () => {
-  //   const textOffSetHeight =
-  //     imageContainer.current.clientHeight + imageContainer.current.scrollHeight;
-  //   const scrollHeight =
-  //     textOffSetHeight - imageContainer.current.clientHeight * 2;
-  //   // const clientHeight = imageContainer.current.clientHeight;
-  //   // const offSet = imageContainer.current.offsetHeight;
-  //   rangeRef.current.setAttribute("max", scrollHeight);
-
-  //   rangeRef.current.value = imageContainer.current.scrollTop;
-  // };
-  // input.addEventListener("input", (event) => {
-  //   setTimeout(() => {
-  //     text.scrollTo({
-  //       behavior: "smooth",
-  //       top: input.value,
-  //     });
-  //   }, 100);
-  // });
   const [valueData, setValueData] = useState(0);
-  const innerContainer = useRef();
+  const imageContainer = useRef();
   const inputRangeRef = useRef();
+
   useEffect(() => {
     const container = imageContainer.current;
     const input = inputRangeRef.current;
-    console.log(container.scrollHeight);
     var b = container.scrollHeight - container.clientHeight;
     input.setAttribute("max", b);
     container.addEventListener("scroll", () => {
-      console.log("rasim balayev");
       var a = container.scrollTop;
       setValueData(a);
     });
   }, [valueData]);
+  
   const onChangeInput = (event) => {
     const container = imageContainer.current;
     container.scrollTop = Number(event.target.value);
   };
   const [data] = useState(dataApi.items);
-  // const myRefs = useRef([]);
+
   let matchMedia = window.matchMedia("(max-width: 991px)").matches;
 
   return (

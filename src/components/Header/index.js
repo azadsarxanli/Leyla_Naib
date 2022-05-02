@@ -11,17 +11,6 @@ import { useState } from "react";
 import { configure } from "@testing-library/react";
 
 const Header = ({ onMouseEnter, onMouseLeave, windowScrollY }) => {
-  // let = window.matchMedia("(max-width: 991px)").matches;
-  // const [windowScrollY, setWindowScrollY] = useState(0);
-  // // console.log(windowScrollY);
-
-  // window.addEventListener(
-  //   "scroll",
-  //   function () {
-  //     setWindowScrollY(window.scrollY);
-  //   },
-  //   true
-  // );
 
   const [header] = useState(HeaderJSON.items);
   const headerContainer = useRef(null);
@@ -35,7 +24,6 @@ const Header = ({ onMouseEnter, onMouseLeave, windowScrollY }) => {
           headerColor.className = "header";
           headerContainer.current.classList.remove("header-white");
         }
-        // headerContainer.current.style.backgroundColor = "white";
         headerContainer.current.classList.add("background-color-white");
       }
       if (
@@ -47,8 +35,6 @@ const Header = ({ onMouseEnter, onMouseLeave, windowScrollY }) => {
 
           headerContainer.current.classList.add("header-white");
         }
-        // headerContainer.current.style.backgroundColor = "#3e71f1";
-        // headerContainer.current.className = "header";
         headerContainer.current.classList.add("background-color-blue");
       }
       if (
@@ -60,7 +46,6 @@ const Header = ({ onMouseEnter, onMouseLeave, windowScrollY }) => {
 
           headerContainer.current.classList.remove("header-white");
         }
-        // headerContainer.current.style.backgroundColor = "#99d4c2";
         headerContainer.current.className = "header";
         headerContainer.current.classList.add("background-color-lightgreen");
       }
@@ -73,8 +58,6 @@ const Header = ({ onMouseEnter, onMouseLeave, windowScrollY }) => {
         }
         headerContainer.current.classList.add("header-white");
         headerContainer.current.classList.add("background-color-purple");
-
-        // headerContainer.current.style.backgroundColor = "#bc85d4";
       }
       if (
         windowScrollY > windowHeightHalf + 3 * windowHeight &&
@@ -83,7 +66,6 @@ const Header = ({ onMouseEnter, onMouseLeave, windowScrollY }) => {
         if (headerContainer.current.className) {
           headerColor.className = "header";
         }
-        // headerContainer.current.style.backgroundColor = "#d66ca3";
         headerContainer.current.classList.add("header-white");
         headerContainer.current.classList.add("background-color-pink");
       }
@@ -95,7 +77,6 @@ const Header = ({ onMouseEnter, onMouseLeave, windowScrollY }) => {
           headerColor.className = "header";
           headerContainer.current.classList.remove("header-white");
         }
-        // headerContainer.current.style.backgroundColor = "white";
       }
     }
   }, [windowScrollY]);

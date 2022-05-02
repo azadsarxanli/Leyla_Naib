@@ -6,14 +6,11 @@ const Footer = () => {
 
   useEffect(() => {
     const footer = footerRef.current;
-    console.log(footer);
-    console.log(footerRef.current);
     if (
       window.location.href.includes("") ||
       window.location.href.includes("work") ||
       window.location.href.includes("work/interior")
     ) {
-      console.log(footer, "if else icinde");
       if (footer.className) {
         return () => {
           footer.className = "footer";

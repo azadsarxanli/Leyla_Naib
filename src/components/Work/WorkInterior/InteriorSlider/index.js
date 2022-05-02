@@ -20,10 +20,12 @@ const InteriorSlider = () => {
       setValueData(a);
     });
   }, [valueData]);
+
   const onChangeHandler = (event) => {
     const container = innerContainer.current;
     container.scrollLeft = Number(event.target.value);
   };
+  
   const matchMedia = window.matchMedia("(max-width: 486px)").matches;
 
   return (
