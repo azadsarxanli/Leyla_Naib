@@ -9,7 +9,7 @@
   &__blog-details-container {
     &__title {
       @include fontStyles($cormorantFont, $commonMiddleFontSize-1450px, 600, white);
-      margin: 40px 0 130px;
+      margin-bottom: 130px;
     }
     &__image-and-image-detail {
       display: flex;

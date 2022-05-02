@@ -4,7 +4,6 @@ import sliderImage from "../../../../assets/images/slider-img-1.png";
 import sliderImageMobile from "../../../../assets/images/slider-img-mobile.png";
 import { useRef, useState, useEffect } from "react";
 
-
 const InteriorSlider = () => {
   const [valueData, setValueData] = useState(0);
   const [sliderImages] = useState(sliderImagesData);
@@ -15,17 +14,12 @@ const InteriorSlider = () => {
     const input = inputRangeRef.current;
 
     var b = container.scrollWidth - container.clientWidth;
-    // console.log(b, "b scroll width maxiumum");
-    // console.log(a);
-    // input.setAttribute("min", container.scrollLeft);
     input.setAttribute("max", b);
-
     container.addEventListener("scroll", () => {
       var a = container.scrollLeft;
       setValueData(a);
     });
   }, [valueData]);
-
   const onChangeHandler = (event) => {
     const container = innerContainer.current;
     container.scrollLeft = Number(event.target.value);
@@ -67,7 +61,7 @@ const InteriorSlider = () => {
         <input
           ref={inputRangeRef}
           value={valueData}
-          min={1}
+          min="0"
           max={100}
           type="range"
           onChange={onChangeHandler}

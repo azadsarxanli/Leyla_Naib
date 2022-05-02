@@ -73,7 +73,6 @@ const Contact = () => {
         // header.classList.remove("header-white");
       };
     }
-    console.log("hello my name is");
   });
   function addDashesToNumber(number) {
     const numWithoutDashes = number.replace(/[^0-9]/g, "");
