@@ -12,15 +12,18 @@ const WorkInterior = () => {
     const body = document.body;
 
     const header = document.querySelector("header");
+    const breadCrumb = document.getElementsByClassName("bread-crumb")[0];
 
     if (!body.className) {
       header.className = "header";
       body.classList.add("background-color-lightgreen");
       header.classList.add("background-color-lightgreen");
+      breadCrumb.classList.add("bread-crumb-black");
     }
     return () => {
       body.className = "";
       header.classList.remove("background-color-lightgreen");
+      breadCrumb.classList.remove("bread-crumb-black");
     };
   });
 

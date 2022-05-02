@@ -10,7 +10,7 @@
         position: absolute;
         z-index: 1000;
         left: 0;
-        top: -20%;
+        top: -15%;
         img {
             width: 100%;
         }
@@ -52,11 +52,8 @@
 
 @media only screen and (max-width: 1600px) {
     .about-images {
-        padding-top: 200px;
-        padding-bottom: 200px;
-        &__triangle {
-            top: -40%;
-        }
+        // padding-top: 200px;
+        // padding-bottom: 200px;
         &__small-img, &__medium-img {
             p {
                 font-size: $fontSizeTexts-1600px;
@@ -68,11 +65,8 @@
 
 @media only screen and (max-width: 1450px) {
     .about-images {
-        padding-top: 100px;
-        padding-bottom: 100px;
-        &__triangle {
-            top: -65%;
-        }
+        // padding-top: 100px;
+        // padding-bottom: 100px;
         &__small-img, &__medium-img {
             p {
                 font-size: $fontSizeTexts-1450px;
@@ -82,25 +76,19 @@
     }
 }
 
-@media only screen and (max-width: 1280px) {
-    .about-images {
-        padding-top: 0;
-        padding-bottom: 20px;
-        &__triangle {
-            top: -85%;
-        }
-    }
-}
+// @media only screen and (max-width: 1280px) {
+//     .about-images {
+//         padding-top: 0;
+//         padding-bottom: 20px;
+//     }
+// }
 
-@media only screen and (max-width: 1160px) {
-    .about-images {
-        margin-top: -100px;
-        padding-bottom: 20px;
-        &__triangle {
-            top: -90%;
-        }
-    }
-}
+// @media only screen and (max-width: 1160px) {
+//     .about-images {
+//         margin-top: -100px;
+//         padding-bottom: 20px;
+//     }
+// }
 
 @media only screen and (max-width: 991px) {
     .about-images {

@@ -1,5 +1,6 @@
 import React from "react";
 import { useEffect } from "react";
+import BreadCrumb from "../BreadCrumb";
 import "./About.scss";
 import AboutContents from "./AboutContents";
 import AboutImages from "./AboutImages";
@@ -28,6 +29,7 @@ const About = () => {
 
   return (
     <>
+      <BreadCrumb />
       <LeylaAbout />
       <AboutImages />
       <AboutContents />

@@ -1,5 +1,6 @@
 import "./Service.scss";
 import { useEffect } from "react";
+import BreadCrumb from "../BreadCrumb";
 
 const Service = () => {
   useEffect(() => {
@@ -21,7 +22,12 @@ const Service = () => {
     };
   });
 
-  return <div>service</div>;
+  return (
+    <>
+      <BreadCrumb />
+      <section className="service"></section>
+    </>
+  );
 };
 
 export default Service;
