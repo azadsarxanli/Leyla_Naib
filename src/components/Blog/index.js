@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import BreadCrumb from "../BreadCrumb";
 import "./Blog.scss";
 import BlogFilter from "./BlogFilter";
 import BlogItems from "./BlogItems";
@@ -22,6 +23,7 @@ const Blog = () => {
 
   return (
     <>
+      <BreadCrumb />
       <BlogFilter />
       <BlogItems />
     </>

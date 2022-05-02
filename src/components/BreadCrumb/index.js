@@ -1,42 +1,34 @@
 import './BreadCrumb.scss';
-import { Link, useLocation, useHistory } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from 'react';
 
-const BreadCrumb = ({ crumbItem }) => {
+const BreadCrumb = () => {
     let matchMedia = window.matchMedia("(max-width: 991px)").matches;
 
-    const [breadCrumbItems, setBreadCrumbItems] = useState([]);
+    const [countCrumb2, setcountCrumb2] = useState(false);
+    const [countCrumb3, setcountCrumb3] = useState(false);
 
-    // let history = useHistory();
-    // let location = useLocation();
+    let location = useLocation();
+    let pathnames = location.pathname.split("/");
 
-    // useEffect(() => {
-    //     setBreadCrumbItems("");
-    //     let crumb = crumbItem.split("/");
-    //     crumb.map(itemCrumb => {
-    //         if (itemCrumb !== '') {
-    //             setBreadCrumbItems(itemCrumb);
-    //         }
-    //     })
-    // })
-
-    // function usePaseName() {
-    //     let location = useLocation();
-    //     let pathnames = location.pathname.split("/");
-    //     useEffect(() => {
-    //         pathnames.map(path => {
-    //             console.log(path)
-                // if (path !== '') {
-                //     setBreadCrumbItems(path);
-                // }
-    //         })
-    //     }, [location]);
-    // };
+    useEffect(() => {
+        if (pathnames.length === 2) {
+            setcountCrumb2(true);
+        } else if (pathnames.length === 3) {
+            setcountCrumb3(true);
+        }
+    })
 
     return !matchMedia ? (
         <section className="bread-crumb">
         <Link to="/">home &sdot;</Link>
-        <Link to="/blog">blog &sdot;</Link>
+        {countCrumb2 
+            ? <a>{pathnames[1]} &sdot;</a> 
+            : countCrumb3 
+            ? <>
+                <Link to={`/${pathnames[1]}`}>{pathnames[1]} &sdot;</Link> 
+                <a>{pathnames[2]} &sdot;</a>
+            </> : ""}
         </section>
     ) : (
         <></>
