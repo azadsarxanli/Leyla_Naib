@@ -15,7 +15,7 @@ const WorkCards = ({ onMouseMove, onMouseOut }) => {
         <section className="work-cards">
             {cardData.map((cardItem, index) => (
                 <div className="work-cards__card-item" key={index}>
-                    <Link to="/work-interior" onClick={refreshPage}>
+                    <Link to="/work/interior" onClick={refreshPage}>
                         <div 
                             className="work-cards__card-item__image-link" 
                             onMouseMove={onMouseMove} 
@@ -25,7 +25,7 @@ const WorkCards = ({ onMouseMove, onMouseOut }) => {
                             <img src={cardItem.src} alt="" />
                         </div>
                     </Link>
-                    <Link to="/work-interior" onClick={refreshPage}>
+                    <Link to="/work/interior" onClick={refreshPage}>
                         <div className="work-cards__card-item__title-continer">
                             <p className="work-cards__card-item__title">{cardItem.title}</p>
                             <svg viewBox="0 0 27 12" fill="none" xmlns="http://www.w3.org/2000/svg">

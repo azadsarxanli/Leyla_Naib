@@ -1,6 +1,6 @@
 import './InteriorMainImage.scss';
-import fullSizeImg from '../../../assets/images/full-img.png';
-import fullImgMobile from '../../../assets/images/full-img-mobile.png';
+import fullSizeImg from '../../../../assets/images/full-img.png';
+import fullImgMobile from '../../../../assets/images/full-img-mobile.png';
 
 const InteriorMainImage = () => {
     return (

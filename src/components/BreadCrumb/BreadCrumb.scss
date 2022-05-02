@@ -1,0 +1,33 @@
+@import '../../styles/styles.scss';
+
+.bread-crumb {
+    padding: 50px 9.4% 0;
+    display: flex;
+    align-items: center;
+    gap: 0 15px;
+  
+    a {
+        @include fontStyles($interFont, $fontSizeTexts-1600px, 400, $lightGrayHeader);
+      display: flex;
+      align-items: center;
+      text-transform: uppercase;
+    }
+}
+
+@media only screen and (max-width: 1600px) {
+    .bread-crumb {
+        gap: 0 13px;
+        a {
+            font-size: $fontSizeTexts-1450px;
+        }
+    }
+}
+
+@media only screen and (max-width: 1450px) {
+    .bread-crumb {
+        gap: 0 10px;
+        a {
+            font-size: 14px;
+        }
+    }
+}

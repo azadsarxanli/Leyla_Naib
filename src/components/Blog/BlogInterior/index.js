@@ -1,9 +1,10 @@
 import "./BlogInterior.scss";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import blogInteriorImage from "../../assets/images/blog-interior.png";
-import quoteImage from "../../assets/images/quote.png";
-import selectiveImage from "../../assets/images/selective-image.png";
+import blogInteriorImage from "../../../assets/images/blog-interior.png";
+import quoteImage from "../../../assets/images/quote.png";
+import selectiveImage from "../../../assets/images/selective-image.png";
+
 
 const BlogInterior = () => {
   useEffect(() => {
@@ -23,20 +24,6 @@ const BlogInterior = () => {
 
   return (
     <section className="blog-interior">
-      <div className="blog-interior__bread-crumbs">
-        <Link to="/">
-          <span>home</span>
-          <span>·</span>
-        </Link>
-        <Link to="/blog">
-          <span>blog</span>
-          <span>·</span>
-        </Link>
-        <Link to="/blog-interior">
-          <span>interior</span>
-          <span>·</span>
-        </Link>
-      </div>
       <div className="blog-interior__blog-details-container">
         <h1 className="blog-interior__blog-details-container__title">
           Sed cras ut vulputate a risus

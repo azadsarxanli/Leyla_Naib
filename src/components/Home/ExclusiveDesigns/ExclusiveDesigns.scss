@@ -11,7 +11,7 @@
       margin-left: auto;
       margin-bottom: 30px;
       border: 1px solid #fafafa;
-      height: 110px;
+      height: 130px;
       transition: all 0.2s linear;
       &__title-and-desc {
         display: flex;
@@ -49,28 +49,6 @@
           height: 100%;
         }
       }
-      &__view-all {
-        position: absolute;
-        top: 40%;
-        right: 20%;
-        display: flex;
-        align-items: center;
-        border: 2px solid white;
-        border-radius: 25px;
-        padding: 6px 20px 5px 20px;
-        opacity: 0;
-        z-index: 99;
-        transition: all 0.2s linear;
-        p {
-          @include fontStyles($interFont, $fontSizeTexts-1450px, 500, white);
-          margin-right: 15px;
-        }
-        svg {
-          width: 65px;
-          height: 15px;
-          fill: white;
-        }
-      }
     }
     &__card-item:hover {
       border: transparent;
@@ -81,10 +59,6 @@
     &__card-item:hover h1 {
       margin-left: -15%;
     }
-    &__card-item:hover &__card-item__view-all {
-      opacity: 1;
-      right: 15%;
-    }
   }
 }
 
@@ -92,6 +66,7 @@
   .exclusive-design {
     &__container {
       &__card-item {
+        height: 120px;
         &__title-and-desc {
           h1 {
             font-size: 38px;
@@ -109,6 +84,7 @@
   .exclusive-design {
     &__container {
       &__card-item {
+        height: 110px;
         &__title-and-desc {
           h1 {
             font-size: 36px;

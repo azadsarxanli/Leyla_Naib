@@ -1,4 +1,4 @@
-@import "../../styles/styles.scss";
+@import "../../../styles/styles.scss";
 
 .background-color-pink {
   background-color: $backColorPink;
@@ -6,22 +6,6 @@
 
 .blog-interior {
   padding: 60px 9.4%;
-  &__bread-crumbs {
-    padding-top: 60px;
-    display: flex;
-    a {
-      display: flex;
-      span {
-        margin-right: 5px;
-        font-family: "Inter";
-        font-style: normal;
-        font-weight: 400;
-        font-size: 13px;
-        text-transform: uppercase;
-        color: #f2f2f2;
-      }
-    }
-  }
   &__blog-details-container {
     &__title {
       @include fontStyles($cormorantFont, $commonMiddleFontSize-1450px, 600, white);
