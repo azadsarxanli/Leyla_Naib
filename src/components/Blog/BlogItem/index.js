@@ -20,7 +20,7 @@ const BlogItem = ({ blogData, filteredData }) => {
               {item.description}
             </p>
             <div className="read-more-and-title">
-              <Link to={`interior/${item._id}`} className="read-more-link">
+              <Link to={`/blog/interior/${item._id}`} className="read-more-link">
                 Read more
               </Link>
               <p className="card-title">{item.title}</p>
