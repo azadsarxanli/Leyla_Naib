@@ -1,10 +1,16 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import BreadCrumb from "../BreadCrumb";
 import "./Blog.scss";
 import BlogFilter from "./BlogFilter";
 import BlogItems from "./BlogItems";
 
 const Blog = () => {
+  const [blogData, setBlogData] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:3001/api/blog")
+      .then((response) => response.json())
+      .then((data) => setBlogData(data.result));
+  }, []);
   useEffect(() => {
     const body = document.body;
     const footer = document.querySelector("footer");
@@ -28,7 +34,7 @@ const Blog = () => {
     <>
       <BreadCrumb />
       <BlogFilter />
-      <BlogItems />
+      <BlogItems blogData={blogData} />
     </>
   );
 };

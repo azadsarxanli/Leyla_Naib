@@ -6,7 +6,7 @@ import quoteImage from "../../../assets/images/quote.png";
 import selectiveImage from "../../../assets/images/selective-image.png";
 import BreadCrumb from "../../BreadCrumb";
 
-const BlogInterior = () => {
+const BlogInterior = ({ blogData }) => {
   useEffect(() => {
     const body = document.body;
     const header = document.querySelector("header");
