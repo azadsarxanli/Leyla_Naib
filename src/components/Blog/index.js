@@ -4,7 +4,13 @@ import "./Blog.scss";
 import BlogFilter from "./BlogFilter";
 import BlogItems from "./BlogItems";
 
-const Blog = () => {
+const Blog = ({ homeActive, setHomeActive }) => {
+  useEffect(() => {
+    if (homeActive) {
+      setHomeActive(false);
+    }
+  }, [homeActive])
+
   const [blogData, setBlogData] = useState([]);
   const [categoryName, setCategoryName] = useState("");
   const [val, setVal] = useState(0);

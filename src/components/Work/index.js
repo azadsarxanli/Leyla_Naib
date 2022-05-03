@@ -4,7 +4,12 @@ import WorkFilter from "./WorkFilter";
 import "./Work.scss";
 import BreadCrumb from "../BreadCrumb";
 
-const Work = ({ onMouseMove, onMouseOut }) => {
+const Work = ({ onMouseMove, onMouseOut, homeActive, setHomeActive }) => {
+  useEffect(() => {
+    if (homeActive) {
+      setHomeActive(false);
+    }
+  }, [homeActive])
 
   useEffect(() => {
     const body = document.body;

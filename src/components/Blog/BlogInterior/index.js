@@ -6,7 +6,13 @@ import quoteImage from "../../../assets/images/quote.png";
 import selectiveImage from "../../../assets/images/selective-image.png";
 import BreadCrumb from "../../BreadCrumb";
 
-const BlogInterior = () => {
+const BlogInterior = ({ homeActive, setHomeActive }) => {
+  useEffect(() => {
+    if (homeActive) {
+      setHomeActive(false);
+    }
+  }, [homeActive])
+
   let {id} = useParams();
   const [blog, setBlog] = useState({});
 

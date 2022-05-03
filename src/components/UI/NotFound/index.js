@@ -1,7 +1,13 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./NotFound.scss";
-const NotFound = () => {
+const NotFound = ({ homeActive, setHomeActive }) => {
+  useEffect(() => {
+    if (homeActive) {
+      setHomeActive(false);
+    }
+  }, [homeActive])
+  
   useEffect(() => {
     const body = document.body;
     body.className = "background-dark-blue";
