@@ -10,15 +10,24 @@ import HeaderJSON from "./Header.json";
 import { useState } from "react";
 import { configure } from "@testing-library/react";
 
-const Header = ({ onMouseEnter, onMouseLeave, windowScrollY }) => {
-
+const Header = ({ onMouseEnter, onMouseLeave, homeActive }) => {
   const [header] = useState(HeaderJSON.items);
   const headerContainer = useRef(null);
   const windowHeight = window.innerHeight;
   const windowHeightHalf = window.innerHeight / 2;
+
+  const [windowScrollY, setWindowScrollY] = useState(0);
+  window.addEventListener(
+    "scroll",
+    function () {
+      setWindowScrollY(window.scrollY);
+    },
+    true
+  );
+
   useEffect(() => {
     const headerColor = headerContainer.current;
-    if (window.location.href.includes("")) {
+    if (window.location.href.includes("") && homeActive) {
       if (windowScrollY < windowHeightHalf) {
         if (headerContainer.current.className) {
           headerColor.className = "header";

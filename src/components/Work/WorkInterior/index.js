@@ -6,7 +6,12 @@ import InteriorMainImage from "./InteriorMainImage";
 import InteriorSlider from "./InteriorSlider";
 import "./WorkInterior.scss";
 
-const WorkInterior = () => {
+const WorkInterior = ({ homeActive, setHomeActive }) => {
+  useEffect(() => {
+    if (homeActive) {
+      setHomeActive(false);
+    }
+  }, [homeActive])
 
   useEffect(() => {
     const body = document.body;

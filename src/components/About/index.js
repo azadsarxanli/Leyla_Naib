@@ -7,7 +7,13 @@ import AboutImages from "./AboutImages";
 import AboutTriangles from "./AboutTriangles";
 import LeylaAbout from "./LeylaAbout";
 
-const About = () => {
+const About = ({ homeActive, setHomeActive }) => {
+  useEffect(() => {
+    if (homeActive) {
+      setHomeActive(false);
+    }
+  }, [homeActive])
+
   useEffect(() => {
     const body = document.body;
     const header = document.querySelector("header");

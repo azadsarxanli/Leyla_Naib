@@ -7,10 +7,27 @@ import LeylaNaib from "./LeylaNaib";
 import ReadMore from "./ReadMore";
 import ViewAll from "./ViewAll";
 
-const Home = ({ onMouseMove, onMouseOut, windowScrollY }) => {
+const Home = ({ onMouseMove, onMouseOut, setHomeActive, homeActive }) => {
   const body = document.body;
   const windowHeight = window.innerHeight;
   const windowHeightHalf = window.innerHeight / 2;
+
+  useEffect(() => {
+    if (!homeActive) {
+      setHomeActive(true);
+    }
+  }, [homeActive])
+
+  const [windowScrollY, setWindowScrollY] = useState(0);
+
+  window.addEventListener(
+    "scroll",
+    function () {
+      setWindowScrollY(window.scrollY);
+    },
+    true
+  );
+
   useEffect(() => {
     const header = document.querySelector("header");
     if (window.location.href.includes("")) {

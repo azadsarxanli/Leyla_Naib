@@ -2,7 +2,13 @@ import "./Service.scss";
 import { useEffect } from "react";
 import BreadCrumb from "../BreadCrumb";
 
-const Service = () => {
+const Service = ({ homeActive, setHomeActive }) => {
+  useEffect(() => {
+    if (homeActive) {
+      setHomeActive(false);
+    }
+  }, [homeActive])
+
   useEffect(() => {
     const body = document.body;
     const header = body.querySelector("header");

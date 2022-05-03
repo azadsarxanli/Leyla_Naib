@@ -2,7 +2,13 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Contact.scss";
 
-const Contact = () => {
+const Contact = ({ homeActive, setHomeActive }) => {
+  useEffect(() => {
+    if (homeActive) {
+      setHomeActive(false);
+    }
+  }, [homeActive])
+
   const [inputs, setInputs] = useState({
     phone: "",
     email: "",
