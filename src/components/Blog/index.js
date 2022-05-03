@@ -6,11 +6,14 @@ import BlogItems from "./BlogItems";
 
 const Blog = () => {
   const [blogData, setBlogData] = useState([]);
+  const [categoryName, setCategoryName] = useState("");
+  const [val, setVal] = useState(0);
   useEffect(() => {
     fetch("http://localhost:3001/api/blog")
       .then((response) => response.json())
       .then((data) => setBlogData(data.result));
   }, []);
+
   useEffect(() => {
     const body = document.body;
     const footer = document.querySelector("footer");
@@ -30,11 +33,24 @@ const Blog = () => {
     };
   });
 
+  const filteredData = blogData.filter((item) => {
+    if (val === 1) {
+      return item;
+    } else {
+      return item.category.toLowerCase() === categoryName;
+    }
+  });
+
   return (
     <>
       <BreadCrumb />
-      <BlogFilter />
-      <BlogItems blogData={blogData} />
+      <BlogFilter
+        setVal={setVal}
+        val={val}
+        categoryName={categoryName}
+        setCategoryName={setCategoryName}
+      />
+      <BlogItems filteredData={filteredData} blogData={blogData} />
     </>
   );
 };

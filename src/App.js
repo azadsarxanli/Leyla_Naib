@@ -46,6 +46,7 @@ const App = () => {
     },
     true
   );
+
   let matchMedia = window.matchMedia("(max-width: 991px)").matches;
 
   return (
@@ -76,7 +77,7 @@ const App = () => {
         ></Route>
         <Route path="/work/interior" element={<WorkInterior />}></Route>
         <Route path="/blog" element={<Blog />}></Route>
-        <Route path="/blog/interior" element={<BlogInterior />}></Route>
+        <Route path="/blog/interior/:id" element={<BlogInterior />}></Route>
         <Route path="/service" element={<Service />}></Route>
         <Route path="/contact" element={<Contact />}></Route>
         {/* // for not found page*/}
