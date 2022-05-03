@@ -14,7 +14,7 @@ const BreadCrumb = () => {
     useEffect(() => {
         if (pathnames.length === 2) {
             setcountCrumb2(true);
-        } else if (pathnames.length === 3) {
+        } else if (pathnames.length >= 3) {
             setcountCrumb3(true);
         }
     })
