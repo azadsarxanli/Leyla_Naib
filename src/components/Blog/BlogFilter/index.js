@@ -1,17 +1,42 @@
 import React from "react";
+import { useRef } from "react";
+import { useEffect } from "react";
+import { useState } from "react";
 import "./BlogFilter.scss";
 
-const BlogFilter = () => {
+const BlogFilter = ({ setCategoryName, categoryData }) => {
+  const subHeaderRef = useRef();
+  const [length, setLength] = useState(0); //? @Dev dynamically maximum value for input range
+
+  const rangeChangeHandler = (event) => {
+    const subHeader = subHeaderRef.current;
+    const paragraphs = [...subHeader.querySelectorAll("p")];
+    paragraphs.forEach((item, index) => {
+      if (item.className.includes(event.target.value / 10)) {
+        setCategoryName(item.textContent.toLowerCase());
+      }
+    });
+  };
+  useEffect(() => {
+    const subHeader = subHeaderRef.current;
+    const paragraphs = [...subHeader.querySelectorAll(".paragraphs")];
+    setLength(paragraphs.length * 10);
+  }, []);
   return (
     <section className="blog-filter">
-      <div className="blog-filter__subheader">
-        <p>All</p>
-        <p>Exlusive decor</p>
-        <p>Interior</p>
-        <p>Exterior</p>
+      <div ref={subHeaderRef} className="blog-filter__subheader">
+        <p className="paragraphs paragraph-1">All</p>
+        <p className="paragraphs paragraph-2">Exclusive decor</p>
+        <p className="paragraphs paragraph-3">Interior</p>
+        <p className="paragraphs paragraph-4">Exterior</p>
       </div>
       <div className="blog-filter__range">
-        <input type="range" />
+        <input
+          onChange={rangeChangeHandler}
+          min={10}
+          max={length}
+          type="range"
+        />
       </div>
     </section>
   );

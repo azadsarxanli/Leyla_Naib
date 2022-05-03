@@ -2,10 +2,11 @@ import React from "react";
 import blogImg from "../../../assets/images/blog-img.png";
 import { Link } from "react-router-dom";
 
-const BlogItem = ({ blogData }) => {
+const BlogItem = ({ blogData, filteredData }) => {
+  console.log(filteredData, "filteredData");
   return (
     <div>
-      {blogData.map((item, index) => (
+      {filteredData.map((item, index) => (
         <div key={index} className="card">
           <div className="card__image">
             <img src={item.posterImage} alt="blogimage" />

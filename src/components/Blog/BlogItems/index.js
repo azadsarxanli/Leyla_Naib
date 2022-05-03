@@ -3,10 +3,10 @@ import React from "react";
 import "./BlogNews.scss";
 import BlogItem from "../BlogItem";
 
-const BlogNews = ({ blogData }) => {
+const BlogNews = ({ blogData, filteredData }) => {
   return (
     <section className="blog-news">
-      <BlogItem blogData={blogData} />
+      <BlogItem filteredData={filteredData} blogData={blogData} />
     </section>
   );
 };
