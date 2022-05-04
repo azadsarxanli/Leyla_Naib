@@ -1,9 +1,8 @@
 import React from "react";
-import blogImg from "../../../assets/images/blog-img.png";
+import blogImg from "../../../assets/images/blog-header-img.png";
 import { Link } from "react-router-dom";
 
-const BlogItem = ({ blogData, filteredData }) => {
-  console.log(filteredData, "filteredData");
+const BlogItem = ({ filteredData }) => {
   return (
     <div>
       {filteredData.map((item, index) => (

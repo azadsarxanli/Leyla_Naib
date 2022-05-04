@@ -3,8 +3,29 @@ import aboutImg1 from '../../../assets/images/about-img1.png';
 import aboutImg2 from '../../../assets/images/about-img2.png';
 import rotateImg from '../../../assets/images/rotate-img.png';
 import triangleImg from '../../../assets/images/big-triangle.png';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useEffect, useRef } from 'react';
 
 const AboutImages = () => {
+    gsap.registerPlugin(ScrollTrigger);
+    const rotateImage = useRef();
+
+    useEffect(() => {
+        gsap.to(
+            rotateImage.current,
+            {
+                transform: "rotate(10deg)",
+                duration: 0.3,
+                scrollTrigger: {
+                    trigger: "#rotate-img",
+                    start: "top 70%",
+                    scrub: false,
+                },
+            }
+        )
+    })
+
     return (
         <section className='about-images'>
             <div className='about-images__triangle'>
@@ -14,7 +35,7 @@ const AboutImages = () => {
                 <img src={aboutImg1} alt="" />
             </div>
             <div className='about-images__small-img'>
-                <div className='about-images__small-img__rotate'>
+                <div className='about-images__small-img__rotate' ref={rotateImage} id="rotate-img">
                     <img src={rotateImg} alt="" />
                 </div>
                 <p>
