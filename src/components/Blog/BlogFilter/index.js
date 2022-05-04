@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import "./BlogFilter.scss";
 
-const BlogFilter = ({ setCategoryName, categoryData, setVal }) => {
+const BlogFilter = ({ setCategoryName, setVal }) => {
   const subHeaderRef = useRef();
   const [length, setLength] = useState(0); //? @Dev dynamically maximum value for input range
 
