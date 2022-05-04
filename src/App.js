@@ -20,7 +20,6 @@ import Contact from "./components/Contact";
 const App = () => {
   const [cursor, setCursor] = useState(false);
   //Tehran
-  const [hover, setHover] = useState(false);
 
   const onMouseEnter = () => {
     setCursor(true);
@@ -30,13 +29,6 @@ const App = () => {
   };
 
   //Tehran
-
-  const onMouseMove = () => {
-    setHover(true);
-  };
-  const onMouseOut = () => {
-    setHover(false);
-  };
 
   const [homeActive, setHomeActive] = useState(false);
 
@@ -52,7 +44,7 @@ const App = () => {
       />
       {!matchMedia ? <CustomCursor cursor={cursor} /> : <></>}
 
-      <ViewButton hover={hover} />
+      <ViewButton />
       <Routes>
         <Route
           path="/"
@@ -61,36 +53,64 @@ const App = () => {
               // windowScrollY={windowScrollY}
               homeActive={homeActive}
               setHomeActive={setHomeActive}
-              onMouseMove={onMouseMove}
-              onMouseOut={onMouseOut}
             />
           }
         ></Route>
-        <Route path="/about" 
+        <Route
+          path="/about"
           element={
-            <About 
-              homeActive={homeActive} 
-              setHomeActive={setHomeActive} />
+            <About homeActive={homeActive} setHomeActive={setHomeActive} />
           }
         ></Route>
         <Route
           path="/work"
           element={
-            <Work 
-              onMouseMove={onMouseMove} 
-              onMouseOut={onMouseOut} 
+            <Work homeActive={homeActive} setHomeActive={setHomeActive} />
+          }
+        ></Route>
+        <Route
+          path="/work/interior/:id"
+          element={
+            <WorkInterior
               homeActive={homeActive}
-              setHomeActive={setHomeActive} 
+              setHomeActive={setHomeActive}
             />
           }
         ></Route>
-        <Route path="/work/interior" element={<WorkInterior homeActive={homeActive} setHomeActive={setHomeActive} />}></Route>
-        <Route path="/blog" element={<Blog homeActive={homeActive} setHomeActive={setHomeActive} />}></Route>
-        <Route path="/blog/interior/:id" element={<BlogInterior homeActive={homeActive} setHomeActive={setHomeActive} />}></Route>
-        <Route path="/service" element={<Service homeActive={homeActive} setHomeActive={setHomeActive} />}></Route>
-        <Route path="/contact" element={<Contact homeActive={homeActive} setHomeActive={setHomeActive} />}></Route>
+        <Route
+          path="/blog"
+          element={
+            <Blog homeActive={homeActive} setHomeActive={setHomeActive} />
+          }
+        ></Route>
+        <Route
+          path="/blog/interior/:id"
+          element={
+            <BlogInterior
+              homeActive={homeActive}
+              setHomeActive={setHomeActive}
+            />
+          }
+        ></Route>
+        <Route
+          path="/service"
+          element={
+            <Service homeActive={homeActive} setHomeActive={setHomeActive} />
+          }
+        ></Route>
+        <Route
+          path="/contact"
+          element={
+            <Contact homeActive={homeActive} setHomeActive={setHomeActive} />
+          }
+        ></Route>
         {/* // for not found page*/}
-        <Route path="*" element={<NotFound homeActive={homeActive} setHomeActive={setHomeActive} />} />
+        <Route
+          path="*"
+          element={
+            <NotFound homeActive={homeActive} setHomeActive={setHomeActive} />
+          }
+        />
       </Routes>
       <Footer />
     </>

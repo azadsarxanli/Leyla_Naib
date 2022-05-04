@@ -4,7 +4,7 @@ import sliderImage from "../../../../assets/images/slider-img-1.png";
 import sliderImageMobile from "../../../../assets/images/slider-img-mobile.png";
 import { useRef, useState, useEffect } from "react";
 
-const InteriorSlider = () => {
+const InteriorSlider = ({ work }) => {
   const [valueData, setValueData] = useState(0);
   const [sliderImages] = useState(sliderImagesData);
   const innerContainer = useRef();
@@ -25,26 +25,26 @@ const InteriorSlider = () => {
     const container = innerContainer.current;
     container.scrollLeft = Number(event.target.value);
   };
-  
+
   const matchMedia = window.matchMedia("(max-width: 486px)").matches;
 
   return (
     <section className="interior-slider">
       <div ref={innerContainer} className="interior-slider__image-container">
         <div className="interior-slider__image-container__inner-container">
-          {sliderImages.map((sliderImg, index) =>
+          {work.response?.content.footerImage.map((sliderImg, index) =>
             !matchMedia ? (
               <img
                 className="slider-img-desk"
                 key={index}
-                src={sliderImg.src}
+                src={sliderImg.url}
                 alt=""
               />
             ) : (
               <img
                 className="slider-img-mob"
                 key={index}
-                src={sliderImg.srcMobile}
+                src={sliderImg.url}
                 alt="images"
               />
             )

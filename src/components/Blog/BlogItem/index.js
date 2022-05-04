@@ -2,7 +2,7 @@ import React from "react";
 import blogImg from "../../../assets/images/blog-img.png";
 import { Link } from "react-router-dom";
 
-const BlogItem = ({ blogData, filteredData }) => {
+const BlogItem = ({ filteredData }) => {
   console.log(filteredData, "filteredData");
   return (
     <div>
@@ -20,7 +20,10 @@ const BlogItem = ({ blogData, filteredData }) => {
               {item.description}
             </p>
             <div className="read-more-and-title">
-              <Link to={`/blog/interior/${item._id}`} className="read-more-link">
+              <Link
+                to={`/blog/interior/${item._id}`}
+                className="read-more-link"
+              >
                 Read more
               </Link>
               <p className="card-title">{item.title}</p>

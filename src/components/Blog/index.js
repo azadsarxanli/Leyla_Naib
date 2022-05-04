@@ -9,11 +9,11 @@ const Blog = ({ homeActive, setHomeActive }) => {
     if (homeActive) {
       setHomeActive(false);
     }
-  }, [homeActive])
+  }, [homeActive]);
 
   const [blogData, setBlogData] = useState([]);
   const [categoryName, setCategoryName] = useState("");
-  const [val, setVal] = useState(0);
+  const [val, setVal] = useState(1);
   useEffect(() => {
     fetch("http://localhost:3001/api/blog")
       .then((response) => response.json())
@@ -40,6 +40,8 @@ const Blog = ({ homeActive, setHomeActive }) => {
   });
 
   const filteredData = blogData.filter((item) => {
+    console.log(item);
+    console.log(val);
     if (val === 1) {
       return item;
     } else {

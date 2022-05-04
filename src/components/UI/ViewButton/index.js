@@ -1,7 +1,9 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./ViewButton.scss";
 
-const ViewButton = ({ hover }) => {
+const ViewButton = ({}) => {
+  const [hover, setHover] = useState(false);
+  console.log(hover, "button");
   const viewBtn = useRef();
   let matchMedia = window.matchMedia("(max-width: 991px)").matches;
 

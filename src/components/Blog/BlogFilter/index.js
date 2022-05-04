@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import "./BlogFilter.scss";
 
-const BlogFilter = ({ setCategoryName, categoryData }) => {
+const BlogFilter = ({ setCategoryName, categoryData, setVal }) => {
   const subHeaderRef = useRef();
   const [length, setLength] = useState(0); //? @Dev dynamically maximum value for input range
 
@@ -14,6 +14,7 @@ const BlogFilter = ({ setCategoryName, categoryData }) => {
     paragraphs.forEach((item, index) => {
       if (item.className.includes(event.target.value / 10)) {
         setCategoryName(item.textContent.toLowerCase());
+        setVal(event.target.value / 10);
       }
     });
   };
