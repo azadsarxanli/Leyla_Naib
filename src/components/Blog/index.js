@@ -9,7 +9,7 @@ const Blog = ({ homeActive, setHomeActive }) => {
     if (homeActive) {
       setHomeActive(false);
     }
-  }, [homeActive])
+  }, [homeActive]);
 
   const [blogData, setBlogData] = useState([]);
   const [categoryName, setCategoryName] = useState("");
@@ -40,6 +40,8 @@ const Blog = ({ homeActive, setHomeActive }) => {
   });
 
   const filteredData = blogData.filter((item) => {
+    console.log(item);
+    console.log(val);
     if (val === 1) {
       return item;
     } else {

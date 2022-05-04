@@ -11,9 +11,9 @@ const BlogInterior = ({ homeActive, setHomeActive }) => {
     if (homeActive) {
       setHomeActive(false);
     }
-  }, [homeActive])
+  }, [homeActive]);
 
-  let {id} = useParams();
+  let { id } = useParams();
   const [blog, setBlog] = useState({});
 
   const fetchBlogData = async () => {
@@ -21,22 +21,22 @@ const BlogInterior = ({ homeActive, setHomeActive }) => {
       try {
         const rawData = await fetch(`http://localhost:3001/api/blog/${id}`);
         const data = await rawData.json();
-        await new Promise(x => setTimeout(x, 10));
+        await new Promise((x) => setTimeout(x, 10));
         setBlog(data.result);
+        console.log(blog, "blogdata");
       } catch (error) {
         console.log("ERROR OCCURRED");
       }
     }
-  }
+  };
 
   console.log(blog);
 
   useEffect(() => {
     fetchBlogData();
-  },[id])
+  }, [id]);
 
   useEffect(() => {
-
     const body = document.body;
     const header = document.querySelector("header");
     const footer = document.querySelector("footer");
@@ -63,9 +63,7 @@ const BlogInterior = ({ homeActive, setHomeActive }) => {
             {blog.content?.headerTitle}
           </h1>
           <div className="blog-interior__blog-details-container__image-and-image-detail">
-            <p>
-              {blog.content?.firstParagraphAfterHeader}
-            </p>
+            <p>{blog.content?.firstParagraphAfterHeader}</p>
             <div className="img-cont">
               {" "}
               <img src={blog.content?.headerImage[0]} alt="blog_image" />

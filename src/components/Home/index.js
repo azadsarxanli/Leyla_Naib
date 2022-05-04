@@ -7,7 +7,20 @@ import LeylaNaib from "./LeylaNaib";
 import ReadMore from "./ReadMore";
 import ViewAll from "./ViewAll";
 
-const Home = ({ onMouseMove, onMouseOut, setHomeActive, homeActive }) => {
+const Home = ({ setHomeActive, homeActive }) => {
+  const [hover, setHover] = useState(false);
+  const onMouseMove = () => {
+    setHover(true);
+  };
+  const onMouseOut = () => {
+    setHover(false);
+  };
+  useEffect(() => {
+    return () => {
+      setHover(false);
+    };
+  }, []);
+  console.log(hover, "hover value");
   const body = document.body;
   const windowHeight = window.innerHeight;
   const windowHeightHalf = window.innerHeight / 2;
@@ -16,7 +29,7 @@ const Home = ({ onMouseMove, onMouseOut, setHomeActive, homeActive }) => {
     if (!homeActive) {
       setHomeActive(true);
     }
-  }, [homeActive])
+  }, [homeActive]);
 
   const [windowScrollY, setWindowScrollY] = useState(0);
 
@@ -27,6 +40,7 @@ const Home = ({ onMouseMove, onMouseOut, setHomeActive, homeActive }) => {
     },
     true
   );
+  let matchMedia = window.matchMedia("(max-width: 991px)").matches;
 
   useEffect(() => {
     const header = document.querySelector("header");
@@ -44,8 +58,10 @@ const Home = ({ onMouseMove, onMouseOut, setHomeActive, homeActive }) => {
         if (body.className) {
           body.className = "";
           body.classList.add("background-color-blue");
-          const section = document.querySelector(".view-all");
-          section.style.backgroundColor = "#3e71f1";
+          if (matchMedia) {
+            const section = document.querySelector(".view-all");
+            section.style.backgroundColor = "#3e71f1";
+          }
         }
       } else if (
         windowScrollY > windowHeightHalf + windowHeight &&
@@ -55,9 +71,11 @@ const Home = ({ onMouseMove, onMouseOut, setHomeActive, homeActive }) => {
           body.className = "";
           // background mobile ucun background if serti daxil edilmelidir
           body.classList.add("background-color-lightgreen");
-          const section = document.querySelector(".view-all");
+          if (matchMedia) {
+            const section = document.querySelector(".view-all");
 
-          section.style.backgroundColor = "#99d4c2";
+            section.style.backgroundColor = "#99d4c2";
+          }
         }
       } else if (
         windowScrollY > windowHeightHalf + 2 * windowHeight &&
@@ -66,8 +84,10 @@ const Home = ({ onMouseMove, onMouseOut, setHomeActive, homeActive }) => {
         if (body.className) {
           body.className = "";
           body.classList.add("background-color-purple");
-          const section = document.querySelector(".view-all");
-          section.style.backgroundColor = "transparent";
+          if (matchMedia) {
+            const section = document.querySelector(".view-all");
+            section.style.backgroundColor = "transparent";
+          }
         }
       } else if (
         windowScrollY > windowHeightHalf + 3 * windowHeight &&
