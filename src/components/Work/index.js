@@ -5,12 +5,12 @@ import "./Work.scss";
 import BreadCrumb from "../BreadCrumb";
 
 const Work = ({ homeActive, setHomeActive }) => {
-  const [hover, setHover] = useState(false);
   useEffect(() => {
     if (homeActive) {
       setHomeActive(false);
     }
   }, [homeActive]);
+  
   const [workData, setWorkData] = useState([]);
   const [categoryName, setCategoryName] = useState("");
   const [val, setVal] = useState(1);
@@ -20,18 +20,9 @@ const Work = ({ homeActive, setHomeActive }) => {
       .then((data) => setWorkData(data.result));
   }, []);
 
-  const onMouseMove = () => {
-    setHover(true);
-  };
-  const onMouseOut = () => {
-    setHover(false);
-  };
-
   useEffect(() => {
-    return () => {
-      setHover(false);
-    };
-  }, []);
+    document.getElementById("view-button-id").classList.remove("hover");
+  });
 
   useEffect(() => {
     const body = document.body;
@@ -70,8 +61,6 @@ const Work = ({ homeActive, setHomeActive }) => {
         setCategoryName={setCategoryName}
       />
       <WorkCards
-        onMouseMove={onMouseMove}
-        onMouseOut={onMouseOut}
         filteredData={filteredData}
         workData={workData}
       />

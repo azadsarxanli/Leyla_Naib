@@ -8,19 +8,6 @@ import ReadMore from "./ReadMore";
 import ViewAll from "./ViewAll";
 
 const Home = ({ setHomeActive, homeActive }) => {
-  const [hover, setHover] = useState(false);
-  const onMouseMove = () => {
-    setHover(true);
-  };
-  const onMouseOut = () => {
-    setHover(false);
-  };
-  useEffect(() => {
-    return () => {
-      setHover(false);
-    };
-  }, []);
-  console.log(hover, "hover value");
   const body = document.body;
   const windowHeight = window.innerHeight;
   const windowHeightHalf = window.innerHeight / 2;
@@ -117,9 +104,9 @@ const Home = ({ setHomeActive, homeActive }) => {
     <>
       <LeylaNaib />
       <AboutLeyla />
-      <ViewAll onMouseMove={onMouseMove} onMouseOut={onMouseOut} />
-      <ExclusiveDesigns onMouseMove={onMouseMove} onMouseOut={onMouseOut} />
-      <ReadMore onMouseMove={onMouseMove} onMouseOut={onMouseOut} />
+      <ViewAll />
+      <ExclusiveDesigns />
+      <ReadMore />
       <Contact />
     </>
   );

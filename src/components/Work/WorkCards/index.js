@@ -4,8 +4,22 @@ import "./WorkCards.scss";
 import workCardData from "./work-cards.json";
 import posterImage from "../../../assets/images/img-four.png";
 
-const WorkCards = ({ onMouseMove, onMouseOut, filteredData }) => {
+const WorkCards = ({ filteredData }) => {
   const imageCard = useRef(null);
+
+  const [cardIndex, setCardIndex] = useState();
+  const onViewButton = () => {
+      document.getElementById("view-button-id").classList.add("hover");
+      if (cardIndex % 2 === 0) {
+      document.getElementById("view-button-id").classList.add("white-view-button");
+      } else if (cardIndex % 2 !== 0) {
+      document.getElementById("view-button-id").classList.remove("white-view-button");
+      }
+  }
+  const offViewButton = () => {
+      document.getElementById("view-button-id").classList.remove("hover");
+  }
+
   return (
     <section className="work-cards">
       {filteredData.map((cardItem, index) => (
@@ -13,8 +27,8 @@ const WorkCards = ({ onMouseMove, onMouseOut, filteredData }) => {
           <Link to={`/work/interior/${cardItem._id}`}>
             <div
               className="work-cards__card-item__image-link"
-              onMouseMove={onMouseMove}
-              onMouseOut={onMouseOut}
+              onMouseMove={() => (onViewButton(), setCardIndex(index))}
+              onMouseOut={offViewButton}
               ref={imageCard}
             >
               <img src={cardItem.posterImage[0].url} alt="" />
