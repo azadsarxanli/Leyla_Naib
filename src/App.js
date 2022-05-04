@@ -19,7 +19,6 @@ import Contact from "./components/Contact";
 
 const App = () => {
   const [cursor, setCursor] = useState(false);
-  //Tehran
 
   const onMouseEnter = () => {
     setCursor(true);
@@ -27,8 +26,6 @@ const App = () => {
   const onMouseLeave = () => {
     setCursor(false);
   };
-
-  //Tehran
 
   const [homeActive, setHomeActive] = useState(false);
 
@@ -39,7 +36,6 @@ const App = () => {
       <Header
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
-        // windowScrollY={windowScrollY}
         homeActive={homeActive}
       />
       {!matchMedia ? <CustomCursor cursor={cursor} /> : <></>}
@@ -50,7 +46,6 @@ const App = () => {
           path="/"
           element={
             <Home
-              // windowScrollY={windowScrollY}
               homeActive={homeActive}
               setHomeActive={setHomeActive}
             />

@@ -29,6 +29,15 @@
   &.hover {
     visibility: visible;
   }
+  &.white-view-button {
+    border: 2px solid white;
+    p {
+      color: white;
+    }
+    svg {
+      fill: white;
+    }
+  }
 }
 
 @media only screen and (max-width: 1600px) {
