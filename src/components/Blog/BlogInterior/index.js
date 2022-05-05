@@ -23,14 +23,10 @@ const BlogInterior = ({ homeActive, setHomeActive }) => {
         const data = await rawData.json();
         await new Promise((x) => setTimeout(x, 10));
         setBlog(data.result);
-        console.log(blog, "blogdata");
       } catch (error) {
-        console.log("ERROR OCCURRED");
       }
     }
   };
-
-  console.log(blog);
 
   useEffect(() => {
     fetchBlogData();
@@ -54,6 +50,14 @@ const BlogInterior = ({ homeActive, setHomeActive }) => {
     };
   });
 
+  let matchMedia = window.matchMedia("(max-width: 991px)").matches;
+  useEffect(() => {
+    const viewButton = document.getElementById("view-button-id");
+    if (!matchMedia && viewButton.className) {
+      viewButton.classList.remove("hover");
+    }
+  });
+
   return (
     <>
       <BreadCrumb />
@@ -66,32 +70,14 @@ const BlogInterior = ({ homeActive, setHomeActive }) => {
             <p>{blog.content?.firstParagraphAfterHeader}</p>
             <div className="img-cont">
               {" "}
-              <img src={blog.content?.headerImage[0]} alt="blog_image" />
+              <img src={blog.content?.headerImage[0].url} alt="blog_image" />
             </div>
           </div>
           <div className="blog-interior__blog-details-container__author-article">
             <p className="paragraph part-n">
-              {/* Sit fermentum ullamcorper in fermentum vitae quisque. Eu ultricies
-              quis bibendum cras turpis eget ullamcorper vel. Ipsum urna neque,
-              magna neque, netus pellentesque quam. Pretium, id arcu ipsum leo
-              in gravida nisl egestas. Ut quis donec venenatis urna, id non.
-              Pharetra nunc, ut eget et neque eu. Nibh vel sagittis, id
-              elementum consectetur. Suspendisse turpis adipiscing imperdiet
-              dignissim ut quisque proin imperdiet. Vulputate praesent commodo
-              est turpis. Lectus nunc semper gravida velit convallis tempor ac
-              et. */}
               {blog.content?.secondParagraphAfterHeader}
             </p>
             <p className="paragraph part-n">
-              {/* Sit fermentum ullamcorper in fermentum vitae quisque. Eu ultricies
-              quis bibendum cras turpis eget ullamcorper vel. Ipsum urna neque,
-              magna neque, netus pellentesque quam. Pretium, id arcu ipsum leo
-              in gravida nisl egestas. Ut quis donec venenatis urna, id non.
-              Pharetra nunc, ut eget et neque eu. Nibh vel sagittis, id
-              elementum consectetur. Suspendisse turpis adipiscing imperdiet
-              dignissim ut quisque proin imperdiet. Vulputate praesent commodo
-              est turpis. Lectus nunc semper gravida velit convallis tempor ac
-              et. */}
               {blog.content?.secondParagraphAfterHeader}
             </p>
           </div>
@@ -99,34 +85,14 @@ const BlogInterior = ({ homeActive, setHomeActive }) => {
             <div className="blog-interior__blog-details-container__article-quote-image__container">
               <img src={quoteImage} alt="quoteimg" />
               <p>
-                {/* Lorem ultrices consectetur neque sed vehicula. Mauris ornare
-                suspendisse felis convallis arcu. Maecenas bibendum in commodo,
-                sit. Amet, hac sed tincidunt tempus nulla. Neque mi, auctor
-                donec amet, libero eget accumsan elit sem. A nunc ut integer in
-                sit vel velit elementum. */}
-                {blog.content?.centerParagraph}
+                {blog.content?.quote}
               </p>
             </div>
             <p className="paragraph part-last part-n">
-              {/* Laoreet donec nisl elit facilisis tortor, faucibus. Hendrerit
-              eleifend quam amet, sed. Posuere suspendisse maecenas est nulla
-              quis. In aenean orci mollis sapien, netus fringilla diam proin at.
-              Ornare pellentesque metus, sed ac netus. Amet, consequat sed nunc
-              tellus magna. Sociis facilisis nisl, ultrices sagittis. Varius
-              interdum nunc et ut ipsum nunc. Faucibus est in viverra tristique
-              placerat. Vel auctor lacus, diam, semper sed diam urna faucibus
-              vulputate. Diam pretium nisl dolor varius elementum gravida. Amet
-              magnis nec mauris dignissim at nunc, imperdiet aenean. Nascetur
-              feugiat pulvinar ornare quis. Scelerisque euismod urna dolor sit
-              sed. Suspendisse fames neque semper massa justo, faucibus
-              convallis eget vitae. Sem scelerisque consequat, purus nulla
-              neque, pellentesque. Nec, odio sem ultrices consequat lobortis ac
-              non. Tincidunt amet feugiat nunc quam. Ultrices arcu nullam et est
-              diam fermentum aliquet quisque luctus. */}
               {blog.content?.paragraphBeforeFooterImage}
             </p>
             <div className="blog-interior__blog-details-container__article-quote-image__selective-image">
-              <img src={blog.content?.footerImage[0]} alt="selective__image" />
+              <img src={blog.content?.footerImage[0].url} alt="selective__image" />
             </div>
           </div>
         </div>

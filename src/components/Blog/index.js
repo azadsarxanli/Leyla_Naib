@@ -40,12 +40,18 @@ const Blog = ({ homeActive, setHomeActive }) => {
   });
 
   const filteredData = blogData.filter((item) => {
-    console.log(item);
-    console.log(val);
     if (val === 1) {
       return item;
     } else {
       return item.category.toLowerCase() === categoryName;
+    }
+  });
+
+  let matchMedia = window.matchMedia("(max-width: 991px)").matches;
+  useEffect(() => {
+    const viewButton = document.getElementById("view-button-id");
+    if (!matchMedia && viewButton.className) {
+      viewButton.classList.remove("hover");
     }
   });
 

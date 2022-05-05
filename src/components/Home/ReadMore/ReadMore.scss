@@ -2,12 +2,11 @@
 
 .read-more {
   padding: 60px $mainPaddingRightAndLeft 80px $mainPaddingRightAndLeft;
-  // background-color: $backColorPink;
   height: 100vh;
   &__container {
     &:first-child {
       display: flex;
-      margin-bottom: 50px;
+      padding-bottom: 50px;
       .read-more__container__description {
         margin-left: 40px;
       }
@@ -54,6 +53,7 @@
           @include fontStyles($interFont, 22px, 600, white);
           background: none;
           border: none;
+          z-index: 10000;
         }
       }
       h2 {

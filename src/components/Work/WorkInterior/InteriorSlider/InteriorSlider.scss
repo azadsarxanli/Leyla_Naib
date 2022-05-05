@@ -18,14 +18,9 @@
             img {
                 width: 100%;
                 margin-right: 50px;
-                &:nth-child(5),
-                &:nth-child(10) {
+                &:last-child {
                     margin-right: 0;
                 }
-            }
-            .slider-img-mob {
-                display: none;
-                // aspect-ratio: 1/1;
             }
         }
     }
@@ -112,11 +107,8 @@
         &__image-container {
             &__inner-container {
                 width: 100%;
-                .slider-img-desk {
-                    display: none;
-                }
-                .slider-img-mob {
-                    display: inline;
+                img {
+                    aspect-ratio: 1/1;
                 }
             }
         }

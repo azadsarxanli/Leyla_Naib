@@ -7,6 +7,7 @@
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",
+    "axios": "^0.27.2",
     "gsap": "^3.10.3",
     "magicmouse.js": "^1.2.1",
     "node-sass": "^7.0.1",

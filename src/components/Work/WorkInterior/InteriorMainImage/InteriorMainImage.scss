@@ -7,9 +7,6 @@
         width: 100%;
         object-fit: cover;
     }
-    &__for-mobile {
-        display: none;
-    }
     p {
         position: absolute;
         top: 80px;
@@ -37,11 +34,8 @@
 
 @media only screen and (max-width: 486px) {
     .main-img-container {
-        &__for-desktop {
-            display: none;
-        }
-        &__for-mobile {
-            display: block;
+        img {
+            aspect-ratio: 1/1;
         }
     }
 }

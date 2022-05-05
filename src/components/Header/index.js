@@ -8,7 +8,6 @@ import mobileLogoWhite from "../../assets/images/logo-white-mobile.png";
 import "./Header.scss";
 import HeaderJSON from "./Header.json";
 import { useState } from "react";
-import { configure } from "@testing-library/react";
 
 const Header = ({ onMouseEnter, onMouseLeave, homeActive }) => {
   const [header] = useState(HeaderJSON.items);
@@ -133,6 +132,11 @@ const Header = ({ onMouseEnter, onMouseLeave, homeActive }) => {
               <li>
                 <Link onClick={headerPanelRemoveHandler} to="about">
                   about
+                </Link>
+              </li>
+              <li>
+                <Link onClick={headerPanelRemoveHandler} to="service">
+                  service
                 </Link>
               </li>
               <li>
