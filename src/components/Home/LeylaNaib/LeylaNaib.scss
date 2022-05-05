@@ -19,6 +19,9 @@
         $blackColorContacts
       );
       margin-bottom: 20px;
+      &::first-letter {
+        text-transform: uppercase;
+      }
     }
   }
 }
@@ -64,21 +67,20 @@
         &:last-child {
           text-align: right;
         }
-        font-family: "Cormorant";
-        font-style: normal;
-        font-weight: 400;
-        font-size: 70px;
-        line-height: 69px;
-
-        color: #101010;
+        @include fontStyles($cormorantFont, 70px, 400, $blackColorContacts);
       }
     }
     &__surname {
-      font-family: "Inter";
-      font-style: normal;
-      font-weight: 400;
-      font-size: 20px;
-      line-height: 24px;
+      @include fontStyles(
+        $interFont,
+        $fontSizeTexts-1920px,
+        400,
+        $blackColorContacts
+      );
+      margin-bottom: 10px;
+      &:first-letter {
+        text-transform: uppercase;
+      }
     }
   }
 }

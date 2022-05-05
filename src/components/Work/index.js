@@ -20,8 +20,12 @@ const Work = ({ homeActive, setHomeActive }) => {
       .then((data) => setWorkData(data.result));
   }, []);
 
+  let matchMedia = window.matchMedia("(max-width: 991px)").matches;
   useEffect(() => {
-    document.getElementById("view-button-id").classList.remove("hover");
+    const viewButton = document.getElementById("view-button-id");
+    if (!matchMedia && viewButton.className) {
+      viewButton.classList.remove("hover");
+    }
   });
 
   useEffect(() => {
@@ -45,7 +49,6 @@ const Work = ({ homeActive, setHomeActive }) => {
     if (val === 1) {
       return item;
     } else {
-      console.log(val, "value");
       return item.category.toLowerCase() === categoryName;
     }
   });

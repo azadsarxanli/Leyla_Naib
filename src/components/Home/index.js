@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import axios from 'axios';
 import "./Home.scss";
 import AboutLeyla from "./AboutLeyla";
 import Contact from "../Contact";

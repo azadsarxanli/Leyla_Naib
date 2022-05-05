@@ -1,23 +1,25 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import "./WorkCards.scss";
-import workCardData from "./work-cards.json";
-import posterImage from "../../../assets/images/img-four.png";
 
 const WorkCards = ({ filteredData }) => {
   const imageCard = useRef(null);
+  let matchMedia = window.matchMedia("(max-width: 991px)").matches;
 
   const [cardIndex, setCardIndex] = useState();
+  const viewButton = document.getElementById("view-button-id");
   const onViewButton = () => {
-      document.getElementById("view-button-id").classList.add("hover");
+    if (!matchMedia) {
+      viewButton.classList.add("hover");
       if (cardIndex % 2 === 0) {
-      document.getElementById("view-button-id").classList.add("white-view-button");
+        viewButton.classList.add("white-view-button");
       } else if (cardIndex % 2 !== 0) {
-      document.getElementById("view-button-id").classList.remove("white-view-button");
+        viewButton.classList.remove("white-view-button");
       }
+    }
   }
   const offViewButton = () => {
-      document.getElementById("view-button-id").classList.remove("hover");
+    viewButton.classList.remove("hover");
   }
 
   return (

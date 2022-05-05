@@ -8,6 +8,12 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    &::-webkit-scrollbar {
+      display: none;
+    }
     p {
       @include fontStyles(
         $cormorantFont,
@@ -16,7 +22,7 @@
         #fff
       );
       &:not(:last-child) {
-        margin-right: 10px;
+        margin-right: 30px;
       }
     }
   }
@@ -127,27 +133,9 @@
   .blog-filter {
     &__subheader {
       width: 100%;
-      overflow-x: scroll;
-      overflow-y: hidden;
-      white-space: nowrap;
-      &::-webkit-scrollbar {
-        display: none;
-      }
     }
     &__range {
       width: 100%;
-    }
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  .blog-filter {
-    &__subheader {
-      p {
-        &:not(:last-child) {
-          margin-right: 30px;
-        }
-      }
     }
   }
 }

@@ -1,6 +1,4 @@
 import "./InteriorContent.scss";
-import contentData from "./content-data.json";
-import { useState } from "react";
 
 const InteriorContent = ({ work }) => {
   return (

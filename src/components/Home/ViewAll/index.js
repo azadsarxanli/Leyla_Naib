@@ -1,14 +1,7 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import axios from "axios";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import "./ViewAll.scss";
-import imageOne from "../../../assets/images/img-one.png";
-import imageTwo from "../../../assets/images/img-two.png";
-import imageThree from "../../../assets/images/img-three.png";
-import imageFour from "../../../assets/images/img-four.png";
-import imageFive from "../../../assets/images/img-five.png";
-import imageSixth from "../../../assets/images/img-sixth.png";
-import mobileDetailRectangle from "../../../assets/images/rectangle.svg";
-import dataApi from "./data.json";
 
 const ViewAll = () => {
   const [valueData, setValueData] = useState(0);
@@ -16,12 +9,16 @@ const ViewAll = () => {
   const imageContainer = useRef();
   const inputRangeRef = useRef();
 
+  let matchMedia = window.matchMedia("(max-width: 991px)").matches;
+
   const onViewButton = () => {
-    document.getElementById("view-button-id").classList.add("hover");
-    if (cardIndex % 2 === 0) {
-      document.getElementById("view-button-id").classList.add("white-view-button");
-    } else if (cardIndex % 2 !== 0) {
-      document.getElementById("view-button-id").classList.remove("white-view-button");
+    if (!matchMedia) {
+      document.getElementById("view-button-id").classList.add("hover");
+      if (cardIndex % 2 === 0) {
+        document.getElementById("view-button-id").classList.add("white-view-button");
+      } else if (cardIndex % 2 !== 0) {
+        document.getElementById("view-button-id").classList.remove("white-view-button");
+      }
     }
   }
   const offViewButton = () => {
@@ -43,9 +40,12 @@ const ViewAll = () => {
     const container = imageContainer.current;
     container.scrollTop = Number(event.target.value);
   };
-  const [data] = useState(dataApi.items);
 
-  let matchMedia = window.matchMedia("(max-width: 991px)").matches;
+  const [portfolioDataHome, setPortfolioDataHome] = useState([])
+  useEffect(() => {
+    axios.get("http://localhost:3001/api/portfolio")
+      .then(res => setPortfolioDataHome(res.data.result))
+  }, [])
 
   return (
     <section className="view-all">
@@ -61,19 +61,19 @@ const ViewAll = () => {
       </div>
       <div className="view-all__images-section">
         <div className="view-all__images-section__cards" ref={imageContainer}>
-          {data.map((item, index) => (
-            <Link to="/work" key={item.id * index}>
+          {portfolioDataHome?.map((item, index) => (
+            <Link to={`/work/interior/${item._id}`} key={item._id}
+                onMouseMove={() => (onViewButton(), setCardIndex(index))}
+                onMouseOut={offViewButton}>
               <div
                 className="view-all__images-section__cards__card-item"
-                onMouseMove={() => (onViewButton(), setCardIndex(index))}
-                onMouseOut={offViewButton}
               >
                 <div className="view-all__images-section__cards__card-item__image">
-                  <img src={item.src} alt="background images" />
+                  <img src={item.posterImage[0].url} alt="background images" />
                 </div>
                 {matchMedia ? (
                   <div className="view-all__images-section__cards__card-item__product-name">
-                    <p>product name </p>
+                    <p>{item.title}</p>
                     <span>
                       <svg
                         width="27"

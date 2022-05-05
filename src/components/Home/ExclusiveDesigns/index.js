@@ -1,18 +1,26 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './ExclusiveDesigns.scss';
-import imageOne from '../../../assets/images/img-one.png';
-import imageTwo from '../../../assets/images/img-two.png';
-import imageThree from '../../../assets/images/img-three.png';
-import imageFour from '../../../assets/images/img-four.png';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 const ExclusiveDesigns = () => {
+    const [portfolioData, setPortfolioData] = useState([]);
+    useEffect(() => {
+      axios.get("http://localhost:3001/api/portfolio")
+        .then(res => setPortfolioData(res.data.result.splice(0, 4)))
+    }, [])
+
+    let matchMedia = window.matchMedia("(max-width: 991px)").matches;
+
     const [cardIndex, setCardIndex] = useState();
     const onViewButton = () => {
-        document.getElementById("view-button-id").classList.add("hover");
-        if (cardIndex % 2 === 0) {
-        document.getElementById("view-button-id").classList.add("white-view-button");
-        } else if (cardIndex % 2 !== 0) {
-        document.getElementById("view-button-id").classList.remove("white-view-button");
+        if (!matchMedia) {
+            document.getElementById("view-button-id").classList.add("hover");
+            if (cardIndex % 2 === 0) {
+            document.getElementById("view-button-id").classList.add("white-view-button");
+            } else if (cardIndex % 2 !== 0) {
+            document.getElementById("view-button-id").classList.remove("white-view-button");
+            }
         }
     }
     const offViewButton = () => {
@@ -22,42 +30,23 @@ const ExclusiveDesigns = () => {
     return (
         <section className="exclusive-design">
             <div className="exclusive-design__container">
-                <div className="exclusive-design__container__card-item">
-                    <div className="exclusive-design__container__card-item__title-and-desc">
-                        <h1>Exclusive decor</h1>
-                        <p className="description">Jåledes. Tehörat. Peng. Bijåment. <br/> Bektig. Semiheten. Tivuning.</p>
-                    </div>
-                    <div className="exclusive-design__container__card-item__image">
-                        <img src={imageOne} alt="" />
-                    </div>
-                </div>
-                <div className="exclusive-design__container__card-item">
-                    <div className="exclusive-design__container__card-item__title-and-desc">
-                        <h1>Interior</h1>
-                        <p>Jåledes. Tehörat. Peng. Bijåment. <br/> Bektig. Semiheten. Tivuning.</p>
-                    </div>
-                    <div className="exclusive-design__container__card-item__image">
-                        <img src={imageTwo} alt="" />
-                    </div>
-                </div>
-                <div className="exclusive-design__container__card-item">
-                    <div className="exclusive-design__container__card-item__title-and-desc">
-                        <h1>Exterior</h1>
-                        <p>Jåledes. Tehörat. Peng. Bijåment. <br/> Bektig. Semiheten. Tivuning.</p>
-                    </div>
-                    <div className="exclusive-design__container__card-item__image">
-                        <img src={imageThree} alt="" />
-                    </div>
-                </div>
-                <div className="exclusive-design__container__card-item">
-                    <div className="exclusive-design__container__card-item__title-and-desc">
-                        <h1>Landscape</h1>
-                        <p>Jåledes. Tehörat. Peng. Bijåment. <br/> Bektig. Semiheten. Tivuning.</p>
-                    </div>
-                    <div className="exclusive-design__container__card-item__image">
-                        <img src={imageFour} alt="" />
-                    </div>
-                </div>
+                {portfolioData.map((portfolio, index) => (
+                    <Link to="/work" 
+                        key={index}
+                        onMouseMove={() => (onViewButton(), setCardIndex(index))}
+                        onMouseOut={offViewButton}
+                    >
+                        <div className="exclusive-design__container__card-item">
+                            <div className="exclusive-design__container__card-item__title-and-desc">
+                                <h1>{portfolio?.category}</h1>
+                                <p className="description">{portfolio?.title} <br/> {portfolio?.title}</p>
+                            </div>
+                            <div className="exclusive-design__container__card-item__image">
+                                <img src={portfolio.posterImage[0].url} alt="" />
+                            </div>
+                        </div>
+                    </Link>
+                ))}
             </div>
         </section>
     )

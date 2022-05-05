@@ -24,9 +24,7 @@ const WorkInterior = ({ homeActive, setHomeActive }) => {
         const data = await rawData.json();
         await new Promise((x) => setTimeout(x, 10));
         setWork(data);
-        console.log(data);
       } catch (error) {
-        console.log("ERROR OCCURRED");
       }
     }
   };
@@ -52,6 +50,14 @@ const WorkInterior = ({ homeActive, setHomeActive }) => {
       header.classList.remove("background-color-lightgreen");
       if (breadCrumb) breadCrumb.classList.remove("bread-crumb-black");
     };
+  });
+
+  let matchMedia = window.matchMedia("(max-width: 991px)").matches;
+  useEffect(() => {
+    const viewButton = document.getElementById("view-button-id");
+    if (!matchMedia && viewButton.className) {
+      viewButton.classList.remove("hover");
+    }
   });
 
   return (

@@ -18,11 +18,13 @@ const BlogFilter = ({ setCategoryName, setVal }) => {
       }
     });
   };
+
   useEffect(() => {
     const subHeader = subHeaderRef.current;
     const paragraphs = [...subHeader.querySelectorAll(".paragraphs")];
     setLength(paragraphs.length * 10);
   }, []);
+
   return (
     <section className="blog-filter">
       <div ref={subHeaderRef} className="blog-filter__subheader">
