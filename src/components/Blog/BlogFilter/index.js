@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import "./BlogFilter.scss";
 
-const BlogFilter = ({ setCategoryName, setVal }) => {
+const BlogFilter = ({ setCategoryName, setVal, blogData }) => {
   const subHeaderRef = useRef();
   const [length, setLength] = useState(0); //? @Dev dynamically maximum value for input range
 
@@ -23,15 +23,22 @@ const BlogFilter = ({ setCategoryName, setVal }) => {
     const subHeader = subHeaderRef.current;
     const paragraphs = [...subHeader.querySelectorAll(".paragraphs")];
     setLength(paragraphs.length * 10);
-  }, []);
+  }, [blogData]);
+
+  const allCategoriesName = ["ALL"];
+  if (blogData) {
+    blogData.map(data => {
+      allCategoriesName.push(data.category);
+    })
+  }
+  let uniqueNames = [...new Set(allCategoriesName)];
 
   return (
     <section className="blog-filter">
       <div ref={subHeaderRef} className="blog-filter__subheader">
-        <p className="paragraphs paragraph-1">All</p>
-        <p className="paragraphs paragraph-2">Exclusive decor</p>
-        <p className="paragraphs paragraph-3">Interior</p>
-        <p className="paragraphs paragraph-4">Exterior</p>
+        {uniqueNames?.map((categoryName, index) => (
+          <p key={index} className={`paragraphs paragraph-${index + 1}`}>{categoryName}</p>
+        ))}
       </div>
       <div className="blog-filter__range">
         <input
