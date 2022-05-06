@@ -59,6 +59,7 @@ const Blog = ({ homeActive, setHomeActive }) => {
     <>
       <BreadCrumb />
       <BlogFilter
+        blogData={blogData}
         setVal={setVal}
         val={val}
         categoryName={categoryName}

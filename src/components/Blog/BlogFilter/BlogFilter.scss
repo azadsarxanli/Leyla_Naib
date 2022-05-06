@@ -21,8 +21,12 @@
         600,
         #fff
       );
+      text-transform: lowercase;
       &:not(:last-child) {
         margin-right: 30px;
+      }
+      &::first-letter {
+        text-transform: uppercase;
       }
     }
   }
@@ -95,7 +99,7 @@
 }
 
 @media only screen and (max-width: 1450px) {
-  .work-filter {
+  .blog-filter {
     &__subheader {
       p {
         font-size: 40px;

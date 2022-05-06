@@ -21,8 +21,12 @@
         600,
         $blackColorContents
       );
+      text-transform: lowercase;
       &:not(:last-child) {
         margin-right: 30px;
+      }
+      &::first-letter {
+        text-transform: uppercase;
       }
     }
   }

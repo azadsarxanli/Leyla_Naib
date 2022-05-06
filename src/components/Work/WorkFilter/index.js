@@ -4,9 +4,10 @@ import { useRef } from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 
-const WorkFilter = ({ setCategoryName, setVal }) => {
+const WorkFilter = ({ setCategoryName, setVal, workData }) => {
   const subHeaderRef = useRef();
   const [length, setLength] = useState(0); //? @Dev dynamically maximum value for input range
+  
   const rangeChangeHandler = (event) => {
     const subHeader = subHeaderRef.current;
     const paragraphs = [...subHeader.querySelectorAll("p")];
@@ -17,18 +18,27 @@ const WorkFilter = ({ setCategoryName, setVal }) => {
       }
     });
   };
+
   useEffect(() => {
     const subHeader = subHeaderRef.current;
     const paragraphs = [...subHeader.querySelectorAll(".paragraphs")];
     setLength(paragraphs.length * 10);
-  }, []);
+  }, [workData]);
+
+  const allCategoriesName = ["ALL"];
+  if (workData) {
+    workData.map(data => {
+      allCategoriesName.push(data.category);
+    })
+  }
+  let uniqueNames = [...new Set(allCategoriesName)];
+
   return (
     <section className="work-filter">
       <div className="work-filter__subheader" ref={subHeaderRef}>
-        <p className="paragraphs paragraph-1">All</p>
-        <p className="paragraphs paragraph-2">Exclusive decor</p>
-        <p className="paragraphs paragraph-3">Interior</p>
-        <p className="paragraphs paragraph-4">Exterior</p>
+        {uniqueNames?.map((categoryName, index) => (
+          <p key={index} className={`paragraphs paragraph-${index + 1}`}>{categoryName}</p>
+        ))}
       </div>
       <div className="work-filter__range">
         <input

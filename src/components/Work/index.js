@@ -45,6 +45,7 @@ const Work = ({ homeActive, setHomeActive }) => {
       if (breadCrumb) breadCrumb.classList.remove("bread-crumb-black");
     };
   });
+
   const filteredData = workData.filter((item) => {
     if (val === 1) {
       return item;
@@ -56,8 +57,9 @@ const Work = ({ homeActive, setHomeActive }) => {
   return (
     <>
       <BreadCrumb />
-
+      
       <WorkFilter
+        workData={workData}
         setVal={setVal}
         val={val}
         categoryName={categoryName}
