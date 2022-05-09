@@ -1,4 +1,5 @@
-import React from "react";
+import axios from "axios";
+import React, { useState } from "react";
 import { useEffect } from "react";
 import BreadCrumb from "../BreadCrumb";
 import "./About.scss";
@@ -33,12 +34,28 @@ const About = ({ homeActive, setHomeActive }) => {
     };
   });
 
+  const [aboutData, setAboutData] = useState([]);
+  const [aboutContent, setAboutContent] = useState([]);
+  const [aboutModule, setAboutModule] = useState([]);
+
+  useEffect(() => {
+    axios.get("http://localhost:3001/api/about")
+      .then(res => setAboutData(res.data.result))
+  }, [])
+
+  useEffect(() => {
+    if (aboutData) {
+      setAboutContent(aboutData.content);
+      setAboutModule(aboutData.module);
+    }
+  }, [aboutData])
+
   return (
     <>
       <BreadCrumb />
-      <LeylaAbout />
-      <AboutImages />
-      <AboutContents />
+      <LeylaAbout aboutData={aboutData} />
+      <AboutImages aboutContent={aboutContent} />
+      <AboutContents aboutModule={aboutModule} />
       <AboutTriangles />
     </>
   );
