@@ -81,6 +81,9 @@
             &.error {
               border: 1px solid $redColorError;
             }
+            &.success {
+              border: 1px solid black;
+            }
           }
         }
         button {
@@ -187,6 +190,7 @@
 
 @media only screen and (max-width: 991px) {
   .contact {
+    height: auto;
     padding: 50px 20px;
   }
 }
@@ -201,7 +205,6 @@
 
 @media only screen and (max-width: 486px) {
   .contact {
-    height: 100vh;
     &__work-together {
       font-family: "Inter";
       font-style: normal;
@@ -268,8 +271,8 @@
   }
 }
 
-@media only screen and (max-width: 400px) {
-  .contact {
-    height: 105vh;
-  }
-}
+// @media only screen and (max-width: 400px) {
+//   .contact {
+//     height: 100vh;
+//   }
+// }
