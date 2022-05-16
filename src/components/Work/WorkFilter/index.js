@@ -7,7 +7,7 @@ import { useState } from "react";
 const WorkFilter = ({ setCategoryName, setVal, workData }) => {
   const subHeaderRef = useRef();
   const [length, setLength] = useState(0); //? @Dev dynamically maximum value for input range
-  
+
   const rangeChangeHandler = (event) => {
     const subHeader = subHeaderRef.current;
     const paragraphs = [...subHeader.querySelectorAll("p")];
@@ -27,17 +27,21 @@ const WorkFilter = ({ setCategoryName, setVal, workData }) => {
 
   const allCategoriesName = ["ALL"];
   if (workData) {
-    workData.map(data => {
+    workData.map((data) => {
       allCategoriesName.push(data.category);
-    })
+      return data;
+    });
   }
   let uniqueNames = [...new Set(allCategoriesName)];
+  console.log(allCategoriesName);
 
   return (
     <section className="work-filter">
       <div className="work-filter__subheader" ref={subHeaderRef}>
         {uniqueNames?.map((categoryName, index) => (
-          <p key={index} className={`paragraphs paragraph-${index + 1}`}>{categoryName}</p>
+          <p key={index} className={`paragraphs paragraph-${index + 1}`}>
+            {categoryName}
+          </p>
         ))}
       </div>
       <div className="work-filter__range">
