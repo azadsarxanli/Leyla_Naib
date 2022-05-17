@@ -8,7 +8,7 @@ const Contact = ({ homeActive, setHomeActive }) => {
     if (homeActive) {
       setHomeActive(false);
     }
-  }, [homeActive])
+  }, [homeActive]);
 
   useEffect(() => {
     if (window.location.href.includes("contact")) {
