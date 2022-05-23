@@ -44,7 +44,7 @@ const WorkFilter = ({ setCategoryName, setVal, workData, categoryName }) => {
       setVal(1);
       setInputRangeValue(10);
     } else {
-      setVal(index);
+      setVal(index + 1);
       setInputRangeValue((index + 1) * 10);
     }
   };
