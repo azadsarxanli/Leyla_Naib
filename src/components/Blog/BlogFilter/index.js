@@ -41,8 +41,8 @@ const BlogFilter = ({ setCategoryName, setVal, blogData }) => {
       setVal(1);
       setInputRangeValue(10);
     } else {
-      setVal(index);
-      setInputRangeValue((index + 1) * 10 - 5);
+      setVal(index + 1);
+      setInputRangeValue((index + 1) * 10 - 6);
     }
   };
 

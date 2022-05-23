@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import axios from "axios";
 
 const ContactForm = () => {
+  const [isSubmit, setIsSubmit] = useState(false);
+
   const [inputs, setInputs] = useState({
     phone: "",
     email: "",
@@ -21,7 +23,6 @@ const ContactForm = () => {
     message: true,
   });
 
-  console.log(type.phone, type.email, type.message);
   const emailRegex = new RegExp("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$");
   const onSubmitForm = () => {
     // email validation
@@ -67,33 +68,21 @@ const ContactForm = () => {
         phone: true,
       }));
     }
-    // if (type.phone && type.email && type.message) {
-    //     console.log("first")
-    //     // setType((param) => ({
-    //     //     ...param,
-    //     //     phone: false,
-    //     //     message: false,
-    //     //     email: false
-    //     // }));
-    // }
-    onPostRequestForm();
+    
+    setIsSubmit(true);
   };
 
-  function onPostRequestForm() {
-    if (
-      inputs.email.length !== 0 &&
-      inputs.message.length !== 0 &&
-      inputs.phone.length !== 0 &&
-      !/^[A-Z0_9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(inputs.email)
-    ) {
-      // axios.post("http://localhost:3001/api/form", inputs)
-      // .then(res => {
-      //     // inputs.email.target.value = "";
-      //     // inputs.phone = "";
-      //     // inputs.message = "";
-      // })
+
+  useEffect(() => {
+    if (isSubmit && type.phone && type.email && type.message) {
+      axios.post("http://localhost:3001/api/form", inputs)
+        .then(res => {})
+      setIsSubmit(false);
+      inputs.phone = "";
+      inputs.email = "";
+      inputs.message = "";
     }
-  }
+  }, [isSubmit, type.phone, type.email, type.message])
 
   function addDashesToNumber(number) {
     const numWithoutDashes = number.replace(/[^0-9]/g, "");
