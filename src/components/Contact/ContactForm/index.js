@@ -22,6 +22,7 @@ const ContactForm = () => {
   });
 
   console.log(type.phone, type.email, type.message);
+  const emailRegex = new RegExp("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$");
   const onSubmitForm = () => {
     // email validation
     if (inputs.email.length === 0) {
@@ -29,7 +30,7 @@ const ContactForm = () => {
         ...param,
         email: false,
       }));
-    } else if (!/^[A-Z0_9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(inputs.email)) {
+    } else if (!emailRegex.test(inputs.email)) {
       setType((param) => ({
         ...param,
         email: false,

@@ -12,8 +12,8 @@ const AboutImages = ({ aboutContent }) => {
         gsap.to(
             rotateImage.current,
             {
-                transform: "rotate(10deg)",
-                duration: 0.3,
+                transform: "rotate(-2deg)",
+                duration: 0.2,
                 scrollTrigger: {
                     trigger: "#rotate-img",
                     start: "top 70%",

@@ -8,11 +8,15 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    overflow-x: scroll;
+    overflow-x: auto;
     overflow-y: hidden;
     white-space: nowrap;
     &::-webkit-scrollbar {
       display: none;
+    }
+    & {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
     }
     p {
       @include fontStyles(
