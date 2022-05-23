@@ -4,9 +4,9 @@
     position: relative;
     display: flex;
     justify-content: space-between;
-    padding: 430px $mainPaddingRightAndLeft 350px $mainPaddingRightAndLeft;
+    padding: 460px $mainPaddingRightAndLeft 350px $mainPaddingRightAndLeft;
     &__triangle {
-        width: 80%;
+        width: 73.5%;
         position: absolute;
         z-index: 1000;
         left: 0;
@@ -16,14 +16,14 @@
         }
     }
     &__main-img {
-        width: 37%;
+        width: 35%;
         img {
             width: 100%;
         }
     }
     &__small-img {
         width: 30%;
-        margin-top: 30px;
+        margin-top: 35px;
         &__rotate {
             width: 80%;
             transform: rotate(-14deg);
@@ -38,7 +38,7 @@
         }
     }
     &__medium-img {
-        width: 23%;
+        width: 21%;
         img {
             width: 100%;
         }
@@ -52,8 +52,14 @@
 
 @media only screen and (max-width: 1600px) {
     .about-images {
-        // padding-top: 200px;
-        // padding-bottom: 200px;
+        padding-top: 370px;
+        &__triangle {
+            width: 76.5%;
+            top: -13%;
+        }
+        &__main-img {
+            width: 38%;
+        }
         &__small-img, &__medium-img {
             p {
                 font-size: $fontSizeTexts-1600px;
@@ -65,8 +71,9 @@
 
 @media only screen and (max-width: 1450px) {
     .about-images {
-        // padding-top: 100px;
-        // padding-bottom: 100px;
+        &__triangle {
+            top: -10.5%;
+        }
         &__small-img, &__medium-img {
             p {
                 font-size: $fontSizeTexts-1450px;
@@ -76,19 +83,24 @@
     }
 }
 
-// @media only screen and (max-width: 1280px) {
-//     .about-images {
-//         padding-top: 0;
-//         padding-bottom: 20px;
-//     }
-// }
+@media only screen and (max-width: 1280px) {
+    .about-images {
+        padding-top: 350px;
+        &__triangle {
+            top: -8%;
+        }
+    }
+}
 
-// @media only screen and (max-width: 1160px) {
-//     .about-images {
-//         margin-top: -100px;
-//         padding-bottom: 20px;
-//     }
-// }
+@media only screen and (max-width: 1024px) {
+    .about-images {
+        padding-top: 260px;
+        padding-bottom: 300px;
+        &__triangle {
+            top: -8%;
+        }
+    }
+}
 
 @media only screen and (max-width: 991px) {
     .about-images {

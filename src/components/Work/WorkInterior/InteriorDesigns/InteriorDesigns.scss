@@ -80,16 +80,9 @@
       }
     }
     &__text-container {
-      flex-direction: column;
       margin-right: 20px;
-      position: relative;
-      height: 100px;
       p {
-        position: absolute;
         width: 100%;
-        &:not(:first-child) {
-          opacity: 0;
-        }
       }
     }
   }

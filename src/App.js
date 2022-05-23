@@ -88,7 +88,7 @@ const App = () => {
           }
         ></Route>
         <Route
-          path="/service"
+          path="/services"
           element={
             <Service homeActive={homeActive} setHomeActive={setHomeActive} />
           }
