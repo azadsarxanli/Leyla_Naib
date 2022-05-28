@@ -3,6 +3,7 @@ import WorkCards from "./WorkCards";
 import WorkFilter from "./WorkFilter";
 import "./Work.scss";
 import BreadCrumb from "../BreadCrumb";
+import axios from 'axios';
 
 const Work = ({ homeActive, setHomeActive }) => {
   useEffect(() => {
@@ -11,7 +12,9 @@ const Work = ({ homeActive, setHomeActive }) => {
     }
   }, [homeActive]);
   
+  let filteredData = [];
   const [workData, setWorkData] = useState([]);
+  const [categoryNameData, setCategoryNameData] = useState([]);
   const [categoryName, setCategoryName] = useState("");
   const [val, setVal] = useState(1);
   useEffect(() => {
@@ -19,6 +22,11 @@ const Work = ({ homeActive, setHomeActive }) => {
       .then((response) => response.json())
       .then((data) => setWorkData(data.result));
   }, []);
+
+  useEffect(() => {
+    axios.get("http://localhost:3001/api/category")
+      .then(res => setCategoryNameData(res.data.result))
+  }, [])
 
   let matchMedia = window.matchMedia("(max-width: 991px)").matches;
   useEffect(() => {
@@ -46,28 +54,34 @@ const Work = ({ homeActive, setHomeActive }) => {
     };
   });
 
-  const filteredData = workData.filter((item) => {
+  const filteredName = categoryNameData.filter((item) => {
     if (val === 1) {
       return item;
     } else {
-      return item.category.toLowerCase() === categoryName;
+      return item.categoryName.toLowerCase() === categoryName;
     }
   });
+
+  if (workData.length !== 0) {
+    workData.map(data => {
+      for (let i = 0; i < filteredName.length; i++ ) {
+        if (filteredName[i]._id === data.category) {
+          filteredData.push(data);
+        }
+      }
+    })
+  }
 
   return (
     <>
       <BreadCrumb />
-      
       <WorkFilter
-        workData={workData}
         setVal={setVal}
-        val={val}
-        categoryName={categoryName}
         setCategoryName={setCategoryName}
+        categoryNameData={categoryNameData}
       />
       <WorkCards
         filteredData={filteredData}
-        workData={workData}
       />
     </>
   );

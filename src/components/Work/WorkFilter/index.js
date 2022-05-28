@@ -4,7 +4,7 @@ import { useRef } from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 
-const WorkFilter = ({ setCategoryName, setVal, workData, categoryName }) => {
+const WorkFilter = ({ setCategoryName, setVal, categoryNameData }) => {
   const [inputRangeValue, setInputRangeValue] = useState(10);
   const subHeaderRef = useRef();
   const inputRef = useRef();
@@ -28,12 +28,12 @@ const WorkFilter = ({ setCategoryName, setVal, workData, categoryName }) => {
     const subHeader = subHeaderRef.current;
     const paragraphs = [...subHeader.querySelectorAll(".paragraphs")];
     setLength(paragraphs.length * 10);
-  }, [workData]);
+  }, [categoryNameData]);
 
   const allCategoriesName = ["ALL"];
-  if (workData) {
-    workData.map((data) => {
-      allCategoriesName.push(data.category);
+  if (categoryNameData) {
+    categoryNameData.map((data) => {
+      allCategoriesName.push(data.categoryName);
       return data;
     });
   }

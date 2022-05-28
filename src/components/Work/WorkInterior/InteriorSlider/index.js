@@ -1,10 +1,8 @@
 import "./InteriorSlider.scss";
-import sliderImagesData from "./slider-images.json";
 import { useRef, useState, useEffect } from "react";
 
 const InteriorSlider = ({ work }) => {
   const [valueData, setValueData] = useState(0);
-  const [sliderImages] = useState(sliderImagesData);
   const innerContainer = useRef();
   const inputRangeRef = useRef();
   useEffect(() => {
@@ -30,7 +28,7 @@ const InteriorSlider = ({ work }) => {
     <section className="interior-slider">
       <div ref={innerContainer} className="interior-slider__image-container">
         <div className="interior-slider__image-container__inner-container">
-          {work.response?.content.footerImage.map((sliderImg, index) =>
+          {work.response && work.response.footerImage.map((sliderImg, index) =>
             <img
               key={index}
               src={sliderImg.url}

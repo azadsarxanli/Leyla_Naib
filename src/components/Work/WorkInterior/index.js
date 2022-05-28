@@ -65,7 +65,7 @@ const WorkInterior = ({ homeActive, setHomeActive }) => {
       <BreadCrumb />
       <InteriorMainImage work={work} />
       <InteriorContent work={work} />
-      <InteriorDesigns work={work} />
+      {/* <InteriorDesigns work={work} /> */}
       <InteriorSlider work={work} />
     </>
   );

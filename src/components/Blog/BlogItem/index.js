@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 const BlogItem = ({ filteredData }) => {
   return (
     <div>
-      {filteredData.map((item, index) => (
+      {filteredData && filteredData.map((item, index) => (
         <div key={index} className="card">
           <div className="card__image">
-            <img src={item?.posterImage[0].url} alt="blogimage" />
+            <img src={item?.posterImage[0]?.url} alt="blogimage" />
           </div>
           <div className="card__detail">
             <p className="card_description">
