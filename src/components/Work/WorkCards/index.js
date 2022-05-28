@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import "./WorkCards.scss";
 
@@ -24,21 +24,21 @@ const WorkCards = ({ filteredData }) => {
 
   return (
     <section className="work-cards">
-      {filteredData.map((cardItem, index) => (
+      {filteredData && filteredData.map((cardItem, index) => (
         <div className="work-cards__card-item" key={index}>
-          <Link to={`/work/interior/${cardItem._id}`}>
+          <Link to={`/work/interior/${cardItem && cardItem._id}`}>
             <div
               className="work-cards__card-item__image-link"
               onMouseMove={() => (onViewButton(), setCardIndex(index))}
               onMouseOut={offViewButton}
               ref={imageCard}
             >
-              <img src={cardItem.posterImage[0].url} alt="" />
+              <img src={cardItem.posterImage && cardItem.posterImage[0].url} alt="" />
             </div>
           </Link>
-          <Link to={`/work/interior/${cardItem._id}`}>
+          <Link to={`/work/interior/${cardItem && cardItem._id}`}>
             <div className="work-cards__card-item__title-continer">
-              <p className="work-cards__card-item__title">{cardItem.title}</p>
+              <p className="work-cards__card-item__title">{cardItem && cardItem.title}</p>
               <svg
                 viewBox="0 0 27 12"
                 fill="none"

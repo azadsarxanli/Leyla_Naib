@@ -39,11 +39,11 @@ const Blog = ({ homeActive, setHomeActive }) => {
     };
   });
 
-  const filteredData = blogData.filter((item) => {
+  const filteredData = blogData?.filter((item) => {
     if (val === 1) {
       return item;
     } else {
-      return item.category.toLowerCase() === categoryName;
+      return item.category?.toLowerCase() === categoryName;
     }
   });
 
@@ -61,11 +61,9 @@ const Blog = ({ homeActive, setHomeActive }) => {
       <BlogFilter
         blogData={blogData}
         setVal={setVal}
-        val={val}
-        categoryName={categoryName}
         setCategoryName={setCategoryName}
       />
-      <BlogItems filteredData={filteredData} blogData={blogData} />
+      <BlogItems filteredData={filteredData} />
     </>
   );
 };

@@ -40,24 +40,24 @@ const ReadMore = () => {
     <section
       className="read-more"
     >
-      {blogDataHome.map((blodData, index) => (
+      {blogDataHome.map((blogData, index) => (
         <div className="read-more__container"
           key={index}
           onMouseMove={onViewButton}
           onMouseOut={offViewButton} 
-          onClick={() => navigate("/blog")}
+          // onClick={() => navigate("/blog")}
         >
           <div className="read-more__container__image">
-            <img src={blodData?.posterImage[0].url} alt="" />
+            <img src={blogData?.posterImage[0].url} alt="" />
           </div>
           <div className="read-more__container__description">
             <p>
-              <span></span> {blodData?.description}
+              <span></span> {blogData?.description}
             </p>
             <div className="read-more__container__description__title-and-btn-container">
               <div className="read-more-btn">
                 <Link
-                  to={`/blog/interior/${blogDataHome[0]?._id}`}
+                  to={`/blog/interior/${blogData?._id}`}
                 >
                   <button 
                     onMouseEnter={() => setOnHoveButton(true)}
@@ -65,7 +65,7 @@ const ReadMore = () => {
                   >Read more</button>
                 </Link>
               </div>
-              <h2>{blodData?.title}</h2>
+              <h2>{blogData?.title}</h2>
             </div>
           </div>
         </div>

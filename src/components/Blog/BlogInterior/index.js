@@ -64,16 +64,15 @@ const BlogInterior = ({ homeActive, setHomeActive }) => {
       <section className="blog-interior">
         <div className="blog-interior__blog-details-container">
           <h1 className="blog-interior__blog-details-container__title">
-            {blog.content?.headerTitle}
+            {blog?.title}
           </h1>
           <div className="blog-interior__blog-details-container__image-and-image-detail">
-            <p>{blog.content?.firstParagraphAfterHeader}</p>
+            <p>{blog?.description}</p>
             <div className="img-cont">
-              {" "}
-              <img src={blog.content?.headerImage[0].url} alt="blog_image" />
+              <img src={blog?.posterImage && blog.posterImage[0].url} alt="blog_image" />
             </div>
           </div>
-          <div className="blog-interior__blog-details-container__author-article">
+          {/* <div className="blog-interior__blog-details-container__author-article">
             <p className="paragraph part-n">
               {blog.content?.secondParagraphAfterHeader}
             </p>
@@ -92,9 +91,9 @@ const BlogInterior = ({ homeActive, setHomeActive }) => {
               {blog.content?.paragraphBeforeFooterImage}
             </p>
             <div className="blog-interior__blog-details-container__article-quote-image__selective-image">
-              <img src={blog.content?.footerImage[0].url} alt="selective__image" />
+              <img src={blog.content?.footerImage[0]?.url} alt="selective__image" />
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
     </>
