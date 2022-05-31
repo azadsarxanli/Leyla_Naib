@@ -2,7 +2,6 @@
 
 .exclusive-design {
   padding: 155px $mainPaddingRightAndLeft;
-  height: 100vh;
   &__container {
     &__card-item {
       position: relative;
@@ -82,7 +81,6 @@
 
 @media only screen and (max-width: 991px) {
   .exclusive-design {
-    height: auto;
     padding: 140px 20px;
     &__container {
       &__card-item {
