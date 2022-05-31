@@ -9,12 +9,12 @@ const ExclusiveDesigns = () => {
 
     useEffect(() => {
       axios.get("http://localhost:3001/api/portfolio")
-        .then(res => setPortfolioData(res.data.result.splice(0, 4)))
+        .then(res => setPortfolioData(res.data.result.splice(0, 5)))
     }, [])
 
     useEffect(() => {
         axios.get("http://localhost:3001/api/category")
-          .then(res => setCategoryNameData(res.data.result.splice(0, 4)))
+          .then(res => setCategoryNameData(res.data.result.splice(0, 5)))
       }, [])
 
     let matchMedia = window.matchMedia("(max-width: 991px)").matches;
@@ -37,62 +37,71 @@ const ExclusiveDesigns = () => {
     return (
         <section className="exclusive-design">
             <div className="exclusive-design__container">
-                    <Link to="/work" 
-                        onMouseMove={() => (onViewButton(), setCardIndex(0))}
-                        onMouseOut={offViewButton}
-                    >
-                        <div className="exclusive-design__container__card-item">
-                            <div className="exclusive-design__container__card-item__title-and-desc">
-                                <h1>{categoryNameData && categoryNameData[0]?.categoryName}</h1>
-                                <p className="description">{portfolioData && portfolioData[0]?.title}</p>
-                            </div>
-                            <div className="exclusive-design__container__card-item__image">
-                                <img src={portfolioData && portfolioData[0]?.posterImage[0]?.url} alt="" />
-                            </div>
+                <Link to="/work" 
+                    onMouseMove={() => (onViewButton(), setCardIndex(0))}
+                    onMouseOut={offViewButton}
+                >
+                    <div className="exclusive-design__container__card-item">
+                        <div className="exclusive-design__container__card-item__title-and-desc">
+                            <h1>{categoryNameData && categoryNameData[0]?.categoryName}</h1>
                         </div>
-                    </Link>
-                    <Link to="/work" 
-                        onMouseMove={() => (onViewButton(), setCardIndex(1))}
-                        onMouseOut={offViewButton}
-                    >
-                        <div className="exclusive-design__container__card-item">
-                            <div className="exclusive-design__container__card-item__title-and-desc">
-                                <h1>{categoryNameData && categoryNameData[1]?.categoryName}</h1>
-                                <p className="description">{portfolioData && portfolioData[1]?.title}</p>
-                            </div>
-                            <div className="exclusive-design__container__card-item__image">
-                                <img src={portfolioData && portfolioData[1]?.posterImage[0]?.url} alt="" />
-                            </div>
+                        <div className="exclusive-design__container__card-item__image">
+                            <img src={portfolioData && portfolioData[0]?.posterImage[0]?.url} alt="" />
                         </div>
-                    </Link>
-                    <Link to="/work" 
-                        onMouseMove={() => (onViewButton(), setCardIndex(2))}
-                        onMouseOut={offViewButton}
-                    >
-                        <div className="exclusive-design__container__card-item">
-                            <div className="exclusive-design__container__card-item__title-and-desc">
-                                <h1>{categoryNameData && categoryNameData[2]?.categoryName}</h1>
-                                <p className="description">{portfolioData && portfolioData[2]?.title}</p>
-                            </div>
-                            <div className="exclusive-design__container__card-item__image">
-                                <img src={portfolioData && portfolioData[2]?.posterImage[0]?.url} alt="" />
-                            </div>
+                    </div>
+                </Link>
+                <Link to="/work" 
+                    onMouseMove={() => (onViewButton(), setCardIndex(1))}
+                    onMouseOut={offViewButton}
+                >
+                    <div className="exclusive-design__container__card-item">
+                        <div className="exclusive-design__container__card-item__title-and-desc">
+                            <h1>{categoryNameData && categoryNameData[1]?.categoryName}</h1>
                         </div>
-                    </Link>
-                    <Link to="/work" 
-                        onMouseMove={() => (onViewButton(), setCardIndex(3))}
-                        onMouseOut={offViewButton}
-                    >
-                        <div className="exclusive-design__container__card-item">
-                            <div className="exclusive-design__container__card-item__title-and-desc">
-                                <h1>{categoryNameData && categoryNameData[3]?.categoryName}</h1>
-                                <p className="description">{portfolioData && portfolioData[3]?.title}</p>
-                            </div>
-                            <div className="exclusive-design__container__card-item__image">
-                                <img src={portfolioData && portfolioData[3]?.posterImage[0]?.url} alt="" />
-                            </div>
+                        <div className="exclusive-design__container__card-item__image">
+                            <img src={portfolioData && portfolioData[1]?.posterImage[0]?.url} alt="" />
                         </div>
-                    </Link>
+                    </div>
+                </Link>
+                <Link to="/work" 
+                    onMouseMove={() => (onViewButton(), setCardIndex(2))}
+                    onMouseOut={offViewButton}
+                >
+                    <div className="exclusive-design__container__card-item">
+                        <div className="exclusive-design__container__card-item__title-and-desc">
+                            <h1>{categoryNameData && categoryNameData[2]?.categoryName}</h1>
+                        </div>
+                        <div className="exclusive-design__container__card-item__image">
+                            <img src={portfolioData && portfolioData[2]?.posterImage[0]?.url} alt="" />
+                        </div>
+                    </div>
+                </Link>
+                <Link to="/work" 
+                    onMouseMove={() => (onViewButton(), setCardIndex(3))}
+                    onMouseOut={offViewButton}
+                >
+                    <div className="exclusive-design__container__card-item">
+                        <div className="exclusive-design__container__card-item__title-and-desc">
+                            <h1>{categoryNameData && categoryNameData[3]?.categoryName}</h1>
+                        </div>
+                        <div className="exclusive-design__container__card-item__image">
+                            <img src={portfolioData && portfolioData[3]?.posterImage[0]?.url} alt="" />
+                        </div>
+                    </div>
+                </Link>
+                <Link to="/work" 
+                    onMouseMove={() => (onViewButton(), setCardIndex(3))}
+                    onMouseOut={offViewButton}
+                >
+                    <div className="exclusive-design__container__card-item">
+                        <div className="exclusive-design__container__card-item__title-and-desc">
+                            <h1>{categoryNameData && categoryNameData[4]?.categoryName}</h1>
+                        </div>
+                        <div className="exclusive-design__container__card-item__image">
+                            <img src={portfolioData && portfolioData[4]?.posterImage[0]?.url} alt="" />
+                        </div>
+                    </div>
+                </Link>
             </div>
         </section>
     )

@@ -24,18 +24,6 @@
           z-index: 99;
           margin-right: 20px;
         }
-        p {
-          @include fontStyles(
-            $interFont,
-            $fontSizeTexts-1920px,
-            500,
-            $lightGrayHeader
-          );
-          margin-top: 20px;
-          margin-left: auto;
-          margin-right: 20%;
-          line-height: 25px;
-        }
       }
       &__image {
         opacity: 0;
@@ -59,9 +47,6 @@
     &__card-item:hover h1 {
       margin-left: -15%;
     }
-    &__card-item:hover p {
-      visibility: hidden;
-    }
   }
 }
 
@@ -73,10 +58,6 @@
         &__title-and-desc {
           h1 {
             font-size: 38px;
-          }
-          p {
-            font-size: $fontSizeTexts-1600px;
-            line-height: 23px;
           }
         }
       }
@@ -92,24 +73,6 @@
         &__title-and-desc {
           h1 {
             font-size: 36px;
-          }
-          p {
-            font-size: $fontSizeTexts-1450px;
-            line-height: 21px;
-          }
-        }
-      }
-    }
-  }
-}
-
-@media only screen and (max-width: 1280px) {
-  .exclusive-design {
-    &__container {
-      &__card-item {
-        &__title-and-desc {
-          p {
-            margin-right: 10%;
           }
         }
       }
@@ -128,19 +91,12 @@
           h1 {
             font-size: 30px;
           }
-          p {
-            font-size: 14px;
-            line-height: 19px;
-            margin-bottom: 15px;
-            // width: fit-content;
-          }
         }
       }
       &__card-item:hover h1 {
         margin-top: -25%;
         margin-left: -11%;
         font-size: 40px;
-        white-space: nowrap;
       }
       &__card-item:hover {
         width: 90%;
@@ -158,13 +114,6 @@
           h1 {
             margin-left: 2%;
           }
-          p {
-            margin-right: 2%;
-            width: 40%;
-            br {
-              display: none;
-            }
-          }
         }
       }
       &__card-item:hover h1 {
@@ -181,10 +130,6 @@
         &__title-and-desc {
           h1 {
             font-size: 25px;
-          }
-          p {
-            width: 60%;
-            font-size: 12px;
           }
         }
       }
@@ -213,9 +158,6 @@
         &__title-and-desc {
           h1 {
             font-size: 20px;
-          }
-          p {
-            font-size: 11px;
           }
         }
       }
