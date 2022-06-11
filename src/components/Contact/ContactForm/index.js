@@ -72,7 +72,6 @@ const ContactForm = () => {
     setIsSubmit(true);
   };
 
-
   useEffect(() => {
     if (isSubmit && type.phone && type.email && type.message) {
       axios.post("http://localhost:3001/api/form", inputs)
@@ -81,6 +80,7 @@ const ContactForm = () => {
       inputs.phone = "";
       inputs.email = "";
       inputs.message = "";
+      alert("Message successfully send");
     }
   }, [isSubmit, type.phone, type.email, type.message])
 

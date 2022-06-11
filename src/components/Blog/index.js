@@ -3,6 +3,7 @@ import BreadCrumb from "../BreadCrumb";
 import "./Blog.scss";
 import BlogFilter from "./BlogFilter";
 import BlogItems from "./BlogItems";
+import axios from "axios";
 
 const Blog = ({ homeActive, setHomeActive }) => {
   useEffect(() => {
@@ -14,11 +15,11 @@ const Blog = ({ homeActive, setHomeActive }) => {
   const [blogData, setBlogData] = useState([]);
   const [categoryName, setCategoryName] = useState("");
   const [val, setVal] = useState(1);
+
   useEffect(() => {
-    fetch("http://localhost:3001/api/blog")
-      .then((response) => response.json())
-      .then((data) => setBlogData(data.result));
-  }, []);
+    axios.get("http://localhost:3001/api/blog")
+      .then(res => setBlogData(res.data.result));
+  }, [])
 
   useEffect(() => {
     const body = document.body;

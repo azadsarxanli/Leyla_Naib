@@ -5,6 +5,7 @@ import blogInteriorImage from "../../../assets/images/blog-interior.png";
 import quoteImage from "../../../assets/images/quote.png";
 import selectiveImage from "../../../assets/images/selective-image.png";
 import BreadCrumb from "../../BreadCrumb";
+import axios from 'axios';
 
 const BlogInterior = ({ homeActive, setHomeActive }) => {
   useEffect(() => {
@@ -15,22 +16,13 @@ const BlogInterior = ({ homeActive, setHomeActive }) => {
 
   let { id } = useParams();
   const [blog, setBlog] = useState({});
-
-  const fetchBlogData = async () => {
-    if (id) {
-      try {
-        const rawData = await fetch(`http://localhost:3001/api/blog/${id}`);
-        const data = await rawData.json();
-        await new Promise((x) => setTimeout(x, 10));
-        setBlog(data.result);
-      } catch (error) {
-      }
-    }
-  };
-
+  
   useEffect(() => {
-    fetchBlogData();
-  }, [id]);
+    if (id) {
+      axios.get(`http://localhost:3001/api/blog/${id}`)
+        .then(res => setBlog(res.data.result));
+    }
+  }, [id])
 
   useEffect(() => {
     const body = document.body;
