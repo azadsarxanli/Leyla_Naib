@@ -17,15 +17,12 @@ const Work = ({ homeActive, setHomeActive }) => {
   const [categoryNameData, setCategoryNameData] = useState([]);
   const [categoryName, setCategoryName] = useState("");
   const [val, setVal] = useState(1);
-  useEffect(() => {
-    fetch("http://localhost:3001/api/portfolio", { mode: "cors" })
-      .then((response) => response.json())
-      .then((data) => setWorkData(data.result));
-  }, []);
 
   useEffect(() => {
     axios.get("http://localhost:3001/api/category")
       .then(res => setCategoryNameData(res.data.result))
+    axios.get("http://localhost:3001/api/portfolio")
+      .then(res => setWorkData(res.data.result))
   }, [])
 
   let matchMedia = window.matchMedia("(max-width: 991px)").matches;

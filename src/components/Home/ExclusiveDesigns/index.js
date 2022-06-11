@@ -8,14 +8,11 @@ const ExclusiveDesigns = () => {
     const [categoryNameData, setCategoryNameData] = useState([]);
 
     useEffect(() => {
-      axios.get("http://localhost:3001/api/portfolio")
-        .then(res => setPortfolioData(res.data.result.splice(0, 5)))
-    }, [])
-
-    useEffect(() => {
         axios.get("http://localhost:3001/api/category")
-          .then(res => setCategoryNameData(res.data.result.splice(0, 5)))
-      }, [])
+            .then(res => setCategoryNameData(res.data.result.splice(0, 5)))
+        axios.get("http://localhost:3001/api/portfolio")
+            .then(res => setPortfolioData(res.data.result.splice(0, 5)))
+    }, [])
 
     let matchMedia = window.matchMedia("(max-width: 991px)").matches;
 

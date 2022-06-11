@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import axios from 'axios'
 import BreadCrumb from "../../BreadCrumb";
 import InteriorContent from "./InteriorContent";
 import InteriorDesigns from "./InteriorDesigns";
@@ -13,25 +14,16 @@ const WorkInterior = ({ homeActive, setHomeActive }) => {
       setHomeActive(false);
     }
   }, [homeActive]);
+  
   let { id } = useParams();
   const [work, setWork] = useState({});
-  const fetchBlogData = async () => {
-    if (id) {
-      try {
-        const rawData = await fetch(
-          `http://localhost:3001/api/portfolio/${id}`
-        );
-        const data = await rawData.json();
-        await new Promise((x) => setTimeout(x, 10));
-        setWork(data);
-      } catch (error) {
-      }
-    }
-  };
 
   useEffect(() => {
-    fetchBlogData();
-  }, [id]);
+    if (id) {
+      axios.get(`http://localhost:3001/api/portfolio/${id}`)
+        .then(res => setWork(res.data));
+    }
+  }, [id])
 
   useEffect(() => {
     const body = document.body;
