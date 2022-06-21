@@ -1,12 +1,9 @@
 import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import "./styles/styles.scss";
 import CustomCursor from "./components/UI/CustomCursor";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Home from "./components/Home";
-
-import "./styles/styles.scss";
 import About from "./components/About";
 import NotFound from "./components/UI/NotFound";
 import Work from "./components/Work";
@@ -16,6 +13,8 @@ import Blog from "./components/Blog";
 import Service from "./components/Service";
 import BlogInterior from "./components/Blog/BlogInterior";
 import Contact from "./components/Contact";
+import PageScrollTop from "./components/UI/PageScrollTop/PageScrollTop";
+import "./styles/styles.scss";
 
 const App = () => {
   const [cursor, setCursor] = useState(false);
@@ -33,6 +32,7 @@ const App = () => {
 
   return (
     <>
+      <PageScrollTop />
       <Header
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
